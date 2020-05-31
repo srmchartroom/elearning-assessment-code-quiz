@@ -8,23 +8,572 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-    <container>
+    <container class="clearfix">
         <header class="navbar-dark">
             <div class="">
                 <div class="float-left">
                     <div class=" alert alert-secondary mt-2 ml-2 mr-2 mb-1 bg-light"><button type="button" class="btn btn-link m-auto">High Scores</button></div>
                     <div class="inline text-center small"><p><em>Review the rankings.</em></p></div>
                 </div>
-                <div class="float-left ml-5 mt-2 pl-5"><h1>Quiz: <span id="quizTitle"></span></h1></div>
                 <div class="float-right">
                     <div class="alert alert-secondary mt-2 ml-2 mr-2 mb-1 bg-light"><p class="m-auto p-2">TIME REMAINING: <span id="timer">60</span> <span class="small">SEC.</span></p></div>
                     <div class="inline text-center small"><p><em>This learning assessment is timed.</em></p></div>
                 </div>
+                <div class="float-left ml-5 mt-2 pl-5"><h1>Quiz: <span id="quizTitle"></span></h1></div>
             </div>
         </header>
-
-
     </container>
+    <container id="qz0" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <h2 class="pb-5">Quiz Challenge</h2>
+                <hr>
+                <p><strong>Directions:</strong></p>
+                <p>The following quiz is a timed learning assessment. The intent of the assessment is to gauge your comprehension of key aspects related to the topic of: <strong><span class="currentTopic"></span></strong>.</p>
+                <p>Try to answer the following questions within the time limit provided. Incorrect answers will penalize your score <span><strong><em>AS WELL AS</em></strong></span> your time (by 10 seconds).</p>
+                <hr>
+            </div>
+        </div>
+        <div class="container-md px-5 pt-5 mt-0 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0float-left" style="width: 100px;">Start Quiz</button>
+            <p>&nbsp;</p>
+        </div>
+    </container>
+    <container id="qz1" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>1 of 10.</strong></p>
+                <p>Text for Question 1....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question1" id="question1A" value="question1A">
+                    <label class="form-check-label" for="question1A">
+                        Option 1A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question1" id="question1B" value="question1B">
+                    <label class="form-check-label" for="question1B">
+                        Option 1B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question1" id="question1C" value="question1C">
+                    <label class="form-check-label" for="question1C">
+                        Option 1C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question1" id="question1D" value="question1D">
+                    <label class="form-check-label" for="question1D">
+                        Option 1D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question1" id="question1E" value="question1E">
+                    <label class="form-check-label" for="question1E">
+                        Options 1E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt1">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q1CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q1IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz2" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>2 of 10.</strong></p>
+                <p>Text for Question 2....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question2" id="question2A" value="question2A">
+                    <label class="form-check-label" for="question2A">
+                        Option 2A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question2" id="question2B" value="question2B">
+                    <label class="form-check-label" for="question2B">
+                        Option 2B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question2" id="question2C" value="question2C">
+                    <label class="form-check-label" for="question2C">
+                        Option 2C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question2" id="question2D" value="question2D">
+                    <label class="form-check-label" for="question2D">
+                        Option 2D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question2" id="question2E" value="question2E">
+                    <label class="form-check-label" for="question2E">
+                        Options 2E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt2">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q2CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q2IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz3" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>3 of 10.</strong></p>
+                <p>Text for Question 3....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question3" id="question3A" value="question3A">
+                    <label class="form-check-label" for="question3A">
+                        Option 3A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question3" id="question3B" value="question3B">
+                    <label class="form-check-label" for="question3B">
+                        Option 3B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question3" id="question3C" value="question3C">
+                    <label class="form-check-label" for="question3C">
+                        Option 3C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question3" id="question3D" value="question3D">
+                    <label class="form-check-label" for="question3D">
+                        Option 3D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question3" id="question3E" value="question3E">
+                    <label class="form-check-label" for="question3E">
+                        Options 3E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt3">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q3CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q3IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz4" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>4 of 10.</strong></p>
+                <p>Text for Question 4....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question4" id="question4A" value="question4A">
+                    <label class="form-check-label" for="question4A">
+                        Option 4A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question4" id="question4B" value="question4B">
+                    <label class="form-check-label" for="question4B">
+                        Option 4B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question4" id="question4C" value="question4C">
+                    <label class="form-check-label" for="question4C">
+                        Option 4C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question4" id="question4D" value="question4D">
+                    <label class="form-check-label" for="question4D">
+                        Option 4D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question4" id="question4E" value="question4E">
+                    <label class="form-check-label" for="question4E">
+                        Options 4E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt4">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q4CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q4IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz5" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>5 of 10.</strong></p>
+                <p>Text for Question 5....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question5" id="question5A" value="question5A">
+                    <label class="form-check-label" for="question5A">
+                        Option 5A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question5" id="question5B" value="question5B">
+                    <label class="form-check-label" for="question5B">
+                        Option 5B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question5" id="question5C" value="question5C">
+                    <label class="form-check-label" for="question5C">
+                        Option 5C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question5" id="question5D" value="question5D">
+                    <label class="form-check-label" for="question5D">
+                        Option 5D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question5" id="question5E" value="question5E">
+                    <label class="form-check-label" for="question5E">
+                        Options 5E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt5">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q5CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q5IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz6" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>6 of 10.</strong></p>
+                <p>Text for Question 6....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question6" id="question6A" value="question6A">
+                    <label class="form-check-label" for="question6A">
+                        Option 6A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question6" id="question6B" value="question6B">
+                    <label class="form-check-label" for="question6B">
+                        Option 6B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question6" id="question6C" value="question6C">
+                    <label class="form-check-label" for="question6C">
+                        Option 6C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question6" id="question6D" value="question6D">
+                    <label class="form-check-label" for="question6D">
+                        Option 6D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question6" id="question6E" value="question6E">
+                    <label class="form-check-label" for="question6E">
+                        Options 6E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt6">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q6CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q6IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz7" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>7 of 10.</strong></p>
+                <p>Text for Question 7....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question7" id="question7A" value="question7A">
+                    <label class="form-check-label" for="question7A">
+                        Option 7A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question7" id="question7B" value="question7B">
+                    <label class="form-check-label" for="question7B">
+                        Option 7B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question7" id="question7C" value="question7C">
+                    <label class="form-check-label" for="question7C">
+                        Option 7C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question7" id="question7D" value="question7D">
+                    <label class="form-check-label" for="question7D">
+                        Option 7D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question7" id="question7E" value="question7E">
+                    <label class="form-check-label" for="question7E">
+                        Options 7E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt7">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q7CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q7IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz8" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>8 of 10.</strong></p>
+                <p>Text for Question 8....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question8" id="question8A" value="question8A">
+                    <label class="form-check-label" for="question8A">
+                        Option 8A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question8" id="question8B" value="question8B">
+                    <label class="form-check-label" for="question8B">
+                        Option 8B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question1" id="question8C" value="question8C">
+                    <label class="form-check-label" for="question8C">
+                        Option 8C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question8" id="question8D" value="question8D">
+                    <label class="form-check-label" for="question8D">
+                        Option 8D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question8" id="question8E" value="question8E">
+                    <label class="form-check-label" for="question8E">
+                        Options 8E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt8">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q8CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q8IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz9" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>9 of 10.</strong></p>
+                <p>Text for Question 9....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question9" id="question9A" value="question9A">
+                    <label class="form-check-label" for="question9A">
+                        Option 1A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question9" id="question9B" value="question9B">
+                    <label class="form-check-label" for="question9B">
+                        Option 9B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question9" id="question9C" value="question9C">
+                    <label class="form-check-label" for="question9C">
+                        Option 9C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question9" id="question9D" value="question9D">
+                    <label class="form-check-label" for="question9D">
+                        Option 9D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question9" id="question9E" value="question9E">
+                    <label class="form-check-label" for="question9E">
+                        Options 9E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt9">Next</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q9CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q9IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz10" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <hr>
+                <p><strong>10 of 10.</strong></p>
+                <p>Text for Question 10....Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto eaque molestiae beatae similique accusantium labore consectetur perspiciatis voluptatibus sit.</p>
+                <hr>
+                <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="question10" id="question10A" value="question10A">
+                    <label class="form-check-label" for="question10A">
+                        Option 10A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question10" id="question10B" value="question10B">
+                    <label class="form-check-label" for="question10B">
+                        Option 10B...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question10" id="question10C" value="question10C">
+                    <label class="form-check-label" for="question10C">
+                        Option 10C...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question10" id="question10D" value="question10D">
+                    <label class="form-check-label" for="question10D">
+                        Option 10D....Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="question10" id="question10E" value="question10E">
+                    <label class="form-check-label" for="question10E">
+                        Options 10E...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
+            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:200px;"><span id="submitBtnTxt10">Finish &amp; Score</span></button>
+            <p>&nbsp;</p>
+        </div>
+        <div id="q10CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
+            Correct!  Explanatory text goes here....
+        </div>
+        <div id="q10IncorrectMsg" class="incorrect-alert container-md alert alert-danger" role="alert" hidden >
+            Incorrect.  Explanatory text goes here...
+        </div>
+    </container>
+    <container id="qz11" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <h2 class="pb-5">You have completed this quiz.</h2>
+                <hr>
+                <p><strong>Score:</strong></p>
+                <p>You answered <span id="numCorrect"></span> out of 10 question.</p>
+                <p>Your weighted score based on your correct responses and time is <span id="score"></span>.</p>
+                <hr class="mt-4">
+                <div class="row pt-5">
+                    <div class="col">
+                        <p>Not pleased with your score? Try again.</p>
+                    <button id="retakeBtn" type="button" class="btn btn-primary mt-0float-left" style="width: 200px;">Retake Quiz</button>
+                    </div>
+                    <div class="col">
+                        <p>Ready to enter your score on the scoreboard?</p>
+                        <form>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <input type="text" class="form-control" id="initialsInput" placeholder="Enter Initials">
+                                </div>
+                                <div class="form-group col">
+                                    <button id="scoreBtn" type="button" class="btn btn-primary mt-0float-left" style="width: 200px;">Submit Score</button></div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </container>
+
+
+
+
+
     <!-- script.js Custom JavaScript file -->
     <script src="script.js"></script>
 
