@@ -12,7 +12,7 @@
         <header class="navbar-dark">
             <div class="">
                 <div class="float-left">
-                    <div class=" alert alert-secondary mt-2 ml-2 mr-2 mb-1 bg-light"><button type="button" class="btn btn-link m-auto">High Scores</button></div>
+                    <div class=" alert alert-secondary mt-2 ml-2 mr-2 mb-1 bg-light"><button type="button" class="btn btn-link m-auto" id="goToScores">High Scores</button></div>
                     <div class="inline text-center small"><p><em>Review the rankings.</em></p></div>
                 </div>
                 <div class="float-right">
@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt1">Next</span></button>
+            <button id="nxt1Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt1">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q1CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt2">Next</span></button>
+            <button id="nxt2Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt2">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q2CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -179,7 +179,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt3">Next</span></button>
+            <button id="nxt3Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt3">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q3CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -229,7 +229,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt4">Next</span></button>
+            <button id="nxt4Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt4">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q4CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -279,7 +279,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt5">Next</span></button>
+            <button id="nxt5Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt5">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q5CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -329,7 +329,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt6">Next</span></button>
+            <button id="nxt6Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt6">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q6CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -379,7 +379,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt7">Next</span></button>
+            <button id="nxt7Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt7">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q7CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -429,7 +429,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt8">Next</span></button>
+            <button id="nxt8Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt8">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q8CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -449,7 +449,7 @@
                 <div class="form-check mt-5">
                     <input class="form-check-input" type="radio" name="question9" id="question9A" value="question9A">
                     <label class="form-check-label" for="question9A">
-                        Option 1A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
+                        Option 9A...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aut!
                     </label>
                 </div>
                 <div class="form-check mt-3">
@@ -479,7 +479,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt9">Next</span></button>
+            <button id="nxt9Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:100px;"><span id="submitBtnTxt9">Next</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q9CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -529,7 +529,7 @@
             </div>
         </div>
         <div class="container-md px-5 pb-3 mt-0 mb-5 bg-light">
-            <button id="startBtn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:200px;"><span id="submitBtnTxt10">Finish &amp; Score</span></button>
+            <button id="nxt10Btn" type="button" class="btn btn-primary mt-0 mb-3 float-right" style="width:200px;"><span id="submitBtnTxt10">Finish &amp; Score</span></button>
             <p>&nbsp;</p>
         </div>
         <div id="q10CorrectMsg" class="correct-alert container-md alert alert-success" role="alert" hidden >
@@ -575,7 +575,7 @@
                 <h2 class="pb-5">Quiz Scoreboard:</h2>
                 <hr class="mt-4">
                 <div class="row pt-5">
-                    <table class="table">
+                    <table class="table" id="scoresTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -585,7 +585,7 @@
                                 <th scope="col">Final Score</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="scoresTableBody">
                             <tr>
                                 <th scope="row" class="rank"></th>
                                 <td class="initials"></td>
@@ -600,11 +600,11 @@
                 <div class="row">
                     <div class="col-md">
                         <p><strong>Not pleased with your score? Try again.</strong></p>
-                        <button id="retakeBtn" type="button" class="btn btn-primary mt-0 float-left" style="width: 200px;">Retake Quiz</button>
+                        <button id="retake2Btn" type="button" class="btn btn-primary mt-0 float-left" style="width: 200px;">Retake Quiz</button>
                     </div>
                     <div class="col-md">
                         <p><strong>Clear the Scoreboard</strong></p>
-                        <button id="scoreBtn" type="button" class="btn btn-primary mt-0" style="width: 200px;">Clear Scores</button>
+                        <button id="clearScoresBtn" type="button" class="btn btn-primary mt-0" style="width: 200px;">Clear Scores</button>
                         <p><em>Note: This action cannot be undone.</em></p>
                     </div>
                 </div>
