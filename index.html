@@ -550,20 +550,62 @@
                 <hr class="mt-4">
                 <div class="row pt-5">
                     <div class="col">
-                        <p>Not pleased with your score? Try again.</p>
+                        <p><strong>Not pleased with your score? Try again.</strong></p>
                     <button id="retakeBtn" type="button" class="btn btn-primary mt-0float-left" style="width: 200px;">Retake Quiz</button>
                     </div>
                     <div class="col">
-                        <p>Ready to enter your score on the scoreboard?</p>
+                        <p><strong>Ready to enter your score on the scoreboard?</strong></p>
                         <form>
                             <div class="row">
                                 <div class="form-group col">
                                     <input type="text" class="form-control" id="initialsInput" placeholder="Enter Initials">
                                 </div>
                                 <div class="form-group col">
-                                    <button id="scoreBtn" type="button" class="btn btn-primary mt-0float-left" style="width: 200px;">Submit Score</button></div>
+                                    <button id="scoreBtn" type="button" class="btn btn-primary mt-0 float-left" style="width: 200px;">Submit Score</button></div>
                                 </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </container>
+    <container id="scores" class="container-fluid">
+        <div class="container-md bg-light" style="min-height: 500px; max-height: 700px;">
+            <div class="container-md p-5" style="margin: auto auto;">
+                <h2 class="pb-5">Quiz Scoreboard:</h2>
+                <hr class="mt-4">
+                <div class="row pt-5">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Initials</th>
+                                <th scope="col">Correct Answers</th>
+                                <th scope="col">Final Time</th>
+                                <th scope="col">Final Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="rank"></th>
+                                <td class="initials"></td>
+                                <td class="correct"></td>
+                                <td class="time"></td>
+                                <td class="score"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="mt-4">
+                <div class="row">
+                    <div class="col-md">
+                        <p><strong>Not pleased with your score? Try again.</strong></p>
+                        <button id="retakeBtn" type="button" class="btn btn-primary mt-0 float-left" style="width: 200px;">Retake Quiz</button>
+                    </div>
+                    <div class="col-md">
+                        <p><strong>Clear the Scoreboard</strong></p>
+                        <button id="scoreBtn" type="button" class="btn btn-primary mt-0" style="width: 200px;">Clear Scores</button>
+                        <p><em>Note: This action cannot be undone.</em></p>
                     </div>
                 </div>
             </div>
