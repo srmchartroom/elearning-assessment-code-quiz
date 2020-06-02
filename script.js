@@ -426,8 +426,11 @@ function scoreTimer() {
         secondsLeft--;
         // display the time state on screen to the current decremented seconds
         spanTime.textContent = Math.floor(secondsLeft);
-        // if the seconds run out...
-        if(secondsLeft === 0) {
+        // the screen is NOT a question
+        if (!qz0Div.classList.contains("hidden") || !qz11Div.classList.contains("hidden") || !scoresDiv.classList.contains("hidden")) { 
+            console.log("Time should stop");
+            clearInterval(timerInterval);
+        } else if(secondsLeft === 0) { // if the seconds run out...
             // clear the Interval
           clearInterval(timerInterval);
           // alert the user that they've run out of time
