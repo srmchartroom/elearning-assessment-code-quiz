@@ -26,15 +26,25 @@ const startBtn = document.querySelector("#startBtn");
 // get qz1 div and set it to qz1Div
 const qz1Div = document.querySelector("#qz1");
 // get value for question 1A and set to q1A
-const q1A = document.querySelector("#question1A");
+const q1A = document.querySelector("#question1A").value;
+// get label for question 1A and set to q1Alabel
+const q1Alabel = document.querySelector("#question1A").label;
 // get value for question 1B and set to q1B
-const q1B = document.querySelector("#question1B");
+const q1B = document.querySelector("#question1B").value;
+// get label for question 1B and set to q1Blabel
+const q1Blabel = document.querySelector("#question1B").label;
 // get value for question 1C and set to q1C
-const q1C = document.querySelector("#question1C");
+const q1C = document.querySelector("#question1C").value;
+// get label for question 1C and set to q1Clabel
+const q1Clabel = document.querySelector("#question1C").label;
 // get value for question 1D and set to q1D
-const q1D = document.querySelector("#question1D");
+const q1D = document.querySelector("#question1D").value;
+// get label for question 1D and set to q1Dlabel
+const q1Dlabel = document.querySelector("#question1D").label;
 // get value for question 1E and set to q1E
-const q1E = document.querySelector("#question1E");
+const q1E = document.querySelector("#question1E").value;
+// get label for question 1E and set to q1Elabel
+const q1Elabel = document.querySelector("#question1E").label;
 // get "Next" button for QZ1 and set to nxt1Btn
 const nxt1Btn = document.querySelector("#nxt1Btn");
 // get correct message alert and set to q1CorrectMsg
@@ -46,15 +56,25 @@ const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg");
 // get qz2 div and set it to qz2Div
 const qz2Div = document.querySelector("#qz2");
 // get value for question 2A and set to q2A
-const q2A = document.querySelector("#question2A");
+const q2A = document.querySelector("#question2A").value;
+// get label for question 2A and set to q2Alabel
+const q2Alabel = document.querySelector("#question2A").label;
 // get value for question 2B and set to q2B
-const q2B = document.querySelector("#question2B");
+const q2B = document.querySelector("#question2B").value;
+// get label for question 2B and set to q2Blabel
+const q2Blabel = document.querySelector("#question2B").label;
 // get value for question 2C and set to q2C
-const q2C = document.querySelector("#question2C");
+const q2C = document.querySelector("#question2C").value;
+// get label for question 2C and set to q2Clabel
+const q2Clabel = document.querySelector("#question2C").label;
 // get value for question 2D and set to q2D
-const q2D = document.querySelector("#question2D");
+const q2D = document.querySelector("#question2D").value;
+// get label for question 2D and set to q2Dlabel
+const q2Dlabel = document.querySelector("#question2D").label;
 // get value for question 2E and set to q2E
-const q2E = document.querySelector("#question2E");
+const q2E = document.querySelector("#question2E").value;
+// get label for question 2E and set to q2Elabel
+const q2Elabel = document.querySelector("#question2E").label;
 // get "Next" button for QZ2 and set to nxt2Btn
 const nxt2Btn = document.querySelector("#nxt2Btn");
 // get correct message alert and set to q2CorrectMsg
@@ -66,15 +86,25 @@ const q2IncorrectMsg = document.querySelector("#q2IncorrectMsg");
 // get qz3 div and set it to qz3Div
 const qz3Div = document.querySelector("#qz3");
 // get value for question 3A and set to q3A
-const q3A = document.querySelector("#question3A");
+const q3A = document.querySelector("#question3A").value;
+// get label for question 3A and set to q3Alabel
+const q3Alabel = document.querySelector("#question3A").label;
 // get value for question 3B and set to q3B
-const q3B = document.querySelector("#question3B");
+const q3B = document.querySelector("#question3B").value;
+// get label for question 3B and set to q3Blabel
+const q3Blabel = document.querySelector("#question3B").label;
 // get value for question 3C and set to q3C
-const q3C = document.querySelector("#question3C");
+const q3C = document.querySelector("#question3C").value;
+// get label for question 3C and set to q3Clabel
+const q3Clabel = document.querySelector("#question3C").label;
 // get value for question 3D and set to q3D
-const q3D = document.querySelector("#question3D");
+const q3D = document.querySelector("#question3D").value;
+// get label for question 3D and set to q3Dlabel
+const q3Dlabel = document.querySelector("#question3D").label;
 // get value for question 3E and set to q3E
-const q3E = document.querySelector("#question3E");
+const q3E = document.querySelector("#question3E").value;
+// get label for question 3E and set to q3Elabel
+const q3Elabel = document.querySelector("#question3E").label;
 // get "Next" button for QZ3 and set to nxt3Btn
 const nxt3Btn = document.querySelector("#nxt3Btn");
 // get correct message alert and set to q3CorrectMsg
@@ -86,15 +116,25 @@ const q3IncorrectMsg = document.querySelector("#q3IncorrectMsg");
 // get qz4 div and set it to qz4Div
 const qz4Div = document.querySelector("#qz4");
 // get value for question 4A and set to q4A
-const q4A = document.querySelector("#question4A");
+const q4A = document.querySelector("#question4A").value;
+// get label for question 4A and set to q4Alabel
+const q4Alabel = document.querySelector("#question4A").label;
 // get value for question 4B and set to q4B
-const q4B = document.querySelector("#question4B");
+const q4B = document.querySelector("#question4B").value;
+// get label for question 4B and set to q4Blabel
+const q4Blabel = document.querySelector("#question4B").label;
 // get value for question 4C and set to q4C
-const q4C = document.querySelector("#question4C");
+const q4C = document.querySelector("#question4C").value;
+// get label for question 4C and set to q4Clabel
+const q4Clabel = document.querySelector("#question4C").label;
 // get value for question 4D and set to q4D
-const q4D = document.querySelector("#question4D");
+const q4D = document.querySelector("#question4D").value;
+// get label for question 4D and set to q4Dlabel
+const q4Dlabel = document.querySelector("#question4D").label;
 // get value for question 4E and set to q4E
-const q4E = document.querySelector("#question4E");
+const q4E = document.querySelector("#question4E").value;
+// get label for question 4E and set to q4Elabel
+const q4Elabel = document.querySelector("#question4E").label;
 // get "Next" button for QZ4 and set to nxt4Btn
 const nxt4Btn = document.querySelector("#nxt4Btn");
 // get correct message alert and set to q4CorrectMsg
@@ -107,15 +147,25 @@ const q4IncorrectMsg = document.querySelector("#q4IncorrectMsg");
 // get qz5 div and set it to qz5Div
 const qz5Div = document.querySelector("#qz5");
 // get value for question 5A and set to q5A
-const q5A = document.querySelector("#question5A");
+const q5A = document.querySelector("#question5A").value;
+// get label for question 5A and set to q5Alabel
+const q5Alabel = document.querySelector("#question5A").label;
 // get value for question 5B and set to q5B
-const q5B = document.querySelector("#question5B");
+const q5B = document.querySelector("#question5B").value;
+// get label for question 5B and set to q5Blabel
+const q5Blabel = document.querySelector("#question5B").label;
 // get value for question 5C and set to q5C
-const q5C = document.querySelector("#question5C");
+const q5C = document.querySelector("#question5C").value;
+// get label for question 5C and set to q5Clabel
+const q5Clabel = document.querySelector("#question5C").label;
 // get value for question 5D and set to q5D
-const q5D = document.querySelector("#question5D");
+const q5D = document.querySelector("#question5D").value;
+// get label for question 5D and set to q5Dlabel
+const q5Dlabel = document.querySelector("#question5D").label;
 // get value for question 5E and set to q5E
-const q5E = document.querySelector("#question5E");
+const q5E = document.querySelector("#question5E").value;
+// get label for question 5E and set to q5Elabel
+const q5Elabel = document.querySelector("#question5E").label;
 // get "Next" button for QZ5 and set to nxt5Btn
 const nxt5Btn = document.querySelector("#nxt5Btn");
 // get correct message alert and set to q5CorrectMsg
@@ -127,15 +177,25 @@ const q5IncorrectMsg = document.querySelector("#q5IncorrectMsg");
 // get qz6 div and set it to qz6Div
 const qz6Div = document.querySelector("#qz6");
 // get value for question 6A and set to q6A
-const q6A = document.querySelector("#question6A");
+const q6A = document.querySelector("#question6A").value;
+// get label for question 6A and set to q6Alabel
+const q6Alabel = document.querySelector("#question6A").label;
 // get value for question 6B and set to q6B
-const q6B = document.querySelector("#question6B");
+const q6B = document.querySelector("#question6B").value;
+// get label for question 6B and set to q6Blabel
+const q6Blabel = document.querySelector("#question6B").label;
 // get value for question 6C and set to q6C
-const q6C = document.querySelector("#question6C");
+const q6C = document.querySelector("#question6C").value;
+// get label for question 6C and set to q6Clabel
+const q6Clabel = document.querySelector("#question6C").label;
 // get value for question 6D and set to q6D
-const q6D = document.querySelector("#question6D");
+const q6D = document.querySelector("#question6D").value;
+// get label for question 6D and set to q6Dlabel
+const q6Dlabel = document.querySelector("#question6D").label;
 // get value for question 6E and set to q6E
-const q6E = document.querySelector("#question6E");
+const q6E = document.querySelector("#question6E").value;
+// get label for question 6E and set to q6Elabel
+const q6Elabel = document.querySelector("#question6E").label;
 // get "Next" button for QZ6 and set to nxt6Btn
 const nxt6Btn = document.querySelector("#nxt6Btn");
 // get correct message alert and set to q6CorrectMsg
@@ -147,15 +207,25 @@ const q6IncorrectMsg = document.querySelector("#q6IncorrectMsg");
 // get qz7 div and set it to qz7Div
 const qz7Div = document.querySelector("#qz7");
 // get value for question 7A and set to q7A
-const q7A = document.querySelector("#question7A");
+const q7A = document.querySelector("#question7A").value;
+// get label for question 7A and set to q7Alabel
+const q7Alabel = document.querySelector("#question7A").label;
 // get value for question 7B and set to q7B
-const q7B = document.querySelector("#question7B");
+const q7B = document.querySelector("#question7B").value;
+// get label for question 7B and set to q7Blabel
+const q7Blabel = document.querySelector("#question7B").label;
 // get value for question 7C and set to q7C
-const q7C = document.querySelector("#question7C");
+const q7C = document.querySelector("#question7C").value;
+// get label for question 7C and set to q7Clabel
+const q7Clabel = document.querySelector("#question7C").label;
 // get value for question 7D and set to q7D
-const q7D = document.querySelector("#question7D");
+const q7D = document.querySelector("#question7D").value;
+// get label for question 7D and set to q7Dlabel
+const q7Dlabel = document.querySelector("#question7D").label;
 // get value for question 7E and set to q7E
-const q7E = document.querySelector("#question7E");
+const q7E = document.querySelector("#question7E").value;
+// get label for question 7E and set to q7Elabel
+const q7Elabel = document.querySelector("#question7E").label;
 // get "Next" button for QZ7 and set to nxt7Btn
 const nxt7Btn = document.querySelector("#nxt7Btn");
 // get correct message alert and set to q7CorrectMsg
@@ -167,15 +237,25 @@ const q7IncorrectMsg = document.querySelector("#q7IncorrectMsg");
 // get qz8 div and set it to qz8Div
 const qz8Div = document.querySelector("#qz8");
 // get value for question 8A and set to q8A
-const q8A = document.querySelector("#question8A");
+const q8A = document.querySelector("#question8A").value;
+// get label for question 8A and set to q8Alabel
+const q8Alabel = document.querySelector("#question8A").label;
 // get value for question 8B and set to q8B
-const q8B = document.querySelector("#question8B");
+const q8B = document.querySelector("#question8B").value;
+// get label for question 8B and set to q8Blabel
+const q8Blabel = document.querySelector("#question8B").label;
 // get value for question 8C and set to q8C
-const q8C = document.querySelector("#question8C");
+const q8C = document.querySelector("#question8C").value;
+// get label for question 8C and set to q8Clabel
+const q8Clabel = document.querySelector("#question8C").label;
 // get value for question 8D and set to q8D
-const q8D = document.querySelector("#question8D");
+const q8D = document.querySelector("#question8D").value;
+// get label for question 8D and set to q8Dlabel
+const q8Dlabel = document.querySelector("#question8D").label;
 // get value for question 8E and set to q8E
-const q8E = document.querySelector("#question8E");
+const q8E = document.querySelector("#question8E").value;
+// get label for question 8E and set to q8Elabel
+const q8Elabel = document.querySelector("#question8E").label;
 // get "Next" button for QZ8 and set to nxt8Btn
 const nxt8Btn = document.querySelector("#nxt8Btn");
 // get correct message alert and set to q8CorrectMsg
@@ -187,15 +267,25 @@ const q8IncorrectMsg = document.querySelector("#q8IncorrectMsg");
 // get qz9 div and set it to qz9Div
 const qz9Div = document.querySelector("#qz9");
 // get value for question 9A and set to q9A
-const q9A = document.querySelector("#question9A");
+const q9A = document.querySelector("#question9A").value;
+// get label for question 9A and set to q9Alabel
+const q9Alabel = document.querySelector("#question9A").label;
 // get value for question 9B and set to q9B
-const q9B = document.querySelector("#question9B");
+const q9B = document.querySelector("#question9B").value;
+// get label for question 9B and set to q9Blabel
+const q9Blabel = document.querySelector("#question9B").label;
 // get value for question 9C and set to q9C
-const q9C = document.querySelector("#question9C");
+const q9C = document.querySelector("#question9C").value;
+// get label for question 9C and set to q9Clabel
+const q9Clabel = document.querySelector("#question9C").label;
 // get value for question 9D and set to q9D
-const q9D = document.querySelector("#question9D");
+const q9D = document.querySelector("#question9D").value;
+// get label for question 9D and set to q9Dlabel
+const q9Dlabel = document.querySelector("#question9D").label;
 // get value for question 9E and set to q9E
-const q9E = document.querySelector("#question9E");
+const q9E = document.querySelector("#question9E").value;
+// get label for question 9E and set to q9Elabel
+const q9Elabel = document.querySelector("#question9E").label;
 // get "Next" button for QZ9 and set to nxt9Btn
 const nxt9Btn = document.querySelector("#nxt9Btn");
 // get correct message alert and set to q9CorrectMsg
@@ -207,15 +297,25 @@ const q9IncorrectMsg = document.querySelector("#q9IncorrectMsg");
 // get qz10 div and set it to qz10Div
 const qz10Div = document.querySelector("#qz10");
 // get value for question 10A and set to q10A
-const q10A = document.querySelector("#question10A");
+const q10A = document.querySelector("#question10A").value;
+// get label for question 10A and set to q10Alabel
+const q10Alabel = document.querySelector("#question10A").label;
 // get value for question 10B and set to q10B
-const q10B = document.querySelector("#question10B");
+const q10B = document.querySelector("#question10B").value;
+// get label for question 10B and set to q10Blabel
+const q10Blabel = document.querySelector("#question10B").label;
 // get value for question 10C and set to q10C
-const q10C = document.querySelector("#question10C");
+const q10C = document.querySelector("#question10C").value;
+// get label for question 10C and set to q10Clabel
+const q10Clabel = document.querySelector("#question10C").label;
 // get value for question 10D and set to q10D
-const q10D = document.querySelector("#question10D");
+const q10D = document.querySelector("#question10D").value;
+// get label for question 10D and set to q10Dlabel
+const q10Dlabel = document.querySelector("#question10D").label;
 // get value for question 10E and set to q10E
-const q10E = document.querySelector("#question10E");
+const q10E = document.querySelector("#question10E").value;
+// get label for question 10E and set to q10Elabel
+const q10Elabel = document.querySelector("#question10E").label;
 // get "Next" button for QZ10 and set to nxt10Btn
 const nxt10Btn = document.querySelector("#nxt10Btn");
 // get correct message alert and set to q10CorrectMsg
@@ -255,54 +355,40 @@ const clearScoresBtn = document.querySelector("#clearScoresBtn");
 //! Event Listeners //
 // Adds an event listener to check run the startingPoint function on window load.
 window.addEventListener("load", startingPoint);
-
 // Add event listener to goToScoresBtn button to run highScores() onClick
 goToScoresBtn.addEventListener("click", highScores);
-
 // Add event listener to startBtn button to run startQuiz() onClick 
 startBtn.addEventListener("click", startQuiz);
-
 // Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
 nxt1Btn.addEventListener("click", nextQz1Qz2);
-
 // Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
 nxt2Btn.addEventListener("click", nextQz2Qz3);
-
 // Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
 nxt3Btn.addEventListener("click", nextQz3Qz4);
-
 // Add event listener to nxt4Btn button to run nextQz4Qz5() onClick
 nxt4Btn.addEventListener("click", nextQz4Qz5);
-
 // Add event listener to nxt5Btn button to run nextQz5Qz6() onClick
 nxt5Btn.addEventListener("click", nextQz5Qz6);
-
 // Add event listener to nxt6Btn button to run nextQz6Qz7() onClick
 nxt6Btn.addEventListener("click", nextQz6Qz7);
-
 // Add event listener to nxt7Btn button to run nextQz7Qz8() onClick
 nxt7Btn.addEventListener("click", nextQz7Qz8);
-
 // Add event listener to nxt8Btn button to run nextQz8Qz9() onClick
 nxt8Btn.addEventListener("click", nextQz8Qz9);
-
 // Add event listener to nxt9Btn button to run nextQz9Qz10() onClick
 nxt9Btn.addEventListener("click", nextQz9Qz10);
-
 // Add event listener to nxt10Btn button to run scoreTally() onClick
 nxt10Btn.addEventListener("click", scoreTally);
-
 // Add event listener to qz11retakeBtn button to run startingPoint() onClick
 qz11retakeBtn.addEventListener("click", startingPoint);
-
 // Add event listener to scoreItBtn button to run scoreBoard() onClick
 scoreItBtn.addEventListener("click",scoreBoard);
-
 // Add event listener to scoresRetakeBtn button to run startingPoint() onClick
 scoresRetakeBtn.addEventListener("click", startingPoint);
-
 // Add event listener to clearScoresBtn button to run clearScores() onClick
 clearScoresBtn.addEventListener("click", clearScores);
+
+//! -- OTHER GLOBAL VARIABLES -- //
 
 
 
@@ -410,6 +496,7 @@ function startQuiz() {
     // kick off the timer
     scoreTimer();
 }
+
 
 function getQ1Answers {
     // get Q1's Answers and Validate
