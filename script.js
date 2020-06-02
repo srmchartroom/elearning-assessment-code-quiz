@@ -29,6 +29,7 @@ const qz1Div = document.querySelector("#qz1");
 const q1A = document.querySelector("#question1A").value;
 // get label for question 1A and set to q1Alabel
 const q1Alabel = document.querySelector("#question1A").label;
+console.log(q1A+","+ q1Alabel);
 // get value for question 1B and set to q1B
 const q1B = document.querySelector("#question1B").value;
 // get label for question 1B and set to q1Blabel
@@ -41,10 +42,6 @@ const q1Clabel = document.querySelector("#question1C").label;
 const q1D = document.querySelector("#question1D").value;
 // get label for question 1D and set to q1Dlabel
 const q1Dlabel = document.querySelector("#question1D").label;
-// get value for question 1E and set to q1E
-const q1E = document.querySelector("#question1E").value;
-// get label for question 1E and set to q1Elabel
-const q1Elabel = document.querySelector("#question1E").label;
 // get "Next" button for QZ1 and set to nxt1Btn
 const nxt1Btn = document.querySelector("#nxt1Btn");
 // get correct message alert and set to q1CorrectMsg
@@ -71,10 +68,6 @@ const q2Clabel = document.querySelector("#question2C").label;
 const q2D = document.querySelector("#question2D").value;
 // get label for question 2D and set to q2Dlabel
 const q2Dlabel = document.querySelector("#question2D").label;
-// get value for question 2E and set to q2E
-const q2E = document.querySelector("#question2E").value;
-// get label for question 2E and set to q2Elabel
-const q2Elabel = document.querySelector("#question2E").label;
 // get "Next" button for QZ2 and set to nxt2Btn
 const nxt2Btn = document.querySelector("#nxt2Btn");
 // get correct message alert and set to q2CorrectMsg
@@ -101,10 +94,6 @@ const q3Clabel = document.querySelector("#question3C").label;
 const q3D = document.querySelector("#question3D").value;
 // get label for question 3D and set to q3Dlabel
 const q3Dlabel = document.querySelector("#question3D").label;
-// get value for question 3E and set to q3E
-const q3E = document.querySelector("#question3E").value;
-// get label for question 3E and set to q3Elabel
-const q3Elabel = document.querySelector("#question3E").label;
 // get "Next" button for QZ3 and set to nxt3Btn
 const nxt3Btn = document.querySelector("#nxt3Btn");
 // get correct message alert and set to q3CorrectMsg
@@ -131,10 +120,6 @@ const q4Clabel = document.querySelector("#question4C").label;
 const q4D = document.querySelector("#question4D").value;
 // get label for question 4D and set to q4Dlabel
 const q4Dlabel = document.querySelector("#question4D").label;
-// get value for question 4E and set to q4E
-const q4E = document.querySelector("#question4E").value;
-// get label for question 4E and set to q4Elabel
-const q4Elabel = document.querySelector("#question4E").label;
 // get "Next" button for QZ4 and set to nxt4Btn
 const nxt4Btn = document.querySelector("#nxt4Btn");
 // get correct message alert and set to q4CorrectMsg
@@ -162,10 +147,6 @@ const q5Clabel = document.querySelector("#question5C").label;
 const q5D = document.querySelector("#question5D").value;
 // get label for question 5D and set to q5Dlabel
 const q5Dlabel = document.querySelector("#question5D").label;
-// get value for question 5E and set to q5E
-const q5E = document.querySelector("#question5E").value;
-// get label for question 5E and set to q5Elabel
-const q5Elabel = document.querySelector("#question5E").label;
 // get "Next" button for QZ5 and set to nxt5Btn
 const nxt5Btn = document.querySelector("#nxt5Btn");
 // get correct message alert and set to q5CorrectMsg
@@ -192,10 +173,6 @@ const q6Clabel = document.querySelector("#question6C").label;
 const q6D = document.querySelector("#question6D").value;
 // get label for question 6D and set to q6Dlabel
 const q6Dlabel = document.querySelector("#question6D").label;
-// get value for question 6E and set to q6E
-const q6E = document.querySelector("#question6E").value;
-// get label for question 6E and set to q6Elabel
-const q6Elabel = document.querySelector("#question6E").label;
 // get "Next" button for QZ6 and set to nxt6Btn
 const nxt6Btn = document.querySelector("#nxt6Btn");
 // get correct message alert and set to q6CorrectMsg
@@ -222,10 +199,6 @@ const q7Clabel = document.querySelector("#question7C").label;
 const q7D = document.querySelector("#question7D").value;
 // get label for question 7D and set to q7Dlabel
 const q7Dlabel = document.querySelector("#question7D").label;
-// get value for question 7E and set to q7E
-const q7E = document.querySelector("#question7E").value;
-// get label for question 7E and set to q7Elabel
-const q7Elabel = document.querySelector("#question7E").label;
 // get "Next" button for QZ7 and set to nxt7Btn
 const nxt7Btn = document.querySelector("#nxt7Btn");
 // get correct message alert and set to q7CorrectMsg
@@ -252,10 +225,6 @@ const q8Clabel = document.querySelector("#question8C").label;
 const q8D = document.querySelector("#question8D").value;
 // get label for question 8D and set to q8Dlabel
 const q8Dlabel = document.querySelector("#question8D").label;
-// get value for question 8E and set to q8E
-const q8E = document.querySelector("#question8E").value;
-// get label for question 8E and set to q8Elabel
-const q8Elabel = document.querySelector("#question8E").label;
 // get "Next" button for QZ8 and set to nxt8Btn
 const nxt8Btn = document.querySelector("#nxt8Btn");
 // get correct message alert and set to q8CorrectMsg
@@ -282,10 +251,6 @@ const q9Clabel = document.querySelector("#question9C").label;
 const q9D = document.querySelector("#question9D").value;
 // get label for question 9D and set to q9Dlabel
 const q9Dlabel = document.querySelector("#question9D").label;
-// get value for question 9E and set to q9E
-const q9E = document.querySelector("#question9E").value;
-// get label for question 9E and set to q9Elabel
-const q9Elabel = document.querySelector("#question9E").label;
 // get "Next" button for QZ9 and set to nxt9Btn
 const nxt9Btn = document.querySelector("#nxt9Btn");
 // get correct message alert and set to q9CorrectMsg
@@ -312,10 +277,6 @@ const q10Clabel = document.querySelector("#question10C").label;
 const q10D = document.querySelector("#question10D").value;
 // get label for question 10D and set to q10Dlabel
 const q10Dlabel = document.querySelector("#question10D").label;
-// get value for question 10E and set to q10E
-const q10E = document.querySelector("#question10E").value;
-// get label for question 10E and set to q10Elabel
-const q10Elabel = document.querySelector("#question10E").label;
 // get "Next" button for QZ10 and set to nxt10Btn
 const nxt10Btn = document.querySelector("#nxt10Btn");
 // get correct message alert and set to q10CorrectMsg
@@ -498,38 +459,49 @@ function startQuiz() {
 }
 
 
-function getQ1Answers {
+function getQ1Answers() {
     // get Q1's Answers and Validate
+    console.log("placeholder");
 }
-function getQ2Answers {
+function getQ2Answers() {
     // get Q2's Answers and Validate
+    console.log("placeholder");
 }
-function getQ3Answers {
+function getQ3Answers() {
     // get Q3's Answers and Validate
+    console.log("placeholder");
 }
-function getQ4Answers {
+function getQ4Answers() {
     // get Q4's Answers and Validate
+    console.log("placeholder");
 }
-function getQ5Answers {
+function getQ5Answers() {
     // get Q5's Answers and Validate
+    console.log("placeholder");
 }
-function getQ6Answers {
+function getQ6Answers() {
     // get Q6's Answers and Validate
+    console.log("placeholder");
 }
-function getQ7Answers {
+function getQ7Answers() {
     // get Q7's Answers and Validate
+    console.log("placeholder");
 }
-function getQ8Answers {
+function getQ8Answers() {
     // get Q8's Answers and Validate
+    console.log("placeholder");
 }
-function getQ9Answers {
+function getQ9Answers() {
     // get Q9's Answers and Validate
+    console.log("placeholder");
 }
-function getQ10Answers {
+function getQ10Answers() {
     // get Q10's Answers and Validate
+    console.log("placeholder");
 }
-function scoreQuizAnswers {
+function scoreQuizAnswers() {
     // score quiz answers array
+    console.log("placeholder");
 }
 
 //------------------------------------------------------------------------------------------------------------------//
