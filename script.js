@@ -428,22 +428,17 @@ function scoreTimer() {
         spanTime.textContent = Math.floor(secondsLeft);
         // the screen is NOT a question
         if (!qz0Div.classList.contains("hidden") || !qz11Div.classList.contains("hidden") || !scoresDiv.classList.contains("hidden")) { 
-            console.log("Time should stop");
-            clearInterval(timerInterval);
-        } else if(secondsLeft === 0) { // if the seconds run out...
-            // clear the Interval
-          clearInterval(timerInterval);
-          // alert the user that they've run out of time
-          alert("Time's up!");
-          // reset the time and div visibilities to the starting point...
-          startingPoint();
-          // ...then hide the quiz start state...
-          qz0Div.classList.add("hidden");
-          // ...and show the tally page...
-          qz11Div.classList.remove("hidden");
-          // ...and finally change the score tally title to indicate time ran out, instead quiz completed
-          scoreTitle.textContent = "You have run out of time.";       
-        }    
+            clearInterval(timerInterval); // stop the timer
+        // else, if questions are currently being answered/quiz is in progress, AND if the seconds run out...
+        } else if(secondsLeft === 0) {
+          clearInterval(timerInterval); // stop the time
+          alert("Time's up!"); // alert the user that time is up
+          startingPoint(); // reset the time and div visibilities to the starting point...
+          qz0Div.classList.add("hidden"); // ...then hide the quiz start state...
+          qz11Div.classList.remove("hidden"); // ...and show the tally page...
+          scoreTitle.textContent = "You have run out of time."; // ...and change score tally title to time ran out vs quiz completed
+        }
+        // interval timer loops every 1000 milliseconds aka every second    
     }, 1000);
 }
 //------------------------------------------------------------------------------------------------------------------//
