@@ -35,10 +35,6 @@ const q1D = document.querySelector("#question1D");
 const q1E = document.querySelector("#question1E");
 // get "Next" button for QZ1 and set to nxt1Btn
 const nxt1Btn = document.querySelector("#nxt1Btn");
-
-// Add event listener to nxt1Btn button
-nxt1Btn.addEventListener("click", qz1Next);
-
 // get correct message alert and set to q1CorrectMsg
 const q1CorrectMsg = document.querySelector("#q1CorrectMsg");
 // get incorrect message alert and set to q1IncorrectMsg
@@ -59,10 +55,6 @@ const q2D = document.querySelector("#question2D");
 const q2E = document.querySelector("#question2E");
 // get "Next" button for QZ2 and set to nxt2Btn
 const nxt2Btn = document.querySelector("#nxt2Btn");
-
-// Add event listener to nxt1Btn button
-nxt2Btn.addEventListener("click", qz2Next);
-
 // get correct message alert and set to q2CorrectMsg
 const q2CorrectMsg = document.querySelector("#q2CorrectMsg");
 // get incorrect message alert and set to q2IncorrectMsg
@@ -83,10 +75,6 @@ const q3D = document.querySelector("#question3D");
 const q3E = document.querySelector("#question3E");
 // get "Next" button for QZ3 and set to nxt3Btn
 const nxt3Btn = document.querySelector("#nxt3Btn");
-
-// Add event listener to nxt1Btn button
-nxt3Btn.addEventListener("click", qz3Next);
-
 // get correct message alert and set to q3CorrectMsg
 const q3CorrectMsg = document.querySelector("#q3CorrectMsg");
 // get incorrect message alert and set to q3IncorrectMsg
@@ -107,10 +95,6 @@ const q4D = document.querySelector("#question4D");
 const q4E = document.querySelector("#question4E");
 // get "Next" button for QZ4 and set to nxt4Btn
 const nxt4Btn = document.querySelector("#nxt4Btn");
-
-// Add event listener to nxt1Btn button
-nxt4Btn.addEventListener("click", qz4Next);
-
 // get correct message alert and set to q4CorrectMsg
 const q4CorrectMsg = document.querySelector("#q4CorrectMsg");
 // get incorrect message alert and set to q4IncorrectMsg
@@ -132,10 +116,6 @@ const q5D = document.querySelector("#question5D");
 const q5E = document.querySelector("#question5E");
 // get "Next" button for QZ5 and set to nxt5Btn
 const nxt5Btn = document.querySelector("#nxt5Btn");
-
-// Add event listener to nxt1Btn button
-nxt5Btn.addEventListener("click", qz5Next);
-
 // get correct message alert and set to q5CorrectMsg
 const q5CorrectMsg = document.querySelector("#q5CorrectMsg");
 // get incorrect message alert and set to q5IncorrectMsg
@@ -156,10 +136,6 @@ const q6D = document.querySelector("#question6D");
 const q6E = document.querySelector("#question6E");
 // get "Next" button for QZ6 and set to nxt6Btn
 const nxt6Btn = document.querySelector("#nxt6Btn");
-
-// Add event listener to nxt1Btn button
-nxt6Btn.addEventListener("click", qz6Next);
-
 // get correct message alert and set to q6CorrectMsg
 const q6CorrectMsg = document.querySelector("#q6CorrectMsg");
 // get incorrect message alert and set to q6IncorrectMsg
@@ -180,10 +156,6 @@ const q7D = document.querySelector("#question7D");
 const q7E = document.querySelector("#question7E");
 // get "Next" button for QZ7 and set to nxt7Btn
 const nxt7Btn = document.querySelector("#nxt7Btn");
-
-// Add event listener to nxt1Btn button
-nxt7Btn.addEventListener("click", qz7Next);
-
 // get correct message alert and set to q7CorrectMsg
 const q7CorrectMsg = document.querySelector("#q7CorrectMsg");
 // get incorrect message alert and set to q7IncorrectMsg
@@ -204,10 +176,6 @@ const q8D = document.querySelector("#question8D");
 const q8E = document.querySelector("#question8E");
 // get "Next" button for QZ8 and set to nxt8Btn
 const nxt8Btn = document.querySelector("#nxt8Btn");
-
-// Add event listener to nxt1Btn button
-nxt8Btn.addEventListener("click", qz8Next);
-
 // get correct message alert and set to q8CorrectMsg
 const q8CorrectMsg = document.querySelector("#q8CorrectMsg");
 // get incorrect message alert and set to q8IncorrectMsg
@@ -228,10 +196,6 @@ const q9D = document.querySelector("#question9D");
 const q9E = document.querySelector("#question9E");
 // get "Next" button for QZ9 and set to nxt9Btn
 const nxt9Btn = document.querySelector("#nxt9Btn");
-
-// Add event listener to nxt1Btn button
-nxt9Btn.addEventListener("click", qz9Next);
-
 // get correct message alert and set to q9CorrectMsg
 const q9CorrectMsg = document.querySelector("#q9CorrectMsg");
 // get incorrect message alert and set to q9IncorrectMsg
@@ -253,10 +217,6 @@ const q10E = document.querySelector("#question10E");
 // get "Next" button for QZ10 and set to nxt10Btn
 const nxt10Btn = document.querySelector("#nxt10Btn");
 // get correct message alert and set to q10CorrectMsg
-
-// Add event listener to nxt1Btn button
-nxt1Btn.addEventListener("click", finishAndScore);
-
 const q10CorrectMsg = document.querySelector("#q10CorrectMsg");
 // get incorrect message alert and set to q10IncorrectMsg
 const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg");
@@ -270,10 +230,6 @@ const spanNumCorrect = document.querySelector("#numCorrect");
 const spanFinalScore = document.querySelector("#score");
 // get qz11 retake button and set to qz11retakeBtn
 const qz11retakeBtn = document.querySelector("#retakeBtn");
-
-// Add event listener to nxt1Btn button
-qz11retakeBtn.addEventListener("click", retakeQuiz);
-
 // get initials input field and set to initialsInput
 const initialsInput = document.querySelector("#initialsInput");
 // get submit score button and set to scoreItBtn
@@ -288,17 +244,228 @@ const scoresTable = document.querySelector("#scoresTable");
 const scoresTableBody = document.querySelector("#scoresTableBody");
 // get the qz12/scores retake btn and set it to scoresRetakeBtn
 const scoresRetakeBtn = document.querySelector("#retake2Btn");
-
-// Add event listener to nxt1Btn button
-scoresRetakeBtn.addEventListener("click", retakeQuiz);
-
 // get the clear scores button and set it to clearScoresBtn
 const clearScoresBtn = document.querySelector("#clearScoresBtn");
 
-// Add event listener to nxt1Btn button
-clearScoresBtn.addEventListener("click", clearScores);
 
+//! Event Listeners //
+// Add event listener to goToScoresBtn button
+goToScoresBtn.addEventListener("click", highScores);
+
+// Add event listener to nxt1Btn button
+startBtn.addEventListener("click", startQuiz);
+// Add event listener to nxt1Btn button
+nxt1Btn.addEventListener("click", nextQz1Qz2);
+// Add event listener to nxt1Btn button
+nxt2Btn.addEventListener("click", nextQz2Qz3);
+// Add event listener to nxt1Btn button
+nxt3Btn.addEventListener("click", nextQz3Qz4);
+// Add event listener to nxt1Btn button
+nxt4Btn.addEventListener("click", nextQz4Qz5);
+// Add event listener to nxt1Btn button
+nxt5Btn.addEventListener("click", nextQz5Qz6);
+// Add event listener to nxt1Btn button
+nxt6Btn.addEventListener("click", nextQz6Qz7);
+// Add event listener to nxt1Btn button
+nxt7Btn.addEventListener("click", nextQz7Qz8);
+// Add event listener to nxt1Btn button
+nxt8Btn.addEventListener("click", nextQz8Qz9);
+// Add event listener to nxt1Btn button
+nxt9Btn.addEventListener("click", nextQz9Qz10);
+// Add event listener to nxt1Btn button
+nxt10Btn.addEventListener("click", scoreTally);
+// Add event listener to nxt1Btn button
+qz11retakeBtn.addEventListener("click", startingPoint);
+// Add event listener to scoreItBtn button
+scoreItBtn.addEventListener("click",scoreBoard);
+// Add event listener to nxt1Btn button
+scoresRetakeBtn.addEventListener("click", startingPoint);
+
+// Add event listener to nxt1Btn button
+// clearScoresBtn.addEventListener("click", quizNext("qz0Div"));
+
+window.addEventListener("load", startingPoint());
 //! -- FUNCTIONS -- //
+
+function startingPoint() {
+    if (qz0Div.classList.contains("hidden")) {
+        qz0Div.classList.remove("hidden");
+        console.log("qz0Div is NOW showing");
+    } else {
+        console.log("qz0Div is already showing");
+    }
+    if (qz1Div.classList.contains("hidden")) {
+        console.log("qz1Div is already hidden");
+    } else {
+        qz1Div.classList.add("hidden");
+        console.log("qz1Div is NOW hidden");
+    }
+    if (qz2Div.classList.contains("hidden")) {
+        console.log("qz2Div is already hidden");
+    } else {
+        qz2Div.classList.add("hidden");
+        console.log("qz2Div is NOW hidden");
+    }
+    if (qz3Div.classList.contains("hidden")) {
+        console.log("qz3Div is already hidden");
+    } else {
+        qz3Div.classList.add("hidden");
+        console.log("qz3Div is NOW hidden");
+    }
+    if (qz4Div.classList.contains("hidden")) {
+        console.log("qz4Div is already hidden");
+    } else {
+        qz4Div.classList.add("hidden");
+        console.log("qz4Div is NOW hidden");
+    }
+    if (qz5Div.classList.contains("hidden")) {
+        console.log("qz5Div is already hidden");
+    } else {
+        qz5Div.classList.add("hidden");
+        console.log("qz5Div is NOW hidden");
+    }
+    if (qz6Div.classList.contains("hidden")) {
+        console.log("qz6Div is already hidden");
+    } else {
+        qz6Div.classList.add("hidden");
+        console.log("qz6Div is NOW hidden");
+    }
+    if (qz7Div.classList.contains("hidden")) {
+        console.log("qz7Div is already hidden");
+    } else {
+        qz7Div.classList.add("hidden");
+        console.log("qz7Div is NOW hidden");
+    }
+    if (qz8Div.classList.contains("hidden")) {
+        console.log("qz8Div is already hidden");
+    } else {
+        qz8Div.classList.add("hidden");
+        console.log("qz8Div is NOW hidden");
+    }
+    if (qz9Div.classList.contains("hidden")) {
+        console.log("qz9Div is already hidden");
+    } else {
+        qz9Div.classList.add("hidden");
+        console.log("qz9Div is NOW hidden");
+    }
+    if (qz10Div.classList.contains("hidden")) {
+        console.log("qz10Div is already hidden");
+    } else {
+        qz10Div.classList.add("hidden");
+        console.log("qz10Div is NOW hidden");
+    }
+    if (qz11Div.classList.contains("hidden")) {
+        console.log("qz11Div is already hidden");
+    } else {
+        qz11Div.classList.add("hidden");
+        console.log("qz11Div is NOW hidden");
+    }
+    if (scoresDiv.classList.contains("hidden")) {
+        console.log("scoresDiv is already hidden");
+    } else {
+        scoresDiv.classList.add("hidden");
+        console.log("scoresDiv is NOW hidden");
+    }
+}
+
+function highScores() {
+    if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) {
+        alert("You are in the middle of a timed quiz. Please complete the quiz before view High Scores.");    
+    } else if (!(qz11Div.classList.contains("hidden"))) {
+        alert("Please submit your score before viewing High Scores.");
+    } else {
+        qz0Div.classList.add("hidden");
+        console.log("-------------");
+        console.log("qz0 is now hidden");
+        scoresDiv.classList.remove("hidden");
+        console.log("Now viewing High Scores");
+    }
+}
+function startQuiz() {
+    qz0Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz0 is now hidden");
+    qz1Div.classList.remove("hidden");
+    console.log("qz1 is now showing");
+}
+function nextQz1Qz2() {
+    qz1Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz1 is now hidden");
+    qz2Div.classList.remove("hidden");
+    console.log("qz2 is now showing");
+}
+function nextQz2Qz3() {
+    qz2Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz2 is now hidden");
+    qz3Div.classList.remove("hidden");
+    console.log("qz3 is now showing");
+}
+function nextQz3Qz4() {
+    qz3Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz3 is now hidden");
+    qz4Div.classList.remove("hidden");
+    console.log("qz4 is now showing");
+}
+function nextQz4Qz5() {
+    qz4Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz4 is now hidden");
+    qz5Div.classList.remove("hidden");
+    console.log("qz5 is now showing");
+}
+function nextQz5Qz6() {
+    qz5Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz5 is now hidden");
+    qz6Div.classList.remove("hidden");
+    console.log("qz6 is now showing");
+}
+function nextQz6Qz7() {
+    qz6Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz6 is now hidden");
+    qz7Div.classList.remove("hidden");
+    console.log("qz7 is now showing");
+}
+function nextQz7Qz8() {
+    qz7Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz7 is now hidden");
+    qz8Div.classList.remove("hidden");
+    console.log("qz8 is now showing");
+}
+function nextQz8Qz9() {
+    qz8Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz8 is now hidden");
+    qz9Div.classList.remove("hidden");
+    console.log("qz9 is now showing");
+}
+function nextQz9Qz10() {
+    qz9Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz9 is now hidden");
+    qz10Div.classList.remove("hidden");
+    console.log("qz10 is now showing");
+}
+function scoreTally() {
+    qz10Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz10 is now hidden");
+    qz11Div.classList.remove("hidden");
+    console.log("qz11 is now showing");
+}
+function scoreBoard() {
+    qz11Div.classList.add("hidden");
+    console.log("-------------");
+    console.log("qz11 is now hidden");
+    scoresDiv.classList.remove("hidden");
+    console.log("scoresDiv is now showing");
+}
+
 
 
 
