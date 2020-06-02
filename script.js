@@ -224,6 +224,8 @@ const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg");
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
 // get qz11 div and set it to qz11Div
 const qz11Div = document.querySelector("#qz11");
+// get scoreTallyTitle h2 and set it to scoreTitle
+const scoreTitle = document.querySelector("#scoreTallyTitle");
 // get qz11 number correct span and set to spanNumCorrect
 const spanNumCorrect = document.querySelector("#numCorrect");
 // get qz11 final weighted score span and set to spanFinalScore
@@ -306,6 +308,8 @@ clearScoresBtn.addEventListener("click", clearScores);
 
 // startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others.
 function startingPoint() {
+    console.log("----------------------------");
+    console.log("startingPoint() function run");
     if (qz0Div.classList.contains("hidden")) {
         qz0Div.classList.remove("hidden");
         console.log("qz0Div is NOW showing");
@@ -384,6 +388,9 @@ function startingPoint() {
         scoresDiv.classList.add("hidden");
         console.log("scoresDiv is NOW hidden");
     }
+    var secondsLeft = 0;
+    spanTime.textContent = Math.floor(secondsLeft);
+    console.log("----------------------------");
 }
 
 // highScores() checks if the quiz is in process or score submission hasn't taken place yet, and throws an alert to complete the step
@@ -402,6 +409,33 @@ function highScores() {
     }
 }
 
+
+
+// scoreTimer() does the following:
+// starts a timer that counts down from a set number of seconds
+// if an answer is wrong, the time decrements by 10 seconds and then continues counting down.
+// once the timer reaches zero an alert/confirm is thrown indicating to the user that time is up
+// then the user is "directed" to the score Tally page/div (visibility is toggled to hide current slide and display score tally div)
+
+function scoreTimer() {
+    var secondsLeft = 60;
+    spanTime.textContent = Math.floor(secondsLeft);
+    console.log("--------------------");
+    console.log("scoreTime() has kicked off");
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        spanTime.textContent = Math.floor(secondsLeft);
+        if(secondsLeft === 0) {
+          clearInterval(timerInterval);
+          alert("Time's up!");
+          startingPoint();
+          qz0Div.classList.add("hidden");
+          qz11Div.classList.remove("hidden");
+          scoreTitle.textContent = "You have run out of time.";       
+        }    
+    }, 1000);
+}
+
 // startQuiz() does the following:
 // --- 1. Toggles visibility of the quiz start (qz0Div) and the hidden question #1 div (qz1Div), simulating a navigation effect
 // --- 2. kicks of timer event
@@ -411,6 +445,7 @@ function startQuiz() {
     console.log("qz0 is now hidden");
     qz1Div.classList.remove("hidden");
     console.log("qz1 is now showing");
+    scoreTimer();
 }
 
 // nextQz1Qz2() does the following:
@@ -549,6 +584,7 @@ function scoreTally() {
     console.log("qz10 is now hidden");
     qz11Div.classList.remove("hidden");
     console.log("qz11 is now showing");
+    scoreTitle.textContent = "You have completed this quiz.";
 }
 
 // scoreBoard() does the following:
