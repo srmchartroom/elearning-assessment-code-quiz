@@ -249,44 +249,62 @@ const clearScoresBtn = document.querySelector("#clearScoresBtn");
 
 
 //! Event Listeners //
-// Add event listener to goToScoresBtn button
+// Adds an event listener to check run the startingPoint function on window load.
+window.addEventListener("load", startingPoint);
+
+// Add event listener to goToScoresBtn button to run highScores() onClick
 goToScoresBtn.addEventListener("click", highScores);
 
-// Add event listener to nxt1Btn button
+// Add event listener to startBtn button to run startQuiz() onClick 
 startBtn.addEventListener("click", startQuiz);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
 nxt1Btn.addEventListener("click", nextQz1Qz2);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
 nxt2Btn.addEventListener("click", nextQz2Qz3);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
 nxt3Btn.addEventListener("click", nextQz3Qz4);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt4Btn button to run nextQz4Qz5() onClick
 nxt4Btn.addEventListener("click", nextQz4Qz5);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt5Btn button to run nextQz5Qz6() onClick
 nxt5Btn.addEventListener("click", nextQz5Qz6);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt6Btn button to run nextQz6Qz7() onClick
 nxt6Btn.addEventListener("click", nextQz6Qz7);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt7Btn button to run nextQz7Qz8() onClick
 nxt7Btn.addEventListener("click", nextQz7Qz8);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt8Btn button to run nextQz8Qz9() onClick
 nxt8Btn.addEventListener("click", nextQz8Qz9);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt9Btn button to run nextQz9Qz10() onClick
 nxt9Btn.addEventListener("click", nextQz9Qz10);
-// Add event listener to nxt1Btn button
+
+// Add event listener to nxt10Btn button to run scoreTally() onClick
 nxt10Btn.addEventListener("click", scoreTally);
-// Add event listener to nxt1Btn button
+
+// Add event listener to qz11retakeBtn button to run startingPoint() onClick
 qz11retakeBtn.addEventListener("click", startingPoint);
-// Add event listener to scoreItBtn button
+
+// Add event listener to scoreItBtn button to run scoreBoard() onClick
 scoreItBtn.addEventListener("click",scoreBoard);
-// Add event listener to nxt1Btn button
+
+// Add event listener to scoresRetakeBtn button to run startingPoint() onClick
 scoresRetakeBtn.addEventListener("click", startingPoint);
 
-// Add event listener to nxt1Btn button
-// clearScoresBtn.addEventListener("click", quizNext("qz0Div"));
+// Add event listener to clearScoresBtn button to run clearScores() onClick
+clearScoresBtn.addEventListener("click", clearScores);
 
-window.addEventListener("load", startingPoint());
+
+
 //! -- FUNCTIONS -- //
 
+// startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others.
 function startingPoint() {
     if (qz0Div.classList.contains("hidden")) {
         qz0Div.classList.remove("hidden");
@@ -368,6 +386,8 @@ function startingPoint() {
     }
 }
 
+// highScores() checks if the quiz is in process or score submission hasn't taken place yet, and throws an alert to complete the step
+// otherwise, if on the scoreboard or initial quiz start div, the "High Scores" link routes the user to the score board.
 function highScores() {
     if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) {
         alert("You are in the middle of a timed quiz. Please complete the quiz before view High Scores.");    
@@ -381,6 +401,10 @@ function highScores() {
         console.log("Now viewing High Scores");
     }
 }
+
+// startQuiz() does the following:
+// --- 1. Toggles visibility of the quiz start (qz0Div) and the hidden question #1 div (qz1Div), simulating a navigation effect
+// --- 2. kicks of timer event
 function startQuiz() {
     qz0Div.classList.add("hidden");
     console.log("-------------");
@@ -388,6 +412,13 @@ function startQuiz() {
     qz1Div.classList.remove("hidden");
     console.log("qz1 is now showing");
 }
+
+// nextQz1Qz2() does the following:
+// --- 1. Toggles visibility of question #1 (qz1Div) and the hidden question #2 (qz2Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#2)
 function nextQz1Qz2() {
     qz1Div.classList.add("hidden");
     console.log("-------------");
@@ -395,6 +426,13 @@ function nextQz1Qz2() {
     qz2Div.classList.remove("hidden");
     console.log("qz2 is now showing");
 }
+
+// nextQz2Qz3() does the following:
+// --- 1. Toggles visibility of question #2 (qz2Div) and the hidden question #3 (qz3Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#3)
 function nextQz2Qz3() {
     qz2Div.classList.add("hidden");
     console.log("-------------");
@@ -402,6 +440,13 @@ function nextQz2Qz3() {
     qz3Div.classList.remove("hidden");
     console.log("qz3 is now showing");
 }
+
+// nextQz3Qz4() does the following:
+// --- 1. Toggles visibility of question #3 (qz3Div) and the hidden question #4 (qz4Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#4)
 function nextQz3Qz4() {
     qz3Div.classList.add("hidden");
     console.log("-------------");
@@ -409,6 +454,13 @@ function nextQz3Qz4() {
     qz4Div.classList.remove("hidden");
     console.log("qz4 is now showing");
 }
+
+// nextQz4Qz5() does the following:
+// --- 1. Toggles visibility of question #4 (qz4Div) and the hidden question #5 (qz5Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#5)
 function nextQz4Qz5() {
     qz4Div.classList.add("hidden");
     console.log("-------------");
@@ -416,6 +468,13 @@ function nextQz4Qz5() {
     qz5Div.classList.remove("hidden");
     console.log("qz5 is now showing");
 }
+
+// nextQz5Qz6() does the following:
+// --- 1. Toggles visibility of question #5 (qz5Div) and the hidden question #6 (qz6Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#6)
 function nextQz5Qz6() {
     qz5Div.classList.add("hidden");
     console.log("-------------");
@@ -423,6 +482,13 @@ function nextQz5Qz6() {
     qz6Div.classList.remove("hidden");
     console.log("qz6 is now showing");
 }
+
+// nextQz6Qz7() does the following:
+// --- 1. Toggles visibility of question #6 (qz6Div) and the hidden question #7 (qz7Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#7)
 function nextQz6Qz7() {
     qz6Div.classList.add("hidden");
     console.log("-------------");
@@ -430,6 +496,13 @@ function nextQz6Qz7() {
     qz7Div.classList.remove("hidden");
     console.log("qz7 is now showing");
 }
+
+// nextQz7Qz8() does the following:
+// --- 1. Toggles visibility of question #7 (qz7Div) and the hidden question #8 (qz8Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#8)
 function nextQz7Qz8() {
     qz7Div.classList.add("hidden");
     console.log("-------------");
@@ -437,6 +510,13 @@ function nextQz7Qz8() {
     qz8Div.classList.remove("hidden");
     console.log("qz8 is now showing");
 }
+
+// nextQz8Qz9() does the following:
+// --- 1. Toggles visibility of question #8 (qz8Div) and the hidden question #9 (qz9Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#9)
 function nextQz8Qz9() {
     qz8Div.classList.add("hidden");
     console.log("-------------");
@@ -444,6 +524,13 @@ function nextQz8Qz9() {
     qz9Div.classList.remove("hidden");
     console.log("qz9 is now showing");
 }
+
+// nextQz9Qz10() does the following:
+// --- 1. Toggles visibility of question #9 (qz9Div) and the hidden question #2 (qz10Div), simulating navigation effect
+// --- 2. Disables the Next button until an answer is selected
+// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
+// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+// --- 5. Proceeds to the next question (#10)
 function nextQz9Qz10() {
     qz9Div.classList.add("hidden");
     console.log("-------------");
@@ -451,6 +538,11 @@ function nextQz9Qz10() {
     qz10Div.classList.remove("hidden");
     console.log("qz10 is now showing");
 }
+
+// scoreTally() does the following:
+// --- 1. Toggles visibility of question #10 (qz10Div) and the hidden score tally div (qz11Div), simulating navigation effect
+// --- 2. Calculates the score based on answers correct (from the scores array) and the time
+// --- 3. enters the score, time, and answers correct in the appropriate span placeholders for the those values
 function scoreTally() {
     qz10Div.classList.add("hidden");
     console.log("-------------");
@@ -458,6 +550,11 @@ function scoreTally() {
     qz11Div.classList.remove("hidden");
     console.log("qz11 is now showing");
 }
+
+// scoreBoard() does the following:
+// --- 1. Toggles visibility of the score tally div (qz11Div) and the hidden scoreboard div (scoresDiv), simulating navigation effect
+// --- 2. writes to the scoreboard table the initials input, the time, the calculated score, questions correct
+// --- 3. Disables submit score btn until initials are provided
 function scoreBoard() {
     qz11Div.classList.add("hidden");
     console.log("-------------");
@@ -466,6 +563,13 @@ function scoreBoard() {
     console.log("scoresDiv is now showing");
 }
 
+// clearScores() does the following:
+// --- 1. clears the score array if not already clear
+// --- 2. clears the scoreboard table
+function clearScores() {
+    // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
+    console.log("clearScoresBtn button was clicked")
+}
 
 
 
