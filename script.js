@@ -410,6 +410,41 @@ function startQuiz() {
     // kick off the timer
     scoreTimer();
 }
+
+function getQ1Answers {
+    // get Q1's Answers and Validate
+}
+function getQ2Answers {
+    // get Q2's Answers and Validate
+}
+function getQ3Answers {
+    // get Q3's Answers and Validate
+}
+function getQ4Answers {
+    // get Q4's Answers and Validate
+}
+function getQ5Answers {
+    // get Q5's Answers and Validate
+}
+function getQ6Answers {
+    // get Q6's Answers and Validate
+}
+function getQ7Answers {
+    // get Q7's Answers and Validate
+}
+function getQ8Answers {
+    // get Q8's Answers and Validate
+}
+function getQ9Answers {
+    // get Q9's Answers and Validate
+}
+function getQ10Answers {
+    // get Q10's Answers and Validate
+}
+function scoreQuizAnswers {
+    // score quiz answers array
+}
+
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz1Qz2() does the following:
 // --- 1. Toggles visibility of question #1 (qz1Div) and the hidden question #2 (qz2Div), simulating navigation effect
@@ -419,10 +454,7 @@ function startQuiz() {
 // --- 5. Proceeds to the next question (#2)
 function nextQz1Qz2() {
     qz1Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz1 is now hidden");
     qz2Div.classList.remove("hidden");
-    console.log("qz2 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz2Qz3() does the following:
@@ -433,10 +465,7 @@ function nextQz1Qz2() {
 // --- 5. Proceeds to the next question (#3)
 function nextQz2Qz3() {
     qz2Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz2 is now hidden");
     qz3Div.classList.remove("hidden");
-    console.log("qz3 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz3Qz4() does the following:
@@ -447,10 +476,7 @@ function nextQz2Qz3() {
 // --- 5. Proceeds to the next question (#4)
 function nextQz3Qz4() {
     qz3Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz3 is now hidden");
     qz4Div.classList.remove("hidden");
-    console.log("qz4 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz4Qz5() does the following:
@@ -461,10 +487,7 @@ function nextQz3Qz4() {
 // --- 5. Proceeds to the next question (#5)
 function nextQz4Qz5() {
     qz4Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz4 is now hidden");
     qz5Div.classList.remove("hidden");
-    console.log("qz5 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz5Qz6() does the following:
@@ -475,10 +498,7 @@ function nextQz4Qz5() {
 // --- 5. Proceeds to the next question (#6)
 function nextQz5Qz6() {
     qz5Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz5 is now hidden");
     qz6Div.classList.remove("hidden");
-    console.log("qz6 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz6Qz7() does the following:
@@ -489,10 +509,7 @@ function nextQz5Qz6() {
 // --- 5. Proceeds to the next question (#7)
 function nextQz6Qz7() {
     qz6Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz6 is now hidden");
     qz7Div.classList.remove("hidden");
-    console.log("qz7 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz7Qz8() does the following:
@@ -503,10 +520,7 @@ function nextQz6Qz7() {
 // --- 5. Proceeds to the next question (#8)
 function nextQz7Qz8() {
     qz7Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz7 is now hidden");
     qz8Div.classList.remove("hidden");
-    console.log("qz8 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz8Qz9() does the following:
@@ -517,10 +531,7 @@ function nextQz7Qz8() {
 // --- 5. Proceeds to the next question (#9)
 function nextQz8Qz9() {
     qz8Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz8 is now hidden");
     qz9Div.classList.remove("hidden");
-    console.log("qz9 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // nextQz9Qz10() does the following:
@@ -531,10 +542,7 @@ function nextQz8Qz9() {
 // --- 5. Proceeds to the next question (#10)
 function nextQz9Qz10() {
     qz9Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz9 is now hidden");
     qz10Div.classList.remove("hidden");
-    console.log("qz10 is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // scoreTally() does the following:
@@ -543,10 +551,7 @@ function nextQz9Qz10() {
 // --- 3. enters the score, time, and answers correct in the appropriate span placeholders for the those values
 function scoreTally() {
     qz10Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz10 is now hidden");
     qz11Div.classList.remove("hidden");
-    console.log("qz11 is now showing");
     scoreTitle.textContent = "You have completed this quiz.";
 }
 //------------------------------------------------------------------------------------------------------------------//
@@ -556,10 +561,7 @@ function scoreTally() {
 // --- 3. Disables submit score btn until initials are provided
 function scoreBoard() {
     qz11Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz11 is now hidden");
     scoresDiv.classList.remove("hidden");
-    console.log("scoresDiv is now showing");
 }
 //------------------------------------------------------------------------------------------------------------------//
 // clearScores() does the following:
