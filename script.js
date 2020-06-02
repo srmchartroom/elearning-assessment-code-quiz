@@ -15,6 +15,8 @@ const spanTime = document.querySelector("#timer");
 //! QUIZ ELEMENTS
 
 //! -- QZ0 ELEMENTS -- //
+// create an empty array to hold the scoring per question
+let arrScore = [];
 // get qz0 div and set it to qz0Div
 const qz0Div = document.querySelector("#qz0");
 // get Start Quiz Button and set it to startBtn 
@@ -305,149 +307,110 @@ clearScoresBtn.addEventListener("click", clearScores);
 
 
 //! -- FUNCTIONS -- //
-
-// startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others.
+//------------------------------------------------------------------------------------------------------------------//
+// startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others, and sets the timer to 0.
 function startingPoint() {
-    console.log("----------------------------");
-    console.log("startingPoint() function run");
-    if (qz0Div.classList.contains("hidden")) {
-        qz0Div.classList.remove("hidden");
-        console.log("qz0Div is NOW showing");
-    } else {
-        console.log("qz0Div is already showing");
-    }
-    if (qz1Div.classList.contains("hidden")) {
-        console.log("qz1Div is already hidden");
-    } else {
-        qz1Div.classList.add("hidden");
-        console.log("qz1Div is NOW hidden");
-    }
-    if (qz2Div.classList.contains("hidden")) {
-        console.log("qz2Div is already hidden");
-    } else {
-        qz2Div.classList.add("hidden");
-        console.log("qz2Div is NOW hidden");
-    }
-    if (qz3Div.classList.contains("hidden")) {
-        console.log("qz3Div is already hidden");
-    } else {
-        qz3Div.classList.add("hidden");
-        console.log("qz3Div is NOW hidden");
-    }
-    if (qz4Div.classList.contains("hidden")) {
-        console.log("qz4Div is already hidden");
-    } else {
-        qz4Div.classList.add("hidden");
-        console.log("qz4Div is NOW hidden");
-    }
-    if (qz5Div.classList.contains("hidden")) {
-        console.log("qz5Div is already hidden");
-    } else {
-        qz5Div.classList.add("hidden");
-        console.log("qz5Div is NOW hidden");
-    }
-    if (qz6Div.classList.contains("hidden")) {
-        console.log("qz6Div is already hidden");
-    } else {
-        qz6Div.classList.add("hidden");
-        console.log("qz6Div is NOW hidden");
-    }
-    if (qz7Div.classList.contains("hidden")) {
-        console.log("qz7Div is already hidden");
-    } else {
-        qz7Div.classList.add("hidden");
-        console.log("qz7Div is NOW hidden");
-    }
-    if (qz8Div.classList.contains("hidden")) {
-        console.log("qz8Div is already hidden");
-    } else {
-        qz8Div.classList.add("hidden");
-        console.log("qz8Div is NOW hidden");
-    }
-    if (qz9Div.classList.contains("hidden")) {
-        console.log("qz9Div is already hidden");
-    } else {
-        qz9Div.classList.add("hidden");
-        console.log("qz9Div is NOW hidden");
-    }
-    if (qz10Div.classList.contains("hidden")) {
-        console.log("qz10Div is already hidden");
-    } else {
-        qz10Div.classList.add("hidden");
-        console.log("qz10Div is NOW hidden");
-    }
-    if (qz11Div.classList.contains("hidden")) {
-        console.log("qz11Div is already hidden");
-    } else {
-        qz11Div.classList.add("hidden");
-        console.log("qz11Div is NOW hidden");
-    }
-    if (scoresDiv.classList.contains("hidden")) {
-        console.log("scoresDiv is already hidden");
-    } else {
-        scoresDiv.classList.add("hidden");
-        console.log("scoresDiv is NOW hidden");
-    }
+    // if the quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
+    if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { }
+    // if the 1st question (qz1Div) is hidden, do nothing. Else, hide it.
+    if (qz1Div.classList.contains("hidden")) { } else { qz1Div.classList.add("hidden"); }
+    // if the 2nd question (qz2Div) is hidden, do nothing. Else, hide it.
+    if (qz2Div.classList.contains("hidden")) { } else { qz2Div.classList.add("hidden"); }
+    // if the 3rd question (qz3Div) is hidden, do nothing. Else, hide it.
+    if (qz3Div.classList.contains("hidden")) { } else { qz3Div.classList.add("hidden"); }
+    // if the 4th question (qz4Div) is hidden, do nothing. Else, hide it.
+    if (qz4Div.classList.contains("hidden")) { } else { qz4Div.classList.add("hidden"); }
+    // if the 5th question (qz5Div) is hidden, do nothing. Else, hide it.
+    if (qz5Div.classList.contains("hidden")) { } else { qz5Div.classList.add("hidden"); }
+    // if the 6th question (qz6Div) is hidden, do nothing. Else, hide it.
+    if (qz6Div.classList.contains("hidden")) { } else { qz6Div.classList.add("hidden"); }
+    // if the 7th question (qz7Div) is hidden, do nothing. Else, hide it.
+    if (qz7Div.classList.contains("hidden")) { } else { qz7Div.classList.add("hidden"); }
+    // if the 8th question (qz8Div) is hidden, do nothing. Else, hide it.
+    if (qz8Div.classList.contains("hidden")) { } else { qz8Div.classList.add("hidden"); }
+    // if the 9th question (qz9Div) is hidden, do nothing. Else, hide it.
+    if (qz9Div.classList.contains("hidden")) { } else { qz9Div.classList.add("hidden"); }
+    // if the 10th question (qz10Div) is hidden, do nothing. Else, hide it.
+    if (qz10Div.classList.contains("hidden")) { } else { qz10Div.classList.add("hidden"); }
+    // if the score tally (qz11Div) is hidden, do nithing. Else, hide it.
+    if (qz11Div.classList.contains("hidden")) { } else { qz11Div.classList.add("hidden"); }
+    // if the scoreboard (scoresDiv) is hidden, do nothing.  Else, hide it.
+    if (scoresDiv.classList.contains("hidden")) { } else { scoresDiv.classList.add("hidden"); }
+    // set the time to 0
     var secondsLeft = 0;
+    // ...and display the 0-set timer in the time remaining div.
     spanTime.textContent = Math.floor(secondsLeft);
-    console.log("----------------------------");
 }
-
-// highScores() checks if the quiz is in process or score submission hasn't taken place yet, and throws an alert to complete the step
-// otherwise, if on the scoreboard or initial quiz start div, the "High Scores" link routes the user to the score board.
+//------------------------------------------------------------------------------------------------------------------//
+// highScores() checks if quiz is in process or submission isn't complete, & throws an alert. Else, show score board.
 function highScores() {
+    // if the quiz has started and any question is currently displayed...
     if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) {
+    // show the user an alert that they must complete the quiz before viewing High Scores
         alert("You are in the middle of a timed quiz. Please complete the quiz before view High Scores.");    
+    // else if the score tally div is displayed (and the score hasn't been submitted)
     } else if (!(qz11Div.classList.contains("hidden"))) {
+    // show the user an alert that they must submit their score before viewing High Scores
         alert("Please submit your score before viewing High Scores.");
+    // else if the quiz start or the score board is displayed...
     } else {
+        // ...hide the quiz start div...
         qz0Div.classList.add("hidden");
-        console.log("-------------");
-        console.log("qz0 is now hidden");
+        // ...and show the scoreboard div.
         scoresDiv.classList.remove("hidden");
-        console.log("Now viewing High Scores");
     }
 }
-
-
-
+//------------------------------------------------------------------------------------------------------------------//
 // scoreTimer() does the following:
 // starts a timer that counts down from a set number of seconds
 // if an answer is wrong, the time decrements by 10 seconds and then continues counting down.
 // once the timer reaches zero an alert/confirm is thrown indicating to the user that time is up
 // then the user is "directed" to the score Tally page/div (visibility is toggled to hide current slide and display score tally div)
-
 function scoreTimer() {
+    // set secondsLeft var to 60
     var secondsLeft = 60;
+    // display the initial time state on-screen as 60
     spanTime.textContent = Math.floor(secondsLeft);
     console.log("--------------------");
     console.log("scoreTime() has kicked off");
+    // create a setInterval loop to a var called timerInterval
     var timerInterval = setInterval(function() {
+        // on each cycle of the loop, decrement the secondsLeft var by 1
         secondsLeft--;
+        // display the time state on screen to the current decremented seconds
         spanTime.textContent = Math.floor(secondsLeft);
+        // if the seconds run out...
         if(secondsLeft === 0) {
+            // clear the Interval
           clearInterval(timerInterval);
+          // alert the user that they've run out of time
           alert("Time's up!");
+          // reset the time and div visibilities to the starting point...
           startingPoint();
+          // ...then hide the quiz start state...
           qz0Div.classList.add("hidden");
+          // ...and show the tally page...
           qz11Div.classList.remove("hidden");
+          // ...and finally change the score tally title to indicate time ran out, instead quiz completed
           scoreTitle.textContent = "You have run out of time.";       
         }    
     }, 1000);
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // startQuiz() does the following:
 // --- 1. Toggles visibility of the quiz start (qz0Div) and the hidden question #1 div (qz1Div), simulating a navigation effect
 // --- 2. kicks of timer event
 function startQuiz() {
+    // sets the score array to empty if not already done so
+    arrScore = []
+    // hide the quiz start div
     qz0Div.classList.add("hidden");
-    console.log("-------------");
-    console.log("qz0 is now hidden");
+    // show the 1st question
     qz1Div.classList.remove("hidden");
-    console.log("qz1 is now showing");
+    // kick off the timer
     scoreTimer();
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz1Qz2() does the following:
 // --- 1. Toggles visibility of question #1 (qz1Div) and the hidden question #2 (qz2Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -461,7 +424,7 @@ function nextQz1Qz2() {
     qz2Div.classList.remove("hidden");
     console.log("qz2 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz2Qz3() does the following:
 // --- 1. Toggles visibility of question #2 (qz2Div) and the hidden question #3 (qz3Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -475,7 +438,7 @@ function nextQz2Qz3() {
     qz3Div.classList.remove("hidden");
     console.log("qz3 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz3Qz4() does the following:
 // --- 1. Toggles visibility of question #3 (qz3Div) and the hidden question #4 (qz4Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -489,7 +452,7 @@ function nextQz3Qz4() {
     qz4Div.classList.remove("hidden");
     console.log("qz4 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz4Qz5() does the following:
 // --- 1. Toggles visibility of question #4 (qz4Div) and the hidden question #5 (qz5Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -503,7 +466,7 @@ function nextQz4Qz5() {
     qz5Div.classList.remove("hidden");
     console.log("qz5 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz5Qz6() does the following:
 // --- 1. Toggles visibility of question #5 (qz5Div) and the hidden question #6 (qz6Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -517,7 +480,7 @@ function nextQz5Qz6() {
     qz6Div.classList.remove("hidden");
     console.log("qz6 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz6Qz7() does the following:
 // --- 1. Toggles visibility of question #6 (qz6Div) and the hidden question #7 (qz7Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -531,7 +494,7 @@ function nextQz6Qz7() {
     qz7Div.classList.remove("hidden");
     console.log("qz7 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz7Qz8() does the following:
 // --- 1. Toggles visibility of question #7 (qz7Div) and the hidden question #8 (qz8Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -545,7 +508,7 @@ function nextQz7Qz8() {
     qz8Div.classList.remove("hidden");
     console.log("qz8 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz8Qz9() does the following:
 // --- 1. Toggles visibility of question #8 (qz8Div) and the hidden question #9 (qz9Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -559,7 +522,7 @@ function nextQz8Qz9() {
     qz9Div.classList.remove("hidden");
     console.log("qz9 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // nextQz9Qz10() does the following:
 // --- 1. Toggles visibility of question #9 (qz9Div) and the hidden question #2 (qz10Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -573,7 +536,7 @@ function nextQz9Qz10() {
     qz10Div.classList.remove("hidden");
     console.log("qz10 is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // scoreTally() does the following:
 // --- 1. Toggles visibility of question #10 (qz10Div) and the hidden score tally div (qz11Div), simulating navigation effect
 // --- 2. Calculates the score based on answers correct (from the scores array) and the time
@@ -586,7 +549,7 @@ function scoreTally() {
     console.log("qz11 is now showing");
     scoreTitle.textContent = "You have completed this quiz.";
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // scoreBoard() does the following:
 // --- 1. Toggles visibility of the score tally div (qz11Div) and the hidden scoreboard div (scoresDiv), simulating navigation effect
 // --- 2. writes to the scoreboard table the initials input, the time, the calculated score, questions correct
@@ -598,7 +561,7 @@ function scoreBoard() {
     scoresDiv.classList.remove("hidden");
     console.log("scoresDiv is now showing");
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 // clearScores() does the following:
 // --- 1. clears the score array if not already clear
 // --- 2. clears the scoreboard table
@@ -606,7 +569,7 @@ function clearScores() {
     // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
     console.log("clearScoresBtn button was clicked")
 }
-
+//------------------------------------------------------------------------------------------------------------------//
 
 
 // --- REMAINING DIVS NEEDED AND HIDDEN CLASS APPLICATION
