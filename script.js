@@ -96,7 +96,7 @@ const arrQZ10 = {
 
 //! -- QZ0 ELEMENTS -- //
 // create an empty array to hold the scoring per question
-let arrScore = [];
+let arrScore = {};
 // get qz0 div and set it to qz0Div
 const qz0Div = document.querySelector("#qz0");
 // get Start Quiz Button and set it to startBtn 
@@ -583,6 +583,7 @@ function startQuiz() {
 function getQ1Answers() {
     // get Q1's Answers and Validate
     console.log("placeholder");
+    
 }
 function getQ2Answers() {
     // get Q2's Answers and Validate
