@@ -12,7 +12,87 @@ const goToScoresBtn = document.querySelector("#goToScores");
 // Get time remaining span and set to spanTimeRem
 const spanTime = document.querySelector("#timer");
 
-//! QUIZ ELEMENTS
+//! QUIZ QUESTION ARRAYS
+// Question #1 Array
+const arrQZ1 = {
+    question : "Which of the following are not valid events for a .addEventListener method?",
+    qz1A : {txtValue : "click" , correct : false },
+    qz1B : {txtValue : "submit", correct : false },
+    qz1C : {txtValue : "keypress", correct : false },
+    qz1D : {txtValue : "wait" , correct: true }
+};
+// Question #2 Array
+const arrQZ2 = {
+    question : "Which of the following prevents event bubbling to a parent element?",
+    qz2A : {txtValue : "event.preventDefault", correct : false },
+    qz2B : {txtValue : "event.stopDefault", correct : false },
+    qz2C : {txtValue : "event.preventPropagation", correct: false},
+    qz2D : {txtValue : "event.stopPropagation", correct: true}
+};
+// Question #3 Array
+const arrQZ3 = {
+    question : "Which method is unique to arrays and can be used similar to a 'for' loop to act on each index and item in an array?",
+    qz3A : {txtValue : "while", correct : false },
+    qz3B : {txtValue : "if...else if...else", correct : false},
+    qz3C : {txtValue : "forEach", correct : true},
+    qz3D : {txtValue : "case...switch", correct: false}
+};
+// Question #4 Array
+const arrQZ4 = {
+    question : "Which of the following would you use to round '1.6739' to '1'?",
+    qz4A : {txtValue : "Math.round", correct : false },
+    qz4B : {txtValue : "Math.roundDown", correct : false},
+    qz4C : {txtValue : "Math.ceiling", correct : false},
+    qz4D : {txtValue : "Math.floor", correct: true}
+};
+// Question #5 Array
+const arrQZ5 = {
+    question : "Which of the following methods would you use to create a loop based on time elapsing?",
+    qz5A : {txtValue : "getInterval", correct : false },
+    qz5B : {txtValue : "setInterval", correct : true},
+    qz5C : {txtValue : "getTimer", correct : false},
+    qz5D : {txtValue : "setTimer", correct: false}
+};
+// Question #6 Array
+const arrQZ6 = {
+    question : "Which of the following would return the item in the first index position of an array call 'items'?",
+    qz6A : {txtValue : "items.1", correct : false },
+    qz6B : {txtValue : "items.0", correct : false},
+    qz6C : {txtValue : "items[1]", correct : true},
+    qz6D : {txtValue : "items[0]", correct: false}
+};
+// Question #7 Array
+const arrQZ7 = {
+    question : "Which of the following methods would be used on an array to arrange its items alphabetically?",
+    qz7A : {txtValue : "sort", correct : true },
+    qz7B : {txtValue : "arrange", correct : false},
+    qz7C : {txtValue : "alpha", correct : false},
+    qz7D : {txtValue : "alphaOrder", correct: false}
+};
+// Question #8 Array
+const arrQZ8 = {
+    question : "Which string method would you use to remove excess whitespace from both sides of a string?",
+    qz8A : {txtValue : "slice", correct : false },
+    qz8B : {txtValue : "concat", correct : false},
+    qz8C : {txtValue : "trim", correct : true},
+    qz8D : {txtValue : "removeSpaces", correct: false}
+};
+// Question #9 Array
+const arrQZ9 = {
+    question : "Which of the following is true?",
+    qz9A : {txtValue : "10 = '10'", correct : false },
+    qz9B : {txtValue : "10 == '10'", correct : true},
+    qz9C : {txtValue : "'10'=== 10", correct : false},
+    qz9D : {txtValue : "10 === '10'", correct: false}
+};
+// Question #10 Array
+const arrQZ10 = {
+    question : "If given a variable equal to '10', which method would you use to convert the '10' string to the number 10?",
+    qz10A : {txtValue : "toNum", correct : false },
+    qz10B : {txtValue : "stringify", correct : false},
+    qz10C : {txtValue : "fromString", correct : false},
+    qz10D : {txtValue : "parseInt", correct: true}
+};
 
 //! -- QZ0 ELEMENTS -- //
 // create an empty array to hold the scoring per question
@@ -23,266 +103,308 @@ const qz0Div = document.querySelector("#qz0");
 const startBtn = document.querySelector("#startBtn");
 
 //! -- QZ1 ELEMENTS -- //
-// get qz1 div and set it to qz1Div
-const qz1Div = document.querySelector("#qz1");
-// get value for question 1A and set to q1A
-const q1A = document.querySelector("#question1A").value;
-// get label for question 1A and set to q1Alabel
-const q1Alabel = document.querySelector("#question1A").label;
-console.log(q1A+","+ q1Alabel);
-// get value for question 1B and set to q1B
-const q1B = document.querySelector("#question1B").value;
-// get label for question 1B and set to q1Blabel
-const q1Blabel = document.querySelector("#question1B").label;
-// get value for question 1C and set to q1C
-const q1C = document.querySelector("#question1C").value;
-// get label for question 1C and set to q1Clabel
-const q1Clabel = document.querySelector("#question1C").label;
-// get value for question 1D and set to q1D
-const q1D = document.querySelector("#question1D").value;
-// get label for question 1D and set to q1Dlabel
-const q1Dlabel = document.querySelector("#question1D").label;
-// get "Next" button for QZ1 and set to nxt1Btn
-const nxt1Btn = document.querySelector("#nxt1Btn");
-// get correct message alert and set to q1CorrectMsg
-const q1CorrectMsg = document.querySelector("#q1CorrectMsg");
-// get incorrect message alert and set to q1IncorrectMsg
-const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg");
+const qz1Div = document.querySelector("#qz1"); // set a var to <div> with corresponding qz#Div
+// --------------------------------------------------------------------------------------- //
+/* NOTE: instead of setting the question and answers/labels in the HTML, we're setting them in an object per question, that way we can later dynamically change questions and answers in a variety of ways, including a potential enhancement to this application of an admin interface that allows for the question and answer selections to be input by the admin first and serve them dynamically in the quiz.  Though this means a bit more coding on the front-end, the goal is to enable flexible extension of the application downstream. */
+// --------------------------------------------------------------------------------------- //
+const question1 = document.querySelector("#question1"); // set var to the <p> with question's #id
+const question1TXT = arrQZ1.question; // set var to question value in questions array object
+question1.textContent = question1TXT; // set question's text content on page to txt var
+// ---- OPTION 1A ---- //
+const lblQ1A = document.querySelector("#label1A"); // set a var to the field label on the radio
+lblQ1A.textContent = arrQZ1.qz1A.txtValue; // set text of label to the value in the object
+const q1Avalue = document.querySelector("#question1A"); // set a var to the actual radio input
+q1Avalue.value = arrQZ1.qz1A.correct; // set the value of the input to the value in the object
+// ---- OPTION 1B ---- //
+const lblQ1B = document.querySelector("#label1B"); // set a var to the field label on the radio
+lblQ1B.textContent = arrQZ1.qz1B.txtValue; // set text of label to the value in the object
+const q1Bvalue = document.querySelector("#question1B"); // set a var to the actual radio input
+q1Bvalue.value = arrQZ1.qz1B.correct; // set the value of the input to the value in the object
+// ---- OPTION 1C ---- //
+const lblQ1C = document.querySelector("#label1C"); // set a var to the field label on the radio
+lblQ1C.textContent = arrQZ1.qz1C.txtValue; // set text of label to the value in the object
+const q1Cvalue = document.querySelector("#question1C"); // set a var to the actual radio input
+q1Cvalue.value = arrQZ1.qz1C.correct; // set the value of the input to the value in the object
+// ---- OPTION 1D ---- //
+const lblQ1D = document.querySelector("#label1D"); // set a var to the field label on the radio
+lblQ1D.textContent = arrQZ1.qz1D.txtValue; // set text of label to the value in the object
+const q1Dvalue = document.querySelector("#question1D"); // set a var to the actual radio input
+q1Dvalue.value = arrQZ1.qz1D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt1Btn = document.querySelector("#nxt1Btn"); // get "Next" button and set to var
+const q1CorrectMsg = document.querySelector("#q1CorrectMsg"); // get correct message alert and set to var
+const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ2 ELEMENTS -- //
-// get qz2 div and set it to qz2Div
-const qz2Div = document.querySelector("#qz2");
-// get value for question 2A and set to q2A
-const q2A = document.querySelector("#question2A").value;
-// get label for question 2A and set to q2Alabel
-const q2Alabel = document.querySelector("#question2A").label;
-// get value for question 2B and set to q2B
-const q2B = document.querySelector("#question2B").value;
-// get label for question 2B and set to q2Blabel
-const q2Blabel = document.querySelector("#question2B").label;
-// get value for question 2C and set to q2C
-const q2C = document.querySelector("#question2C").value;
-// get label for question 2C and set to q2Clabel
-const q2Clabel = document.querySelector("#question2C").label;
-// get value for question 2D and set to q2D
-const q2D = document.querySelector("#question2D").value;
-// get label for question 2D and set to q2Dlabel
-const q2Dlabel = document.querySelector("#question2D").label;
-// get "Next" button for QZ2 and set to nxt2Btn
-const nxt2Btn = document.querySelector("#nxt2Btn");
-// get correct message alert and set to q2CorrectMsg
-const q2CorrectMsg = document.querySelector("#q2CorrectMsg");
-// get incorrect message alert and set to q2IncorrectMsg
-const q2IncorrectMsg = document.querySelector("#q2IncorrectMsg");
+const qz2Div = document.querySelector("#qz2"); // set a var to <div> with corresponding qz#Div
+const question2 = document.querySelector("#question2"); // set var to the <p> with question's #id
+const question2TXT = arrQZ2.question; // set var to question value in questions array object
+question2.textContent = question2TXT; // set question's text content on page to txt var--- //
+// ---- OPTION 2A ---- //
+const lblQ2A = document.querySelector("#label2A"); // set a var to the field label on the radio
+lblQ2A.textContent = arrQZ2.qz2A.txtValue; // set text of label to the value in the object
+const q2Avalue = document.querySelector("#question2A"); // set a var to the actual radio input
+q2Avalue.value = arrQZ2.qz2A.correct; // set the value of the input to the value in the object
+// ---- OPTION 2B ---- //
+const lblQ2B = document.querySelector("#label2B"); // set a var to the field label on the radio
+lblQ2B.textContent = arrQZ2.qz2B.txtValue; // set text of label to the value in the object
+const q2Bvalue = document.querySelector("#question2B"); // set a var to the actual radio input
+q2Bvalue.value = arrQZ2.qz2B.correct; // set the value of the input to the value in the object
+// ---- OPTION 2C ---- //
+const lblQ2C = document.querySelector("#label2C"); // set a var to the field label on the radio
+lblQ2C.textContent = arrQZ2.qz2C.txtValue; // set text of label to the value in the object
+const q2Cvalue = document.querySelector("#question2C"); // set a var to the actual radio input
+q2Cvalue.value = arrQZ2.qz2C.correct; // set the value of the input to the value in the object
+// ---- OPTION 2D ---- //
+const lblQ2D = document.querySelector("#label2D"); // set a var to the field label on the radio
+lblQ2D.textContent = arrQZ2.qz2D.txtValue; // set text of label to the value in the object
+const q2Dvalue = document.querySelector("#question2D"); // set a var to the actual radio input
+q2Dvalue.value = arrQZ2.qz2D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt2Btn = document.querySelector("#nxt2Btn"); // get "Next" button and set to var
+const q2CorrectMsg = document.querySelector("#q2CorrectMsg"); // get correct message alert and set to var
+const q2IncorrectMsg = document.querySelector("#q2IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ3 ELEMENTS -- //
-// get qz3 div and set it to qz3Div
-const qz3Div = document.querySelector("#qz3");
-// get value for question 3A and set to q3A
-const q3A = document.querySelector("#question3A").value;
-// get label for question 3A and set to q3Alabel
-const q3Alabel = document.querySelector("#question3A").label;
-// get value for question 3B and set to q3B
-const q3B = document.querySelector("#question3B").value;
-// get label for question 3B and set to q3Blabel
-const q3Blabel = document.querySelector("#question3B").label;
-// get value for question 3C and set to q3C
-const q3C = document.querySelector("#question3C").value;
-// get label for question 3C and set to q3Clabel
-const q3Clabel = document.querySelector("#question3C").label;
-// get value for question 3D and set to q3D
-const q3D = document.querySelector("#question3D").value;
-// get label for question 3D and set to q3Dlabel
-const q3Dlabel = document.querySelector("#question3D").label;
-// get "Next" button for QZ3 and set to nxt3Btn
-const nxt3Btn = document.querySelector("#nxt3Btn");
-// get correct message alert and set to q3CorrectMsg
-const q3CorrectMsg = document.querySelector("#q3CorrectMsg");
-// get incorrect message alert and set to q3IncorrectMsg
-const q3IncorrectMsg = document.querySelector("#q3IncorrectMsg");
+const qz3Div = document.querySelector("#qz3"); // set a var to <div> with corresponding qz#Div
+const question3 = document.querySelector("#question3"); // set var to the <p> with question's #id
+const question3TXT = arrQZ3.question; // set var to question value in questions array object
+question3.textContent = question3TXT; // set question's text content on page to txt var
+// ---- OPTION 3A ---- //
+const lblQ3A = document.querySelector("#label3A"); // set a var to the field label on the radio
+lblQ3A.textContent = arrQZ3.qz3A.txtValue; // set text of label to the value in the object
+const q3Avalue = document.querySelector("#question3A"); // set a var to the actual radio input
+q3Avalue.value = arrQZ3.qz3A.correct; // set the value of the input to the value in the object
+// ---- OPTION 3B ---- //
+const lblQ3B = document.querySelector("#label3B"); // set a var to the field label on the radio
+lblQ3B.textContent = arrQZ3.qz3B.txtValue; // set text of label to the value in the object
+const q3Bvalue = document.querySelector("#question3B"); // set a var to the actual radio input
+q3Bvalue.value = arrQZ3.qz3B.correct; // set the value of the input to the value in the object
+// ---- OPTION 3C ---- //
+const lblQ3C = document.querySelector("#label3C"); // set a var to the field label on the radio
+lblQ3C.textContent = arrQZ3.qz3C.txtValue; // set text of label to the value in the object
+const q3Cvalue = document.querySelector("#question3C"); // set a var to the actual radio input
+q3Cvalue.value = arrQZ3.qz3C.correct; // set the value of the input to the value in the object
+// ---- OPTION 3D ---- //
+const lblQ3D = document.querySelector("#label3D"); // set a var to the field label on the radio
+lblQ3D.textContent = arrQZ3.qz3D.txtValue; // set text of label to the value in the object
+const q3Dvalue = document.querySelector("#question3D"); // set a var to the actual radio input
+q3Dvalue.value = arrQZ3.qz3D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt3Btn = document.querySelector("#nxt3Btn"); // get "Next" button and set to var
+const q3CorrectMsg = document.querySelector("#q3CorrectMsg"); // get correct message alert and set to var
+const q3IncorrectMsg = document.querySelector("#q3IncorrectMsg"); // get incorrect message alert & set to var
+
 
 //! -- QZ4 ELEMENTS -- //
-// get qz4 div and set it to qz4Div
-const qz4Div = document.querySelector("#qz4");
-// get value for question 4A and set to q4A
-const q4A = document.querySelector("#question4A").value;
-// get label for question 4A and set to q4Alabel
-const q4Alabel = document.querySelector("#question4A").label;
-// get value for question 4B and set to q4B
-const q4B = document.querySelector("#question4B").value;
-// get label for question 4B and set to q4Blabel
-const q4Blabel = document.querySelector("#question4B").label;
-// get value for question 4C and set to q4C
-const q4C = document.querySelector("#question4C").value;
-// get label for question 4C and set to q4Clabel
-const q4Clabel = document.querySelector("#question4C").label;
-// get value for question 4D and set to q4D
-const q4D = document.querySelector("#question4D").value;
-// get label for question 4D and set to q4Dlabel
-const q4Dlabel = document.querySelector("#question4D").label;
-// get "Next" button for QZ4 and set to nxt4Btn
-const nxt4Btn = document.querySelector("#nxt4Btn");
-// get correct message alert and set to q4CorrectMsg
-const q4CorrectMsg = document.querySelector("#q4CorrectMsg");
-// get incorrect message alert and set to q4IncorrectMsg
-const q4IncorrectMsg = document.querySelector("#q4IncorrectMsg");
-
+const qz4Div = document.querySelector("#qz4"); // set a var to <div> with corresponding qz#Div
+const question4 = document.querySelector("#question4"); // set var to the <p> with question's #id
+const question4TXT = arrQZ4.question; // set var to question value in questions array object
+question4.textContent = question4TXT; // set question's text content on page to txt var
+// ---- OPTION 4A ---- //
+const lblQ4A = document.querySelector("#label4A"); // set a var to the field label on the radio
+lblQ4A.textContent = arrQZ4.qz4A.txtValue; // set text of label to the value in the object
+const q4Avalue = document.querySelector("#question4A"); // set a var to the actual radio input
+q4Avalue.value = arrQZ4.qz4A.correct; // set the value of the input to the value in the object
+// ---- OPTION 4B ---- //
+const lblQ4B = document.querySelector("#label4B"); // set a var to the field label on the radio
+lblQ4B.textContent = arrQZ4.qz4B.txtValue; // set text of label to the value in the object
+const q4Bvalue = document.querySelector("#question4B"); // set a var to the actual radio input
+q4Bvalue.value = arrQZ4.qz4B.correct; // set the value of the input to the value in the object
+// ---- OPTION 4C ---- //
+const lblQ4C = document.querySelector("#label4C"); // set a var to the field label on the radio
+lblQ4C.textContent = arrQZ4.qz4C.txtValue; // set text of label to the value in the object
+const q4Cvalue = document.querySelector("#question4C"); // set a var to the actual radio input
+q4Cvalue.value = arrQZ4.qz4C.correct; // set the value of the input to the value in the object
+// ---- OPTION 4D ---- //
+const lblQ4D = document.querySelector("#label4D"); // set a var to the field label on the radio
+lblQ4D.textContent = arrQZ4.qz4D.txtValue; // set text of label to the value in the object
+const q4Dvalue = document.querySelector("#question4D"); // set a var to the actual radio input
+q4Dvalue.value = arrQZ4.qz4D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt4Btn = document.querySelector("#nxt4Btn"); // get "Next" button and set to var
+const q4CorrectMsg = document.querySelector("#q4CorrectMsg"); // get correct message alert and set to var
+const q4IncorrectMsg = document.querySelector("#q4IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ5 ELEMENTS -- //
-// get qz5 div and set it to qz5Div
-const qz5Div = document.querySelector("#qz5");
-// get value for question 5A and set to q5A
-const q5A = document.querySelector("#question5A").value;
-// get label for question 5A and set to q5Alabel
-const q5Alabel = document.querySelector("#question5A").label;
-// get value for question 5B and set to q5B
-const q5B = document.querySelector("#question5B").value;
-// get label for question 5B and set to q5Blabel
-const q5Blabel = document.querySelector("#question5B").label;
-// get value for question 5C and set to q5C
-const q5C = document.querySelector("#question5C").value;
-// get label for question 5C and set to q5Clabel
-const q5Clabel = document.querySelector("#question5C").label;
-// get value for question 5D and set to q5D
-const q5D = document.querySelector("#question5D").value;
-// get label for question 5D and set to q5Dlabel
-const q5Dlabel = document.querySelector("#question5D").label;
-// get "Next" button for QZ5 and set to nxt5Btn
-const nxt5Btn = document.querySelector("#nxt5Btn");
-// get correct message alert and set to q5CorrectMsg
-const q5CorrectMsg = document.querySelector("#q5CorrectMsg");
-// get incorrect message alert and set to q5IncorrectMsg
-const q5IncorrectMsg = document.querySelector("#q5IncorrectMsg");
+const qz5Div = document.querySelector("#qz5"); // set a var to <div> with corresponding qz#Div
+const question5 = document.querySelector("#question5"); // set var to the <p> with question's #id
+const question5TXT = arrQZ5.question; // set var to question value in questions array object
+question5.textContent = question5TXT; // set question's text content on page to txt var
+// ---- OPTION 5A ---- //
+const lblQ5A = document.querySelector("#label5A"); // set a var to the field label on the radio
+lblQ5A.textContent = arrQZ5.qz5A.txtValue; // set text of label to the value in the object
+const q5Avalue = document.querySelector("#question5A"); // set a var to the actual radio input
+q5Avalue.value = arrQZ5.qz5A.correct; // set the value of the input to the value in the object
+// ---- OPTION 5B ---- //
+const lblQ5B = document.querySelector("#label5B"); // set a var to the field label on the radio
+lblQ5B.textContent = arrQZ5.qz5B.txtValue; // set text of label to the value in the object
+const q5Bvalue = document.querySelector("#question5B"); // set a var to the actual radio input
+q5Bvalue.value = arrQZ5.qz5B.correct; // set the value of the input to the value in the object
+// ---- OPTION 5C ---- //
+const lblQ5C = document.querySelector("#label5C"); // set a var to the field label on the radio
+lblQ5C.textContent = arrQZ5.qz5C.txtValue; // set text of label to the value in the object
+const q5Cvalue = document.querySelector("#question5C"); // set a var to the actual radio input
+q5Cvalue.value = arrQZ5.qz5C.correct; // set the value of the input to the value in the object
+// ---- OPTION 5D ---- //
+const lblQ5D = document.querySelector("#label5D"); // set a var to the field label on the radio
+lblQ5D.textContent = arrQZ5.qz5D.txtValue; // set text of label to the value in the object
+const q5Dvalue = document.querySelector("#question5D"); // set a var to the actual radio input
+q5Dvalue.value = arrQZ5.qz5D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt5Btn = document.querySelector("#nxt5Btn"); // get "Next" button and set to var
+const q5CorrectMsg = document.querySelector("#q5CorrectMsg"); // get correct message alert and set to var
+const q5IncorrectMsg = document.querySelector("#q5IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ6 ELEMENTS -- //
-// get qz6 div and set it to qz6Div
-const qz6Div = document.querySelector("#qz6");
-// get value for question 6A and set to q6A
-const q6A = document.querySelector("#question6A").value;
-// get label for question 6A and set to q6Alabel
-const q6Alabel = document.querySelector("#question6A").label;
-// get value for question 6B and set to q6B
-const q6B = document.querySelector("#question6B").value;
-// get label for question 6B and set to q6Blabel
-const q6Blabel = document.querySelector("#question6B").label;
-// get value for question 6C and set to q6C
-const q6C = document.querySelector("#question6C").value;
-// get label for question 6C and set to q6Clabel
-const q6Clabel = document.querySelector("#question6C").label;
-// get value for question 6D and set to q6D
-const q6D = document.querySelector("#question6D").value;
-// get label for question 6D and set to q6Dlabel
-const q6Dlabel = document.querySelector("#question6D").label;
-// get "Next" button for QZ6 and set to nxt6Btn
-const nxt6Btn = document.querySelector("#nxt6Btn");
-// get correct message alert and set to q6CorrectMsg
-const q6CorrectMsg = document.querySelector("#q6CorrectMsg");
-// get incorrect message alert and set to q6IncorrectMsg
-const q6IncorrectMsg = document.querySelector("#q6IncorrectMsg");
+const qz6Div = document.querySelector("#qz6"); // set a var to <div> with corresponding qz#Div
+const question6 = document.querySelector("#question6"); // set var to the <p> with question's #id
+const question6TXT = arrQZ6.question; // set var to question value in questions array object
+question6.textContent = question6TXT; // set question's text content on page to txt var
+// ---- OPTION 6A ---- //
+const lblQ6A = document.querySelector("#label6A"); // set a var to the field label on the radio
+lblQ6A.textContent = arrQZ6.qz6A.txtValue; // set text of label to the value in the object
+const q6Avalue = document.querySelector("#question6A"); // set a var to the actual radio input
+q6Avalue.value = arrQZ6.qz6A.correct; // set the value of the input to the value in the object
+// ---- OPTION 6B ---- //
+const lblQ6B = document.querySelector("#label6B"); // set a var to the field label on the radio
+lblQ6B.textContent = arrQZ6.qz6B.txtValue; // set text of label to the value in the object
+const q6Bvalue = document.querySelector("#question6B"); // set a var to the actual radio input
+q6Bvalue.value = arrQZ6.qz6B.correct; // set the value of the input to the value in the object
+// ---- OPTION 6C ---- //
+const lblQ6C = document.querySelector("#label6C"); // set a var to the field label on the radio
+lblQ6C.textContent = arrQZ6.qz6C.txtValue; // set text of label to the value in the object
+const q6Cvalue = document.querySelector("#question6C"); // set a var to the actual radio input
+q6Cvalue.value = arrQZ6.qz6C.correct; // set the value of the input to the value in the object
+// ---- OPTION 6D ---- //
+const lblQ6D = document.querySelector("#label6D"); // set a var to the field label on the radio
+lblQ6D.textContent = arrQZ6.qz6D.txtValue; // set text of label to the value in the object
+const q6Dvalue = document.querySelector("#question6D"); // set a var to the actual radio input
+q6Dvalue.value = arrQZ6.qz6D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt6Btn = document.querySelector("#nxt6Btn"); // get "Next" button and set to var
+const q6CorrectMsg = document.querySelector("#q6CorrectMsg"); // get correct message alert and set to var
+const q6IncorrectMsg = document.querySelector("#q6IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ7 ELEMENTS -- //
-// get qz7 div and set it to qz7Div
-const qz7Div = document.querySelector("#qz7");
-// get value for question 7A and set to q7A
-const q7A = document.querySelector("#question7A").value;
-// get label for question 7A and set to q7Alabel
-const q7Alabel = document.querySelector("#question7A").label;
-// get value for question 7B and set to q7B
-const q7B = document.querySelector("#question7B").value;
-// get label for question 7B and set to q7Blabel
-const q7Blabel = document.querySelector("#question7B").label;
-// get value for question 7C and set to q7C
-const q7C = document.querySelector("#question7C").value;
-// get label for question 7C and set to q7Clabel
-const q7Clabel = document.querySelector("#question7C").label;
-// get value for question 7D and set to q7D
-const q7D = document.querySelector("#question7D").value;
-// get label for question 7D and set to q7Dlabel
-const q7Dlabel = document.querySelector("#question7D").label;
-// get "Next" button for QZ7 and set to nxt7Btn
-const nxt7Btn = document.querySelector("#nxt7Btn");
-// get correct message alert and set to q7CorrectMsg
-const q7CorrectMsg = document.querySelector("#q7CorrectMsg");
-// get incorrect message alert and set to q7IncorrectMsg
-const q7IncorrectMsg = document.querySelector("#q7IncorrectMsg");
+const qz7Div = document.querySelector("#qz7"); // set a var to <div> with corresponding qz#Div\
+const question7 = document.querySelector("#question7"); // set var to the <p> with question's #id
+const question7TXT = arrQZ7.question; // set var to question value in questions array object
+question7.textContent = question7TXT; // set question's text content on page to txt var
+// ---- OPTION 7A: Label ---- //
+const lblQ7A = document.querySelector("#label7A"); // set a var to the field label on the radio
+lblQ7A.textContent = arrQZ7.qz7A.txtValue; // set text of label to the value in the object
+const q7Avalue = document.querySelector("#question7A");  // set a var to the actual radio input
+q7Avalue.value = arrQZ7.qz7A.correct; // set the value of the input to the value in the object
+// ---- OPTION 7B ---- //
+const lblQ7B = document.querySelector("#label7B"); // set a var to the field label on the radio
+lblQ7B.textContent = arrQZ7.qz7B.txtValue; // set text of label to the value in the object
+const q7Bvalue = document.querySelector("#question7B"); // set a var to the actual radio input
+q7Bvalue.value = arrQZ7.qz7B.correct; // set the value of the input to the value in the object
+// ---- OPTION 7C ---- //
+const lblQ7C = document.querySelector("#label7C"); // set a var to the field label on the radio
+lblQ7C.textContent = arrQZ7.qz7C.txtValue; // set text of label to the value in the object
+const q7Cvalue = document.querySelector("#question7C"); // set a var to the actual radio input
+q7Cvalue.value = arrQZ7.qz7C.correct; // set the value of the input to the value in the object
+// ---- OPTION 7D ---- //
+const lblQ7D = document.querySelector("#label7D"); // set a var to the field label on the radio
+lblQ7D.textContent = arrQZ7.qz7D.txtValue; // set text of label to the value in the object
+const q7Dvalue = document.querySelector("#question7D");
+q7Dvalue.value = arrQZ7.qz7D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt7Btn = document.querySelector("#nxt7Btn"); // get "Next" button and set to var
+const q7CorrectMsg = document.querySelector("#q7CorrectMsg"); // get correct message alert and set to var
+const q7IncorrectMsg = document.querySelector("#q7IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ8 ELEMENTS -- //
-// get qz8 div and set it to qz8Div
-const qz8Div = document.querySelector("#qz8");
-// get value for question 8A and set to q8A
-const q8A = document.querySelector("#question8A").value;
-// get label for question 8A and set to q8Alabel
-const q8Alabel = document.querySelector("#question8A").label;
-// get value for question 8B and set to q8B
-const q8B = document.querySelector("#question8B").value;
-// get label for question 8B and set to q8Blabel
-const q8Blabel = document.querySelector("#question8B").label;
-// get value for question 8C and set to q8C
-const q8C = document.querySelector("#question8C").value;
-// get label for question 8C and set to q8Clabel
-const q8Clabel = document.querySelector("#question8C").label;
-// get value for question 8D and set to q8D
-const q8D = document.querySelector("#question8D").value;
-// get label for question 8D and set to q8Dlabel
-const q8Dlabel = document.querySelector("#question8D").label;
-// get "Next" button for QZ8 and set to nxt8Btn
-const nxt8Btn = document.querySelector("#nxt8Btn");
-// get correct message alert and set to q8CorrectMsg
-const q8CorrectMsg = document.querySelector("#q8CorrectMsg");
-// get incorrect message alert and set to q8IncorrectMsg
-const q8IncorrectMsg = document.querySelector("#q8IncorrectMsg");
+const qz8Div = document.querySelector("#qz8"); // set a var to <div> with corresponding qz#Div
+const question8 = document.querySelector("#question8"); // set var to the <p> with question's #id
+const question8TXT = arrQZ8.question; // set var to question value in questions array object
+question8.textContent = question8TXT; // set question's text content on page to txt var
+// ---- OPTION 8A ---- //
+const lblQ8A = document.querySelector("#label8A"); // set a var to the field label on the radio
+lblQ8A.textContent = arrQZ8.qz8A.txtValue; // set text of label to the value in the object
+const q8Avalue = document.querySelector("#question8A"); // set a var to the actual radio input
+q8Avalue.value = arrQZ8.qz8A.correct; // set the value of the input to the value in the object
+// ---- OPTION 8B ---- //
+const lblQ8B = document.querySelector("#label8B"); // set a var to the field label on the radio
+lblQ8B.textContent = arrQZ8.qz8B.txtValue; // set text of label to the value in the object
+const q8Bvalue = document.querySelector("#question8B"); // set a var to the actual radio input
+q8Bvalue.value = arrQZ8.qz8B.correct; // set the value of the input to the value in the object
+// ---- OPTION 8C ---- //
+const lblQ8C = document.querySelector("#label8C"); // set a var to the field label on the radio
+lblQ8C.textContent = arrQZ8.qz8C.txtValue; // set text of label to the value in the object
+const q8Cvalue = document.querySelector("#question8C"); // set a var to the actual radio input
+q8Cvalue.value = arrQZ8.qz8C.correct; // set the value of the input to the value in the object
+// ---- OPTION 8D ---- //
+const lblQ8D = document.querySelector("#label8D"); // set a var to the field label on the radio
+lblQ8D.textContent = arrQZ8.qz8D.txtValue; // set text of label to the value in the object
+const q8Dvalue = document.querySelector("#question8D"); // set a var to the actual radio input
+q8Dvalue.value = arrQZ8.qz8D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt8Btn = document.querySelector("#nxt8Btn"); // get "Next" button and set to var
+const q8CorrectMsg = document.querySelector("#q8CorrectMsg"); // get correct message alert and set to var
+const q8IncorrectMsg = document.querySelector("#q8IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ9 ELEMENTS -- //
-// get qz9 div and set it to qz9Div
-const qz9Div = document.querySelector("#qz9");
-// get value for question 9A and set to q9A
-const q9A = document.querySelector("#question9A").value;
-// get label for question 9A and set to q9Alabel
-const q9Alabel = document.querySelector("#question9A").label;
-// get value for question 9B and set to q9B
-const q9B = document.querySelector("#question9B").value;
-// get label for question 9B and set to q9Blabel
-const q9Blabel = document.querySelector("#question9B").label;
-// get value for question 9C and set to q9C
-const q9C = document.querySelector("#question9C").value;
-// get label for question 9C and set to q9Clabel
-const q9Clabel = document.querySelector("#question9C").label;
-// get value for question 9D and set to q9D
-const q9D = document.querySelector("#question9D").value;
-// get label for question 9D and set to q9Dlabel
-const q9Dlabel = document.querySelector("#question9D").label;
-// get "Next" button for QZ9 and set to nxt9Btn
-const nxt9Btn = document.querySelector("#nxt9Btn");
-// get correct message alert and set to q9CorrectMsg
-const q9CorrectMsg = document.querySelector("#q9CorrectMsg");
-// get incorrect message alert and set to q9IncorrectMsg
-const q9IncorrectMsg = document.querySelector("#q9IncorrectMsg");
+const qz9Div = document.querySelector("#qz9"); // set a var to <div> with corresponding qz#Div
+const question9 = document.querySelector("#question9"); // set var to the <p> with question's #id
+const question9TXT = arrQZ9.question; // set var to question value in questions array object
+question9.textContent = question9TXT; // set question's text content on page to txt var
+// ---- OPTION 9A ---- //
+const lblQ9A = document.querySelector("#label9A"); // set a var to the field label on the radio
+lblQ9A.textContent = arrQZ9.qz9A.txtValue; // set text of label to the value in the object
+const q9Avalue = document.querySelector("#question9A"); // set a var to the actual radio input
+q9Avalue.value = arrQZ9.qz9A.correct; // set the value of the input to the value in the object
+// ---- OPTION 9B ---- //
+const lblQ9B = document.querySelector("#label9B"); // set a var to the field label on the radio
+lblQ9B.textContent = arrQZ9.qz9B.txtValue; // set text of label to the value in the object
+const q9Bvalue = document.querySelector("#question9B"); // set a var to the actual radio input
+q9Bvalue.value = arrQZ9.qz9B.correct; // set the value of the input to the value in the object
+// ---- OPTION 9C ---- //
+const lblQ9C = document.querySelector("#label9C"); // set a var to the field label on the radio
+lblQ9C.textContent = arrQZ9.qz9C.txtValue; // set text of label to the value in the object
+const q9Cvalue = document.querySelector("#question9C"); // set a var to the actual radio input
+q9Cvalue.value = arrQZ9.qz9C.correct; // set the value of the input to the value in the object
+// ---- OPTION 9D ---- //
+const lblQ9D = document.querySelector("#label9D"); // set a var to the field label on the radio
+lblQ9D.textContent = arrQZ9.qz9D.txtValue; // set text of label to the value in the object
+const q9Dvalue = document.querySelector("#question9D"); // set a var to the actual radio input
+q9Dvalue.value = arrQZ9.qz9D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt9Btn = document.querySelector("#nxt9Btn"); // get "Next" button and set to var
+const q9CorrectMsg = document.querySelector("#q9CorrectMsg"); // get correct message alert and set to var
+const q9IncorrectMsg = document.querySelector("#q9IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ10 ELEMENTS -- //
-// get qz10 div and set it to qz10Div
-const qz10Div = document.querySelector("#qz10");
-// get value for question 10A and set to q10A
-const q10A = document.querySelector("#question10A").value;
-// get label for question 10A and set to q10Alabel
-const q10Alabel = document.querySelector("#question10A").label;
-// get value for question 10B and set to q10B
-const q10B = document.querySelector("#question10B").value;
-// get label for question 10B and set to q10Blabel
-const q10Blabel = document.querySelector("#question10B").label;
-// get value for question 10C and set to q10C
-const q10C = document.querySelector("#question10C").value;
-// get label for question 10C and set to q10Clabel
-const q10Clabel = document.querySelector("#question10C").label;
-// get value for question 10D and set to q10D
-const q10D = document.querySelector("#question10D").value;
-// get label for question 10D and set to q10Dlabel
-const q10Dlabel = document.querySelector("#question10D").label;
-// get "Next" button for QZ10 and set to nxt10Btn
-const nxt10Btn = document.querySelector("#nxt10Btn");
-// get correct message alert and set to q10CorrectMsg
-const q10CorrectMsg = document.querySelector("#q10CorrectMsg");
-// get incorrect message alert and set to q10IncorrectMsg
-const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg");
+const qz10Div = document.querySelector("#qz10"); // set a var to <div> with corresponding qz#Div
+const question10 = document.querySelector("#question10"); // set var to the <p> with question's #id
+const question10TXT = arrQZ10.question; // set var to question value in questions array object
+question10.textContent = question10TXT; // set question's text content on page to txt var
+// ---- OPTION 10A ---- //
+const lblQ10A = document.querySelector("#label10A"); // set a var to the field label on the radio
+lblQ10A.textContent = arrQZ10.qz10A.txtValue; // set text of label to the value in the object
+const q10Avalue = document.querySelector("#question10A"); // set a var to the actual radio input
+q10Avalue.value = arrQZ10.qz10A.correct; // set the value of the input to the value in the object
+// ---- OPTION 10B ---- //
+const lblQ10B = document.querySelector("#label10B"); // set a var to the field label on the radio
+lblQ10B.textContent = arrQZ10.qz10B.txtValue; // set text of label to the value in the object
+const q10Bvalue = document.querySelector("#question10B"); // set a var to the actual radio input
+q10Bvalue.value = arrQZ10.qz10B.correct; // set the value of the input to the value in the object
+// ---- OPTION 10C---- //
+const lblQ10C = document.querySelector("#label10C"); // set a var to the field label on the radio
+lblQ10C.textContent = arrQZ10.qz10C.txtValue; // set text of label to the value in the object
+const q10Cvalue = document.querySelector("#question10C"); // set a var to the actual radio input
+q10Cvalue.value = arrQZ10.qz10C.correct; // set the value of the input to the value in the object
+// ---- OPTION 10D ---- //
+const lblQ10D = document.querySelector("#label10D"); // set a var to the field label on the radio
+lblQ10D.textContent = arrQZ10.qz10D.txtValue; // set text of label to the value in the object
+const q10Dvalue = document.querySelector("#question10D"); // set a var to the actual radio input
+q10Dvalue.value = arrQZ10.qz10D.correct; // set the value of the input to the value in the object
+// -- BUTTONS AND MESSAGING -- //
+const nxt10Btn = document.querySelector("#nxt10Btn"); // get "Next" button and set to var
+const q10CorrectMsg = document.querySelector("#q10CorrectMsg"); // get correct message alert and set to var
+const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg"); // get incorrect message alert & set to var
 
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
 // get qz11 div and set it to qz11Div
@@ -311,7 +433,6 @@ const scoresTableBody = document.querySelector("#scoresTableBody");
 const scoresRetakeBtn = document.querySelector("#retake2Btn");
 // get the clear scores button and set it to clearScoresBtn
 const clearScoresBtn = document.querySelector("#clearScoresBtn");
-
 
 //! Event Listeners //
 // Adds an event listener to check run the startingPoint function on window load.
@@ -354,8 +475,9 @@ clearScoresBtn.addEventListener("click", clearScores);
 
 
 //! -- FUNCTIONS -- //
-//------------------------------------------------------------------------------------------------------------------//
-// startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others, and sets the timer to 0.
+//----------------------------//
+// startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others, 
+// and sets the timer to 0.
 function startingPoint() {
     // if the quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
     if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { }
@@ -388,8 +510,9 @@ function startingPoint() {
     // ...and display the 0-set timer in the time remaining div.
     spanTime.textContent = Math.floor(secondsLeft);
 }
-//------------------------------------------------------------------------------------------------------------------//
-// highScores() checks if quiz is in process or submission isn't complete, & throws an alert. Else, show score board.
+//------------------------------------------------------------//
+// highScores() checks if quiz is in process or submission isn't complete, 
+// & throws an alert. Else, show score board.
 function highScores() {
     // if the quiz has started and any question is currently displayed...
     if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) {
@@ -407,7 +530,7 @@ function highScores() {
         scoresDiv.classList.remove("hidden");
     }
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------//
 // scoreTimer() does the following:
 // starts a timer that counts down from a set number of seconds
 // if an answer is wrong, the time decrements by 10 seconds and then continues counting down.
@@ -441,7 +564,7 @@ function scoreTimer() {
         // interval timer loops every 1000 milliseconds aka every second    
     }, 1000);
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------------------//
 // startQuiz() does the following:
 // --- 1. Toggles visibility of the quiz start (qz0Div) and the hidden question #1 div (qz1Div), simulating a navigation effect
 // --- 2. kicks of timer event
@@ -502,7 +625,7 @@ function scoreQuizAnswers() {
     console.log("placeholder");
 }
 
-//------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------//
 // nextQz1Qz2() does the following:
 // --- 1. Toggles visibility of question #1 (qz1Div) and the hidden question #2 (qz2Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -513,7 +636,7 @@ function nextQz1Qz2() {
     qz1Div.classList.add("hidden");
     qz2Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------//
 // nextQz2Qz3() does the following:
 // --- 1. Toggles visibility of question #2 (qz2Div) and the hidden question #3 (qz3Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -524,7 +647,7 @@ function nextQz2Qz3() {
     qz2Div.classList.add("hidden");
     qz3Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------------------//
 // nextQz3Qz4() does the following:
 // --- 1. Toggles visibility of question #3 (qz3Div) and the hidden question #4 (qz4Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -535,7 +658,7 @@ function nextQz3Qz4() {
     qz3Div.classList.add("hidden");
     qz4Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------//
 // nextQz4Qz5() does the following:
 // --- 1. Toggles visibility of question #4 (qz4Div) and the hidden question #5 (qz5Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -546,7 +669,7 @@ function nextQz4Qz5() {
     qz4Div.classList.add("hidden");
     qz5Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------------------//
 // nextQz5Qz6() does the following:
 // --- 1. Toggles visibility of question #5 (qz5Div) and the hidden question #6 (qz6Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -557,7 +680,7 @@ function nextQz5Qz6() {
     qz5Div.classList.add("hidden");
     qz6Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------//
 // nextQz6Qz7() does the following:
 // --- 1. Toggles visibility of question #6 (qz6Div) and the hidden question #7 (qz7Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -568,7 +691,7 @@ function nextQz6Qz7() {
     qz6Div.classList.add("hidden");
     qz7Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------//
 // nextQz7Qz8() does the following:
 // --- 1. Toggles visibility of question #7 (qz7Div) and the hidden question #8 (qz8Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -579,7 +702,7 @@ function nextQz7Qz8() {
     qz7Div.classList.add("hidden");
     qz8Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------//
 // nextQz8Qz9() does the following:
 // --- 1. Toggles visibility of question #8 (qz8Div) and the hidden question #9 (qz9Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -590,7 +713,7 @@ function nextQz8Qz9() {
     qz8Div.classList.add("hidden");
     qz9Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------//
 // nextQz9Qz10() does the following:
 // --- 1. Toggles visibility of question #9 (qz9Div) and the hidden question #2 (qz10Div), simulating navigation effect
 // --- 2. Disables the Next button until an answer is selected
@@ -601,7 +724,7 @@ function nextQz9Qz10() {
     qz9Div.classList.add("hidden");
     qz10Div.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------//
 // scoreTally() does the following:
 // --- 1. Toggles visibility of question #10 (qz10Div) and the hidden score tally div (qz11Div), simulating navigation effect
 // --- 2. Calculates the score based on answers correct (from the scores array) and the time
@@ -611,7 +734,7 @@ function scoreTally() {
     qz11Div.classList.remove("hidden");
     scoreTitle.textContent = "You have completed this quiz.";
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------//
 // scoreBoard() does the following:
 // --- 1. Toggles visibility of the score tally div (qz11Div) and the hidden scoreboard div (scoresDiv), simulating navigation effect
 // --- 2. writes to the scoreboard table the initials input, the time, the calculated score, questions correct
@@ -620,7 +743,7 @@ function scoreBoard() {
     qz11Div.classList.add("hidden");
     scoresDiv.classList.remove("hidden");
 }
-//------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------//
 // clearScores() does the following:
 // --- 1. clears the score array if not already clear
 // --- 2. clears the scoreboard table
@@ -628,7 +751,7 @@ function clearScores() {
     // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
     console.log("clearScoresBtn button was clicked")
 }
-//------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------//
 
 
 // --- REMAINING DIVS NEEDED AND HIDDEN CLASS APPLICATION
