@@ -134,6 +134,9 @@ q1Dvalue.value = arrQZ1.qz1D.correct; // set the value of the input to the value
 const nxt1Btn = document.querySelector("#nxt1Btn"); // get "Next" button and set to var
 const q1CorrectMsg = document.querySelector("#q1CorrectMsg"); // get correct message alert and set to var
 const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q1Answers = document.forms.fq1.elements.question1; // set radio elements w/ name of question1 to q1Answers
+// console.log(q1Answers);
 
 //! -- QZ2 ELEMENTS -- //
 const qz2Div = document.querySelector("#qz2"); // set a var to <div> with corresponding qz#Div
@@ -164,6 +167,9 @@ q2Dvalue.value = arrQZ2.qz2D.correct; // set the value of the input to the value
 const nxt2Btn = document.querySelector("#nxt2Btn"); // get "Next" button and set to var
 const q2CorrectMsg = document.querySelector("#q2CorrectMsg"); // get correct message alert and set to var
 const q2IncorrectMsg = document.querySelector("#q2IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q2Answers = document.forms.fq2.elements.question2; // set radio elements w/ name of question2 to q2Answers
+// console.log(q2Answers);
 
 //! -- QZ3 ELEMENTS -- //
 const qz3Div = document.querySelector("#qz3"); // set a var to <div> with corresponding qz#Div
@@ -194,7 +200,9 @@ q3Dvalue.value = arrQZ3.qz3D.correct; // set the value of the input to the value
 const nxt3Btn = document.querySelector("#nxt3Btn"); // get "Next" button and set to var
 const q3CorrectMsg = document.querySelector("#q3CorrectMsg"); // get correct message alert and set to var
 const q3IncorrectMsg = document.querySelector("#q3IncorrectMsg"); // get incorrect message alert & set to var
-
+// -- ANSWER RESPONSES -- //
+const q3Answers = document.forms.fq3.elements.question3; // set radio elements w/ name of question3 to q3Answers
+// console.log(q3Answers);
 
 //! -- QZ4 ELEMENTS -- //
 const qz4Div = document.querySelector("#qz4"); // set a var to <div> with corresponding qz#Div
@@ -225,6 +233,9 @@ q4Dvalue.value = arrQZ4.qz4D.correct; // set the value of the input to the value
 const nxt4Btn = document.querySelector("#nxt4Btn"); // get "Next" button and set to var
 const q4CorrectMsg = document.querySelector("#q4CorrectMsg"); // get correct message alert and set to var
 const q4IncorrectMsg = document.querySelector("#q4IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q4Answers = document.forms.fq4.elements.question4; // set radio elements w/ name of question4 to q4Answers
+// console.log(q4Answers);
 
 //! -- QZ5 ELEMENTS -- //
 const qz5Div = document.querySelector("#qz5"); // set a var to <div> with corresponding qz#Div
@@ -255,6 +266,9 @@ q5Dvalue.value = arrQZ5.qz5D.correct; // set the value of the input to the value
 const nxt5Btn = document.querySelector("#nxt5Btn"); // get "Next" button and set to var
 const q5CorrectMsg = document.querySelector("#q5CorrectMsg"); // get correct message alert and set to var
 const q5IncorrectMsg = document.querySelector("#q5IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q5Answers = document.forms.fq5.elements.question5; // set radio elements w/ name of question5 to q5Answers
+// console.log(q5Answers);
 
 //! -- QZ6 ELEMENTS -- //
 const qz6Div = document.querySelector("#qz6"); // set a var to <div> with corresponding qz#Div
@@ -285,6 +299,9 @@ q6Dvalue.value = arrQZ6.qz6D.correct; // set the value of the input to the value
 const nxt6Btn = document.querySelector("#nxt6Btn"); // get "Next" button and set to var
 const q6CorrectMsg = document.querySelector("#q6CorrectMsg"); // get correct message alert and set to var
 const q6IncorrectMsg = document.querySelector("#q6IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q6Answers = document.forms.fq6.elements.question6; // set radio elements w/ name of question6 to q6Answers
+// console.log(q6Answers);
 
 //! -- QZ7 ELEMENTS -- //
 const qz7Div = document.querySelector("#qz7"); // set a var to <div> with corresponding qz#Div\
@@ -315,6 +332,9 @@ q7Dvalue.value = arrQZ7.qz7D.correct; // set the value of the input to the value
 const nxt7Btn = document.querySelector("#nxt7Btn"); // get "Next" button and set to var
 const q7CorrectMsg = document.querySelector("#q7CorrectMsg"); // get correct message alert and set to var
 const q7IncorrectMsg = document.querySelector("#q7IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q7Answers = document.forms.fq7.elements.question7; // set radio elements w/ name of question7 to q7Answers
+// console.log(q7Answers);
 
 //! -- QZ8 ELEMENTS -- //
 const qz8Div = document.querySelector("#qz8"); // set a var to <div> with corresponding qz#Div
@@ -345,6 +365,9 @@ q8Dvalue.value = arrQZ8.qz8D.correct; // set the value of the input to the value
 const nxt8Btn = document.querySelector("#nxt8Btn"); // get "Next" button and set to var
 const q8CorrectMsg = document.querySelector("#q8CorrectMsg"); // get correct message alert and set to var
 const q8IncorrectMsg = document.querySelector("#q8IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q8Answers = document.forms.fq8.elements.question8; // set radio elements w/ name of question8 to q8Answers
+// console.log(q8Answers);
 
 //! -- QZ9 ELEMENTS -- //
 const qz9Div = document.querySelector("#qz9"); // set a var to <div> with corresponding qz#Div
@@ -375,6 +398,9 @@ q9Dvalue.value = arrQZ9.qz9D.correct; // set the value of the input to the value
 const nxt9Btn = document.querySelector("#nxt9Btn"); // get "Next" button and set to var
 const q9CorrectMsg = document.querySelector("#q9CorrectMsg"); // get correct message alert and set to var
 const q9IncorrectMsg = document.querySelector("#q9IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q9Answers = document.forms.fq9.elements.question9; // set radio elements w/ name of question9 to q9Answers
+// console.log(q9Answers);
 
 //! -- QZ10 ELEMENTS -- //
 const qz10Div = document.querySelector("#qz10"); // set a var to <div> with corresponding qz#Div
@@ -405,6 +431,9 @@ q10Dvalue.value = arrQZ10.qz10D.correct; // set the value of the input to the va
 const nxt10Btn = document.querySelector("#nxt10Btn"); // get "Next" button and set to var
 const q10CorrectMsg = document.querySelector("#q10CorrectMsg"); // get correct message alert and set to var
 const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg"); // get incorrect message alert & set to var
+// -- ANSWER RESPONSES -- //
+const q10Answers = document.forms.fq10.elements.question10; // set radio elements w/ name of question10 to q10Answers
+// console.log(q10Answers);
 
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
 // get qz11 div and set it to qz11Div
@@ -480,31 +509,31 @@ clearScoresBtn.addEventListener("click", clearScores);
 // and sets the timer to 0.
 function startingPoint() {
     // if the quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
-    if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { }
+    if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { return; }
     // if the 1st question (qz1Div) is hidden, do nothing. Else, hide it.
-    if (qz1Div.classList.contains("hidden")) { } else { qz1Div.classList.add("hidden"); }
+    if (qz1Div.classList.contains("hidden")) { return; } else { qz1Div.classList.add("hidden"); }
     // if the 2nd question (qz2Div) is hidden, do nothing. Else, hide it.
-    if (qz2Div.classList.contains("hidden")) { } else { qz2Div.classList.add("hidden"); }
+    if (qz2Div.classList.contains("hidden")) { return; } else { qz2Div.classList.add("hidden"); }
     // if the 3rd question (qz3Div) is hidden, do nothing. Else, hide it.
-    if (qz3Div.classList.contains("hidden")) { } else { qz3Div.classList.add("hidden"); }
+    if (qz3Div.classList.contains("hidden")) { return; } else { qz3Div.classList.add("hidden"); }
     // if the 4th question (qz4Div) is hidden, do nothing. Else, hide it.
-    if (qz4Div.classList.contains("hidden")) { } else { qz4Div.classList.add("hidden"); }
+    if (qz4Div.classList.contains("hidden")) { return; } else { qz4Div.classList.add("hidden"); }
     // if the 5th question (qz5Div) is hidden, do nothing. Else, hide it.
-    if (qz5Div.classList.contains("hidden")) { } else { qz5Div.classList.add("hidden"); }
+    if (qz5Div.classList.contains("hidden")) { return; } else { qz5Div.classList.add("hidden"); }
     // if the 6th question (qz6Div) is hidden, do nothing. Else, hide it.
-    if (qz6Div.classList.contains("hidden")) { } else { qz6Div.classList.add("hidden"); }
+    if (qz6Div.classList.contains("hidden")) { return; } else { qz6Div.classList.add("hidden"); }
     // if the 7th question (qz7Div) is hidden, do nothing. Else, hide it.
-    if (qz7Div.classList.contains("hidden")) { } else { qz7Div.classList.add("hidden"); }
+    if (qz7Div.classList.contains("hidden")) { return; } else { qz7Div.classList.add("hidden"); }
     // if the 8th question (qz8Div) is hidden, do nothing. Else, hide it.
-    if (qz8Div.classList.contains("hidden")) { } else { qz8Div.classList.add("hidden"); }
+    if (qz8Div.classList.contains("hidden")) { return; } else { qz8Div.classList.add("hidden"); }
     // if the 9th question (qz9Div) is hidden, do nothing. Else, hide it.
-    if (qz9Div.classList.contains("hidden")) { } else { qz9Div.classList.add("hidden"); }
+    if (qz9Div.classList.contains("hidden")) { return; } else { qz9Div.classList.add("hidden"); }
     // if the 10th question (qz10Div) is hidden, do nothing. Else, hide it.
-    if (qz10Div.classList.contains("hidden")) { } else { qz10Div.classList.add("hidden"); }
+    if (qz10Div.classList.contains("hidden")) { return; } else { qz10Div.classList.add("hidden"); }
     // if the score tally (qz11Div) is hidden, do nithing. Else, hide it.
-    if (qz11Div.classList.contains("hidden")) { } else { qz11Div.classList.add("hidden"); }
+    if (qz11Div.classList.contains("hidden")) { return; } else { qz11Div.classList.add("hidden"); }
     // if the scoreboard (scoresDiv) is hidden, do nothing.  Else, hide it.
-    if (scoresDiv.classList.contains("hidden")) { } else { scoresDiv.classList.add("hidden"); }
+    if (scoresDiv.classList.contains("hidden")) { return; } else { scoresDiv.classList.add("hidden"); }
     // set the time to 0
     var secondsLeft = 0;
     // ...and display the 0-set timer in the time remaining div.
@@ -553,7 +582,7 @@ function scoreTimer() {
         if (!qz0Div.classList.contains("hidden") || !qz11Div.classList.contains("hidden") || !scoresDiv.classList.contains("hidden")) { 
             clearInterval(timerInterval); // stop the timer
         // else, if questions are currently being answered/quiz is in progress, AND if the seconds run out...
-        } else if(secondsLeft === 0) {
+        } else if (secondsLeft === 0) {
           clearInterval(timerInterval); // stop the time
           alert("Time's up!"); // alert the user that time is up
           startingPoint(); // reset the time and div visibilities to the starting point...
@@ -583,7 +612,7 @@ function startQuiz() {
 function getQ1Answers() {
     // get Q1's Answers and Validate
     console.log("placeholder");
-    
+
 }
 function getQ2Answers() {
     // get Q2's Answers and Validate
@@ -634,6 +663,7 @@ function scoreQuizAnswers() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#2)
 function nextQz1Qz2() {
+    event.preventDefault();
     qz1Div.classList.add("hidden");
     qz2Div.classList.remove("hidden");
 }
@@ -750,7 +780,7 @@ function scoreBoard() {
 // --- 2. clears the scoreboard table
 function clearScores() {
     // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
-    console.log("clearScoresBtn button was clicked")
+    console.log("clearScoresBtn button was clicked");
 }
 //----------------------------------------------------//
 
