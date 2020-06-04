@@ -11,6 +11,10 @@ const goToScoresBtn = document.querySelector("#goToScores");
 //! -- TIME REMAINING TICKER -- //
 // Get time remaining span and set to spanTimeRem
 const spanTime = document.querySelector("#timer");
+//! -- TIME PENALTY VARIABLE -- //
+// sets an empty timePenalty var that will be assigned a penalty value when answer is incorrect
+let timePenalty = "";
+
 
 //! QUIZ QUESTION ARRAYS
 // Question #1 Array
@@ -599,6 +603,7 @@ function highScores() {
 // if an answer is wrong, the time decrements by 10 seconds and then continues counting down.
 // once the timer reaches zero an alert/confirm is thrown indicating to the user that time is up
 // then the user is "directed" to the score Tally page/div (visibility is toggled to hide current slide and display score tally div)
+
 function scoreTimer() {
     // display the initial time state on-screen as 60
     spanTime.textContent = Math.floor(secondsLeft);
@@ -606,8 +611,10 @@ function scoreTimer() {
     console.log("scoreTime() has kicked off");
     // create a setInterval loop to a var called timerInterval
     var timerInterval = setInterval(function() {
-        // on each cycle of the loop, decrement the secondsLeft var by 1
-        secondsLeft--;
+        // on each cycle of the loop, decrement the secondsLeft var by 1 and subtract any answer penalty;
+        secondsLeft = secondsLeft - timePenalty - 1;
+        // Reset timePenalty so it's only applied 1x and is read for the next possible wrong answer 
+        timePenalty = ""
         // display the time state on screen to the current decremented seconds
         spanTime.textContent = Math.floor(secondsLeft);
         // the screen is NOT a question
@@ -647,7 +654,7 @@ function getQ1Answers() {
     q1FinalAnswer = q1Answers.value;
     console.log(q1FinalAnswer);
     if(q1FinalAnswer == "false") {
-        secondsLeft - 10;
+        timePenalty = 10;
     }
 }
 function getQ2Answers() {
@@ -655,54 +662,81 @@ function getQ2Answers() {
     console.log(q2Answers);
     q2FinalAnswer = q2Answers.value;
     console.log(q2FinalAnswer);
+    if(q2FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ3Answers() {
     // get Q3's Answers and Validate
     console.log(q3Answers);
     q3FinalAnswer = q3Answers.value;
     console.log(q3FinalAnswer);
+    if(q3FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ4Answers() {
     // get Q4's Answers and Validate
     console.log(q4Answers);
     q4FinalAnswer = q4Answers.value;
     console.log(q4FinalAnswer);
+    if(q4FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ5Answers() {
     // get Q5's Answers and Validate
     console.log(q5Answers);
     q5FinalAnswer = q5Answers.value;
     console.log(q5FinalAnswer);
+    if(q5FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ6Answers() {
     // get Q6's Answers and Validate
     console.log(q6Answers);
     q6FinalAnswer = q6Answers.value;
     console.log(q6FinalAnswer);
+    if(q6FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ7Answers() {
     // get Q7's Answers and Validate
     console.log(q7Answers);
     q7FinalAnswer = q7Answers.value;
     console.log(q7FinalAnswer);
+    if(q7FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ8Answers() {
     // get Q8's Answers and Validate
     console.log(q8Answers);
     q8FinalAnswer = q8Answers.value;
     console.log(q8FinalAnswer);
+    if(q8FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ9Answers() {
     // get Q9's Answers and Validate
     console.log(q9Answers);
     q9FinalAnswer = q9Answers.value;
     console.log(q9FinalAnswer);
+    if(q9FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function getQ10Answers() {
     // get Q10's Answers and Validate
     console.log(q10Answers);
     q10FinalAnswer = q10Answers.value;
     console.log(q10FinalAnswer);
+    if(q10FinalAnswer == "false") {
+        timePenalty = 10;
+    }
 }
 function scoreQuizAnswers() {
     // score quiz answers array
