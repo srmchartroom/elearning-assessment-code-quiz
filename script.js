@@ -101,6 +101,8 @@ let arrScore = {};
 const qz0Div = document.querySelector("#qz0");
 // get Start Quiz Button and set it to startBtn 
 const startBtn = document.querySelector("#startBtn");
+// set secondsLeft var to 60
+let secondsLeft = 120;
 
 //! -- QZ1 ELEMENTS -- //
 const qz1Div = document.querySelector("#qz1"); // set a var to <div> with corresponding qz#Div
@@ -136,7 +138,7 @@ const q1CorrectMsg = document.querySelector("#q1CorrectMsg"); // get correct mes
 const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q1Answers = document.forms.fq1.elements.question1; // set radio elements w/ name of question1 to q1Answers
-// console.log(q1Answers);
+let q1FinalAnswer = ""; // placeholder for final answer after submit
 
 //! -- QZ2 ELEMENTS -- //
 const qz2Div = document.querySelector("#qz2"); // set a var to <div> with corresponding qz#Div
@@ -169,7 +171,7 @@ const q2CorrectMsg = document.querySelector("#q2CorrectMsg"); // get correct mes
 const q2IncorrectMsg = document.querySelector("#q2IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q2Answers = document.forms.fq2.elements.question2; // set radio elements w/ name of question2 to q2Answers
-// console.log(q2Answers);
+let q2FinalAnswer = ""; // placeholder for final answer after submit
 
 //! -- QZ3 ELEMENTS -- //
 const qz3Div = document.querySelector("#qz3"); // set a var to <div> with corresponding qz#Div
@@ -202,7 +204,7 @@ const q3CorrectMsg = document.querySelector("#q3CorrectMsg"); // get correct mes
 const q3IncorrectMsg = document.querySelector("#q3IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q3Answers = document.forms.fq3.elements.question3; // set radio elements w/ name of question3 to q3Answers
-// console.log(q3Answers);
+let q3FinalAnswer = ""; // placeholder for final answer after submit
 
 //! -- QZ4 ELEMENTS -- //
 const qz4Div = document.querySelector("#qz4"); // set a var to <div> with corresponding qz#Div
@@ -235,7 +237,7 @@ const q4CorrectMsg = document.querySelector("#q4CorrectMsg"); // get correct mes
 const q4IncorrectMsg = document.querySelector("#q4IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q4Answers = document.forms.fq4.elements.question4; // set radio elements w/ name of question4 to q4Answers
-// console.log(q4Answers);
+let q4FinalAnswer = ""; // placeholder for final answer after submit
 
 //! -- QZ5 ELEMENTS -- //
 const qz5Div = document.querySelector("#qz5"); // set a var to <div> with corresponding qz#Div
@@ -268,7 +270,8 @@ const q5CorrectMsg = document.querySelector("#q5CorrectMsg"); // get correct mes
 const q5IncorrectMsg = document.querySelector("#q5IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q5Answers = document.forms.fq5.elements.question5; // set radio elements w/ name of question5 to q5Answers
-// console.log(q5Answers);
+let q5FinalAnswer = ""; // placeholder for final answer after submit
+
 
 //! -- QZ6 ELEMENTS -- //
 const qz6Div = document.querySelector("#qz6"); // set a var to <div> with corresponding qz#Div
@@ -301,7 +304,8 @@ const q6CorrectMsg = document.querySelector("#q6CorrectMsg"); // get correct mes
 const q6IncorrectMsg = document.querySelector("#q6IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q6Answers = document.forms.fq6.elements.question6; // set radio elements w/ name of question6 to q6Answers
-// console.log(q6Answers);
+let q6FinalAnswer = ""; // placeholder for final answer after submit
+
 
 //! -- QZ7 ELEMENTS -- //
 const qz7Div = document.querySelector("#qz7"); // set a var to <div> with corresponding qz#Div\
@@ -334,7 +338,8 @@ const q7CorrectMsg = document.querySelector("#q7CorrectMsg"); // get correct mes
 const q7IncorrectMsg = document.querySelector("#q7IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q7Answers = document.forms.fq7.elements.question7; // set radio elements w/ name of question7 to q7Answers
-// console.log(q7Answers);
+let q7FinalAnswer = ""; // placeholder for final answer after submit
+
 
 //! -- QZ8 ELEMENTS -- //
 const qz8Div = document.querySelector("#qz8"); // set a var to <div> with corresponding qz#Div
@@ -367,7 +372,8 @@ const q8CorrectMsg = document.querySelector("#q8CorrectMsg"); // get correct mes
 const q8IncorrectMsg = document.querySelector("#q8IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q8Answers = document.forms.fq8.elements.question8; // set radio elements w/ name of question8 to q8Answers
-// console.log(q8Answers);
+let q8FinalAnswer = ""; // placeholder for final answer after submit
+
 
 //! -- QZ9 ELEMENTS -- //
 const qz9Div = document.querySelector("#qz9"); // set a var to <div> with corresponding qz#Div
@@ -400,7 +406,8 @@ const q9CorrectMsg = document.querySelector("#q9CorrectMsg"); // get correct mes
 const q9IncorrectMsg = document.querySelector("#q9IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q9Answers = document.forms.fq9.elements.question9; // set radio elements w/ name of question9 to q9Answers
-// console.log(q9Answers);
+let q9FinalAnswer = ""; // placeholder for final answer after submit
+
 
 //! -- QZ10 ELEMENTS -- //
 const qz10Div = document.querySelector("#qz10"); // set a var to <div> with corresponding qz#Div
@@ -433,7 +440,8 @@ const q10CorrectMsg = document.querySelector("#q10CorrectMsg"); // get correct m
 const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg"); // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q10Answers = document.forms.fq10.elements.question10; // set radio elements w/ name of question10 to q10Answers
-// console.log(q10Answers);
+let q10FinalAnswer = ""; // placeholder for final answer after submit
+
 
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
 // get qz11 div and set it to qz11Div
@@ -566,8 +574,6 @@ function highScores() {
 // once the timer reaches zero an alert/confirm is thrown indicating to the user that time is up
 // then the user is "directed" to the score Tally page/div (visibility is toggled to hide current slide and display score tally div)
 function scoreTimer() {
-    // set secondsLeft var to 60
-    var secondsLeft = 60;
     // display the initial time state on-screen as 60
     spanTime.textContent = Math.floor(secondsLeft);
     console.log("--------------------");
@@ -611,44 +617,63 @@ function startQuiz() {
 
 function getQ1Answers() {
     // get Q1's Answers and Validate
-    console.log("placeholder");
-
+    console.log(q1Answers);
+    q1FinalAnswer = q1Answers.value;
+    console.log(q1FinalAnswer);
 }
 function getQ2Answers() {
     // get Q2's Answers and Validate
-    console.log("placeholder");
+    console.log(q2Answers);
+    q2FinalAnswer = q2Answers.value;
+    console.log(q2FinalAnswer);
 }
 function getQ3Answers() {
     // get Q3's Answers and Validate
-    console.log("placeholder");
+    console.log(q3Answers);
+    q3FinalAnswer = q3Answers.value;
+    console.log(q3FinalAnswer);
 }
 function getQ4Answers() {
     // get Q4's Answers and Validate
-    console.log("placeholder");
+    console.log(q4Answers);
+    q4FinalAnswer = q4Answers.value;
+    console.log(q4FinalAnswer);
 }
 function getQ5Answers() {
     // get Q5's Answers and Validate
-    console.log("placeholder");
+    console.log(q5Answers);
+    q5FinalAnswer = q5Answers.value;
+    console.log(q5FinalAnswer);
 }
 function getQ6Answers() {
     // get Q6's Answers and Validate
-    console.log("placeholder");
+    console.log(q6Answers);
+    q6FinalAnswer = q6Answers.value;
+    console.log(q6FinalAnswer);
 }
 function getQ7Answers() {
     // get Q7's Answers and Validate
-    console.log("placeholder");
+    console.log(q7Answers);
+    q7FinalAnswer = q7Answers.value;
+    console.log(q7FinalAnswer);
 }
 function getQ8Answers() {
     // get Q8's Answers and Validate
-    console.log("placeholder");
+    console.log(q8Answers);
+    q8FinalAnswer = q8Answers.value;
+    console.log(q8FinalAnswer);
 }
 function getQ9Answers() {
     // get Q9's Answers and Validate
-    console.log("placeholder");
+    console.log(q9Answers);
+    q9FinalAnswer = q9Answers.value;
+    console.log(q9FinalAnswer);
 }
 function getQ10Answers() {
     // get Q10's Answers and Validate
-    console.log("placeholder");
+    console.log(q10Answers);
+    q10FinalAnswer = q10Answers.value;
+    console.log(q10FinalAnswer);
 }
 function scoreQuizAnswers() {
     // score quiz answers array
@@ -663,7 +688,7 @@ function scoreQuizAnswers() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#2)
 function nextQz1Qz2() {
-    event.preventDefault();
+    getQ1Answers();
     qz1Div.classList.add("hidden");
     qz2Div.classList.remove("hidden");
 }
@@ -675,6 +700,7 @@ function nextQz1Qz2() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#3)
 function nextQz2Qz3() {
+    getQ2Answers();
     qz2Div.classList.add("hidden");
     qz3Div.classList.remove("hidden");
 }
@@ -686,6 +712,7 @@ function nextQz2Qz3() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#4)
 function nextQz3Qz4() {
+    getQ3Answers();
     qz3Div.classList.add("hidden");
     qz4Div.classList.remove("hidden");
 }
@@ -697,6 +724,7 @@ function nextQz3Qz4() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#5)
 function nextQz4Qz5() {
+    getQ4Answers();
     qz4Div.classList.add("hidden");
     qz5Div.classList.remove("hidden");
 }
@@ -708,6 +736,7 @@ function nextQz4Qz5() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#6)
 function nextQz5Qz6() {
+    getQ5Answers();
     qz5Div.classList.add("hidden");
     qz6Div.classList.remove("hidden");
 }
@@ -719,6 +748,7 @@ function nextQz5Qz6() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#7)
 function nextQz6Qz7() {
+    getQ6Answers();
     qz6Div.classList.add("hidden");
     qz7Div.classList.remove("hidden");
 }
@@ -730,6 +760,7 @@ function nextQz6Qz7() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#8)
 function nextQz7Qz8() {
+    getQ7Answers();
     qz7Div.classList.add("hidden");
     qz8Div.classList.remove("hidden");
 }
@@ -741,6 +772,7 @@ function nextQz7Qz8() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#9)
 function nextQz8Qz9() {
+    getQ8Answers();
     qz8Div.classList.add("hidden");
     qz9Div.classList.remove("hidden");
 }
@@ -752,6 +784,7 @@ function nextQz8Qz9() {
 // --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 // --- 5. Proceeds to the next question (#10)
 function nextQz9Qz10() {
+    getQ9Answers();
     qz9Div.classList.add("hidden");
     qz10Div.classList.remove("hidden");
 }
@@ -761,6 +794,7 @@ function nextQz9Qz10() {
 // --- 2. Calculates the score based on answers correct (from the scores array) and the time
 // --- 3. enters the score, time, and answers correct in the appropriate span placeholders for the those values
 function scoreTally() {
+    getQ10Answers();
     qz10Div.classList.add("hidden");
     qz11Div.classList.remove("hidden");
     scoreTitle.textContent = "You have completed this quiz.";
