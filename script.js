@@ -1,20 +1,12 @@
 //! HEADER ELEMENTS
 
 //! -- QUIZ TITLE -- //
-// access the span with id of #quizTitle
-const quizTitle = document.querySelector("#quizTitle");
-// dynamically add quiz title
-quizTitle.textContent = "Javascript Basics - Level I.";
+const quizTitle = document.querySelector("#quizTitle"); // access the span with id of #quizTitle
+quizTitle.textContent = "Javascript Basics - Level I."; // dynamically add quiz title
 //! -- HIGH SCORES LINK -- //
-// Get High Scores Link set to goToScoresBtn
-const goToScoresBtn = document.querySelector("#goToScores");
+const goToScoresBtn = document.querySelector("#goToScores"); // Get High Scores Link set to goToScoresBtn
 //! -- TIME REMAINING TICKER -- //
-// Get time remaining span and set to spanTimeRem
-const spanTime = document.querySelector("#timer");
-//! -- TIME PENALTY VARIABLE -- //
-// sets an empty timePenalty var that will be assigned a penalty value when answer is incorrect
-let timePenalty = "";
-
+const spanTime = document.querySelector("#timer");  // Get time remaining span and set to spanTimeRem
 
 //! QUIZ QUESTION ARRAYS
 // Question #1 Array
@@ -99,14 +91,10 @@ const arrQZ10 = {
 };
 
 //! -- QZ0 ELEMENTS -- //
-// create an empty array to hold the scoring per question
-let arrScore = {};
 // get qz0 div and set it to qz0Div
 const qz0Div = document.querySelector("#qz0");
 // get Start Quiz Button and set it to startBtn 
 const startBtn = document.querySelector("#startBtn");
-// set secondsLeft var to 60
-let secondsLeft = 120;
 
 //! -- QZ1 ELEMENTS -- //
 const qz1Div = document.querySelector("#qz1"); // set a var to <div> with corresponding qz#Div
@@ -276,7 +264,6 @@ const q5IncorrectMsg = document.querySelector("#q5IncorrectMsg"); // get incorre
 const q5Answers = document.forms.fq5.elements.question5; // set radio elements w/ name of question5 to q5Answers
 let q5FinalAnswer = ""; // placeholder for final answer after submit
 
-
 //! -- QZ6 ELEMENTS -- //
 const qz6Div = document.querySelector("#qz6"); // set a var to <div> with corresponding qz#Div
 const question6 = document.querySelector("#question6"); // set var to the <p> with question's #id
@@ -309,7 +296,6 @@ const q6IncorrectMsg = document.querySelector("#q6IncorrectMsg"); // get incorre
 // -- ANSWER RESPONSES -- //
 const q6Answers = document.forms.fq6.elements.question6; // set radio elements w/ name of question6 to q6Answers
 let q6FinalAnswer = ""; // placeholder for final answer after submit
-
 
 //! -- QZ7 ELEMENTS -- //
 const qz7Div = document.querySelector("#qz7"); // set a var to <div> with corresponding qz#Div\
@@ -378,7 +364,6 @@ const q8IncorrectMsg = document.querySelector("#q8IncorrectMsg"); // get incorre
 const q8Answers = document.forms.fq8.elements.question8; // set radio elements w/ name of question8 to q8Answers
 let q8FinalAnswer = ""; // placeholder for final answer after submit
 
-
 //! -- QZ9 ELEMENTS -- //
 const qz9Div = document.querySelector("#qz9"); // set a var to <div> with corresponding qz#Div
 const question9 = document.querySelector("#question9"); // set var to the <p> with question's #id
@@ -411,7 +396,6 @@ const q9IncorrectMsg = document.querySelector("#q9IncorrectMsg"); // get incorre
 // -- ANSWER RESPONSES -- //
 const q9Answers = document.forms.fq9.elements.question9; // set radio elements w/ name of question9 to q9Answers
 let q9FinalAnswer = ""; // placeholder for final answer after submit
-
 
 //! -- QZ10 ELEMENTS -- //
 const qz10Div = document.querySelector("#qz10"); // set a var to <div> with corresponding qz#Div
@@ -446,7 +430,6 @@ const q10IncorrectMsg = document.querySelector("#q10IncorrectMsg"); // get incor
 const q10Answers = document.forms.fq10.elements.question10; // set radio elements w/ name of question10 to q10Answers
 let q10FinalAnswer = ""; // placeholder for final answer after submit
 
-
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
 // get qz11 div and set it to qz11Div
 const qz11Div = document.querySelector("#qz11");
@@ -475,6 +458,16 @@ const scoresRetakeBtn = document.querySelector("#retake2Btn");
 // get the clear scores button and set it to clearScoresBtn
 const clearScoresBtn = document.querySelector("#clearScoresBtn");
 
+//! -- OTHER GLOBAL VARIABLES -- //
+// sets the secondsLeft var to the initial quiz time for counting down
+let secondsLeft = 60;
+// Create empty timePenalty var to hold time penalty values when answer is incorrect
+let timePenalty = ""; 
+// create an empty array to hold the scoring per question
+let arrScore = {};
+// Create a finalTimeRemaining variable to hold the time left on the clock when quiz is finished
+let finalTimeRemaining = "";
+
 //! Event Listeners //
 // Adds an event listener to check run the startingPoint function on window load.
 window.addEventListener("load", startingPoint);
@@ -484,67 +477,39 @@ goToScoresBtn.addEventListener("click", highScores);
 startBtn.addEventListener("click", startQuiz);
 // Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
 nxt1Btn.addEventListener("click", nextQz1Qz2);
-
-
 // Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
 nxt2Btn.addEventListener("click", nextQz2Qz3);
-
-
 // Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
 nxt3Btn.addEventListener("click", nextQz3Qz4);
-
-
 // Add event listener to nxt4Btn button to run nextQz4Qz5() onClick
 nxt4Btn.addEventListener("click", nextQz4Qz5);
-
-
 // Add event listener to nxt5Btn button to run nextQz5Qz6() onClick
 nxt5Btn.addEventListener("click", nextQz5Qz6);
-
-
 // Add event listener to nxt6Btn button to run nextQz6Qz7() onClick
 nxt6Btn.addEventListener("click", nextQz6Qz7);
-
-
 // Add event listener to nxt7Btn button to run nextQz7Qz8() onClick
 nxt7Btn.addEventListener("click", nextQz7Qz8);
-
-
 // Add event listener to nxt8Btn button to run nextQz8Qz9() onClick
 nxt8Btn.addEventListener("click", nextQz8Qz9);
-
-
 // Add event listener to nxt9Btn button to run nextQz9Qz10() onClick
 nxt9Btn.addEventListener("click", nextQz9Qz10);
-
-
 // Add event listener to nxt10Btn button to run scoreTally() onClick
 nxt10Btn.addEventListener("click", scoreTally);
-
-
 // Add event listener to qz11retakeBtn button to run startingPoint() onClick
 qz11retakeBtn.addEventListener("click", startingPoint);
-
-
 // Add event listener to scoreItBtn button to run scoreBoard() onClick
 scoreItBtn.addEventListener("click",scoreBoard);
-
-
 // Add event listener to scoresRetakeBtn button to run startingPoint() onClick
 scoresRetakeBtn.addEventListener("click", startingPoint);
-
-
 // Add event listener to clearScoresBtn button to run clearScores() onClick
 clearScoresBtn.addEventListener("click", clearScores);
 
-//! -- OTHER GLOBAL VARIABLES -- //
-
-
-
 //! -- FUNCTIONS -- //
-//----------------------------//
-// startingPoint() sets a class baseline that shows the beginning of quiz div and hides all others, 
-// and sets the timer to 0.
+
+//! -- STARTING POINT -- //
+// The startingPoint() functionsets a class baseline that shows the beginning of quiz div and hides all  
+// others, sets the timer for initial display purposes, empties the current arrScores array holding the  
+// answers to previous attempts, and empties the timePenalty var. 
 function startingPoint() {
     // if the quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
     if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { return; }
@@ -572,14 +537,20 @@ function startingPoint() {
     if (qz11Div.classList.contains("hidden")) { return; } else { qz11Div.classList.add("hidden"); }
     // if the scoreboard (scoresDiv) is hidden, do nothing.  Else, hide it.
     if (scoresDiv.classList.contains("hidden")) { return; } else { scoresDiv.classList.add("hidden"); }
-    // set the time to 0
-    var secondsLeft = 0;
-    // ...and display the 0-set timer in the time remaining div.
+    // set the timer to 60
+    secondsLeft = 60;
+    // Display the timer value in the time remaining div.
     spanTime.textContent = Math.floor(secondsLeft);
+    // Empty the arrScore array holding answer values
+    arrScore = [""];
+    // Empty timePenalty var if any value is currently held there
+    timePenalty = "";
 }
-//------------------------------------------------------------//
-// highScores() checks if quiz is in process or submission isn't complete, 
-// & throws an alert. Else, show score board.
+
+//! -- HIGH SCORES FUNCTION -- //
+// The highScores() function checks if quiz is in-process or if submission isn't complete, & throws an alert
+// notifying the user that they are mid-quiz or haven't submitted their score yet. Otherwise, it shows the 
+// score board when the user clicks the "High Scores" link in the header area.
 function highScores() {
     // if the quiz has started and any question is currently displayed...
     if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) {
@@ -597,321 +568,244 @@ function highScores() {
         scoresDiv.classList.remove("hidden");
     }
 }
-//-----------------------------------------------------------------//
-// scoreTimer() does the following:
-// starts a timer that counts down from a set number of seconds
-// if an answer is wrong, the time decrements by 10 seconds and then continues counting down.
-// once the timer reaches zero an alert/confirm is thrown indicating to the user that time is up
-// then the user is "directed" to the score Tally page/div (visibility is toggled to hide current slide and display score tally div)
 
+//! -- SCORE TIMER FUNCTION -- //
+//-----------------------------------------------------------------//
+// The scoreTimer() function starts a timer that counts down from a set number of seconds defined in the 
+// "secondsLeft" variable. The countdown is set to an interval of a tick per 1000 milliseconds (or 1 sec.).
+// On each interval loop, the current time penalty is deducted from the current time and then reset to avoid
+// multiple penalties for a single missed question. Once the timer reaches zero, an alert/confirm is thrown 
+// indicating to the user that time is up, at which point the user is "directed" to qz11 - the score tally  
+// page/div, the visibility of which is toggled to hide current the current div viewed and display the score 
+// tally div instead.=.
 function scoreTimer() {
-    // display the initial time state on-screen as 60
-    spanTime.textContent = Math.floor(secondsLeft);
+    spanTime.textContent = Math.floor(secondsLeft); // display the initial time state on-screen as 60
     console.log("--------------------");
     console.log("scoreTime() has kicked off");
-    // create a setInterval loop to a var called timerInterval
-    var timerInterval = setInterval(function() {
-        // on each cycle of the loop, decrement the secondsLeft var by 1 and subtract any answer penalty;
-        secondsLeft = secondsLeft - timePenalty - 1;
-        // Reset timePenalty so it's only applied 1x and is read for the next possible wrong answer 
-        timePenalty = ""
-        // display the time state on screen to the current decremented seconds
-        spanTime.textContent = Math.floor(secondsLeft);
-        // the screen is NOT a question
+    var timerInterval = setInterval(function() { // create a setInterval loop to a var called timerInterval
+        secondsLeft = secondsLeft - timePenalty - 1; // on each interval, decrease secondsLeft by 1 and subtract answer penalty;
+        timePenalty = ""  // Reset timePenalty so only applied once per wrong answer 
+        spanTime.textContent = Math.floor(secondsLeft); // update time readout in the header to the current sec.s remaining
+        // If the current screen/div being viewed is NOT a question (in other words, the user isn't in mid-quiz)
         if (!qz0Div.classList.contains("hidden") || !qz11Div.classList.contains("hidden") || !scoresDiv.classList.contains("hidden")) { 
             clearInterval(timerInterval); // stop the timer
         // else, if questions are currently being answered/quiz is in progress, AND if the seconds run out...
         } else if (secondsLeft === 0) {
-          clearInterval(timerInterval); // stop the time
+          clearInterval(timerInterval); // stop the timer
           alert("Time's up!"); // alert the user that time is up
           startingPoint(); // reset the time and div visibilities to the starting point...
           qz0Div.classList.add("hidden"); // ...then hide the quiz start state...
-          qz11Div.classList.remove("hidden"); // ...and show the tally page...
-          scoreTitle.textContent = "You have run out of time."; // ...and change score tally title to time ran out vs quiz completed
+          qz11Div.classList.remove("hidden"); // ...then show the tally page...
+          scoreTitle.textContent = "You have run out of time."; // ...and then change scoring div title to note time ran out
         } 
-        // interval timer loops every 1000 milliseconds aka every second    
-    }, 1000);
+        finalTimeRemaining = secondsLeft; //  sets the finalTimeRemaining on the clock to however many seconds are left
+    }, 1000); // interval timer loops every 1000 milliseconds aka every second    
 }
-//-------------------------------------------------------//
-// startQuiz() does the following:
-// --- 1. Toggles visibility of the quiz start (qz0Div) and the hidden question #1 div (qz1Div), simulating a navigation effect
-// --- 2. kicks of timer event
+
+//! -- START QUIZ FUNCTION -- //
+// The startQuiz() function toggles visibility of the quiz start (qz0Div) and the hidden question #1 div 
+// (qz1Div), simulating a navigation effect. It kicks of timer event. And it wipes out the arrScore[] answers
+// array so that no previous answers are held in it.
 function startQuiz() {
-    // sets the score array to empty if not already done so
-    arrScore = []
-    // hide the quiz start div
-    qz0Div.classList.add("hidden");
-    // show the 1st question
-    qz1Div.classList.remove("hidden");
-    // kick off the timer
-    scoreTimer();
+    arrScore = [] // sets the score array to empty if not already done so
+    qz0Div.classList.add("hidden"); // hide the quiz start div
+    qz1Div.classList.remove("hidden"); // show the 1st question
+    scoreTimer(); // kick off the timer
 }
 
-
+//! -- GET Q# ANSWERS FUNCTION(S) -- //
+// The getQ#Answers() function (e.g. getQ1Answers, getQ5Answers) is a function set for every question that 
+// sets the value of the radio selection when the function is called (which occurs upon submitting the answer
+// and moving to the next question) to a new "final answer" variable.  The function also checks if the answer
+// is wrong (value of "false"), and if so, will set the time penalty deducation to 10 seconds which will be
+// deducted from the time remaining as soon as the user submits the wrong answer and moves on in the quiz.
 function getQ1Answers() {
-    // get Q1's Answers and Validate
-    console.log(q1Answers);
-    q1FinalAnswer = q1Answers.value;
-    console.log(q1FinalAnswer);
-    if(q1FinalAnswer == "false") {
-        timePenalty = 10;
+    q1FinalAnswer = q1Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 1: " + q1FinalAnswer);
+    if(q1FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10; // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ2Answers() {
-    // get Q2's Answers and Validate
-    console.log(q2Answers);
-    q2FinalAnswer = q2Answers.value;
-    console.log(q2FinalAnswer);
-    if(q2FinalAnswer == "false") {
-        timePenalty = 10;
+    q2FinalAnswer = q2Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 2: " + q2FinalAnswer);
+    if(q2FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ3Answers() {
-    // get Q3's Answers and Validate
-    console.log(q3Answers);
-    q3FinalAnswer = q3Answers.value;
-    console.log(q3FinalAnswer);
-    if(q3FinalAnswer == "false") {
-        timePenalty = 10;
+    q3FinalAnswer = q3Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 3: " + q3FinalAnswer);
+    if(q3FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ4Answers() {
-    // get Q4's Answers and Validate
-    console.log(q4Answers);
-    q4FinalAnswer = q4Answers.value;
-    console.log(q4FinalAnswer);
-    if(q4FinalAnswer == "false") {
-        timePenalty = 10;
+    q4FinalAnswer = q4Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 4: " + q4FinalAnswer);
+    if(q4FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ5Answers() {
-    // get Q5's Answers and Validate
-    console.log(q5Answers);
-    q5FinalAnswer = q5Answers.value;
-    console.log(q5FinalAnswer);
-    if(q5FinalAnswer == "false") {
-        timePenalty = 10;
+    q5FinalAnswer = q5Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 5: " + q5FinalAnswer);
+    if(q5FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ6Answers() {
-    // get Q6's Answers and Validate
-    console.log(q6Answers);
-    q6FinalAnswer = q6Answers.value;
-    console.log(q6FinalAnswer);
-    if(q6FinalAnswer == "false") {
-        timePenalty = 10;
+    q6FinalAnswer = q6Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 6: " + q6FinalAnswer);
+    if(q6FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ7Answers() {
-    // get Q7's Answers and Validate
-    console.log(q7Answers);
-    q7FinalAnswer = q7Answers.value;
-    console.log(q7FinalAnswer);
-    if(q7FinalAnswer == "false") {
-        timePenalty = 10;
+    q7FinalAnswer = q7Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 7: " + q7FinalAnswer);
+    if(q7FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ8Answers() {
-    // get Q8's Answers and Validate
-    console.log(q8Answers);
-    q8FinalAnswer = q8Answers.value;
-    console.log(q8FinalAnswer);
-    if(q8FinalAnswer == "false") {
-        timePenalty = 10;
+    q8FinalAnswer = q8Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 8: " + q8FinalAnswer);
+    if(q8FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ9Answers() {
-    // get Q9's Answers and Validate
-    console.log(q9Answers);
-    q9FinalAnswer = q9Answers.value;
-    console.log(q9FinalAnswer);
-    if(q9FinalAnswer == "false") {
-        timePenalty = 10;
+    q9FinalAnswer = q9Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 9: " + q9FinalAnswer);
+    if(q9FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ10Answers() {
-    // get Q10's Answers and Validate
-    console.log(q10Answers);
-    q10FinalAnswer = q10Answers.value;
-    console.log(q10FinalAnswer);
-    if(q10FinalAnswer == "false") {
-        timePenalty = 10;
+    q10FinalAnswer = q10Answers.value; // Set a final answer variable to hold the final submitted response
+    console.log("Question 10: " + q10FinalAnswer);
+    if(q10FinalAnswer == "false") {  // if the answer is false...
+        timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
+
+
+//! -- SCORE THE QUIZ FUNCTION -- //
+
 function scoreQuizAnswers() {
     // score quiz answers array
     console.log("placeholder");
 }
 
-//----------------------------------------------------------//
-// nextQz1Qz2() does the following:
-// --- 1. Toggles visibility of question #1 (qz1Div) and the hidden question #2 (qz2Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#2)
+
+//! -- NAVIGATION FROM QUESTION-TO-QUESTON FUNCTION(S) -- //
+// This function nextQz(#x)Qz(#y) functions (e.g. nextQz1Qz2, nextQz5Qz6) toggle the visibility of the 
+// the current question (e.g. Question 1 for nextQz1Qz2) and the following question that was hidden (e.g.
+// Question 2 for nextQz1Qz2).  This simulates a navigation effect for this single page PWA as the user 
+// takes the quiz.  The function logs the selected answer as correct or incorrect in the completed score
+// array in the appropriate index position.
+//! It also disables the Next button until an answer is selected.
+//! It toggles the visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
+//! It then hides the submit button and toggles the continue button to allow the user to continue.
+//! And on click proceeds to the next question
 function nextQz1Qz2() {
-    getQ1Answers();
-    arrScore.push(q1FinalAnswer);
-    qz1Div.classList.add("hidden");
-    qz2Div.classList.remove("hidden");
+    getQ1Answers();  // Call the corresponding getQ#Answers function
+    arrScore.push(q1FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz1Div.classList.add("hidden");  // hides the current question
+    qz2Div.classList.remove("hidden");  // and shows the next question
 }
-//----------------------------------------------------------//
-// nextQz2Qz3() does the following:
-// --- 1. Toggles visibility of question #2 (qz2Div) and the hidden question #3 (qz3Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#3)
 function nextQz2Qz3() {
-    getQ2Answers();
-    arrScore.push(q2FinalAnswer);
-    qz2Div.classList.add("hidden");
-    qz3Div.classList.remove("hidden");
+    getQ2Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q2FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz2Div.classList.add("hidden"); // hides the current question
+    qz3Div.classList.remove("hidden"); // and shows the next question
 }
-//-------------------------------------------------------//
-// nextQz3Qz4() does the following:
-// --- 1. Toggles visibility of question #3 (qz3Div) and the hidden question #4 (qz4Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#4)
 function nextQz3Qz4() {
-    getQ3Answers();
-    arrScore.push(q3FinalAnswer);
-    qz3Div.classList.add("hidden");
-    qz4Div.classList.remove("hidden");
+    getQ3Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q3FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz3Div.classList.add("hidden"); // hides the current question
+    qz4Div.classList.remove("hidden"); // and shows the next question
 }
-//------------------------------------------------------//
-// nextQz4Qz5() does the following:
-// --- 1. Toggles visibility of question #4 (qz4Div) and the hidden question #5 (qz5Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#5)
 function nextQz4Qz5() {
-    getQ4Answers();
-    arrScore.push(q4FinalAnswer);
-    qz4Div.classList.add("hidden");
-    qz5Div.classList.remove("hidden");
+    getQ4Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q4FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz4Div.classList.add("hidden"); // hides the current question
+    qz5Div.classList.remove("hidden"); // and shows the next question
 }
-//-------------------------------------------------------//
-// nextQz5Qz6() does the following:
-// --- 1. Toggles visibility of question #5 (qz5Div) and the hidden question #6 (qz6Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#6)
 function nextQz5Qz6() {
-    getQ5Answers();
-    arrScore.push(q5FinalAnswer);
-    qz5Div.classList.add("hidden");
-    qz6Div.classList.remove("hidden");
+    getQ5Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q5FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz5Div.classList.add("hidden"); // hides the current question
+    qz6Div.classList.remove("hidden"); // and shows the next question
 }
-//------------------------------------------------------//
-// nextQz6Qz7() does the following:
-// --- 1. Toggles visibility of question #6 (qz6Div) and the hidden question #7 (qz7Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#7)
 function nextQz6Qz7() {
-    getQ6Answers();
-    arrScore.push(q6FinalAnswer);
-    qz6Div.classList.add("hidden");
-    qz7Div.classList.remove("hidden");
+    getQ6Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q6FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz6Div.classList.add("hidden"); // hides the current question
+    qz7Div.classList.remove("hidden"); // and shows the next question
 }
-//----------------------------------------------------//
-// nextQz7Qz8() does the following:
-// --- 1. Toggles visibility of question #7 (qz7Div) and the hidden question #8 (qz8Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#8)
 function nextQz7Qz8() {
-    getQ7Answers();
-    arrScore.push(q7FinalAnswer);
-    qz7Div.classList.add("hidden");
-    qz8Div.classList.remove("hidden");
+    getQ7Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q7FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz7Div.classList.add("hidden"); // hides the current question
+    qz8Div.classList.remove("hidden"); // and shows the next question
 }
-//-----------------------------------------------------//
-// nextQz8Qz9() does the following:
-// --- 1. Toggles visibility of question #8 (qz8Div) and the hidden question #9 (qz9Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#9)
 function nextQz8Qz9() {
-    getQ8Answers();
-    arrScore.push(q8FinalAnswer);
-    qz8Div.classList.add("hidden");
-    qz9Div.classList.remove("hidden");
+    getQ8Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q8FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz8Div.classList.add("hidden"); // hides the current question
+    qz9Div.classList.remove("hidden"); // and shows the next question
 }
-//----------------------------------------------------//
-// nextQz9Qz10() does the following:
-// --- 1. Toggles visibility of question #9 (qz9Div) and the hidden question #2 (qz10Div), simulating navigation effect
-// --- 2. Disables the Next button until an answer is selected
-// --- 3. Logs the selected answer as correct or incorrect in the completed score array in the appropriate position
-// --- 4. Toggles visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-// --- 5. Proceeds to the next question (#10)
 function nextQz9Qz10() {
-    getQ9Answers();
-    arrScore.push(q9FinalAnswer);
-    qz9Div.classList.add("hidden");
-    qz10Div.classList.remove("hidden");
+    getQ9Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q9FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
+    qz9Div.classList.add("hidden"); // hides the current question
+    qz10Div.classList.remove("hidden"); // and shows the next question
 }
-//----------------------------------------------------//
-// scoreTally() does the following:
-// --- 1. Toggles visibility of question #10 (qz10Div) and the hidden score tally div (qz11Div), simulating navigation effect
-// --- 2. Calculates the score based on answers correct (from the scores array) and the time
-// --- 3. enters the score, time, and answers correct in the appropriate span placeholders for the those values
+
+//! -- FINISH AND SCORE FUNCTION -- //
+// The scoreTally() function simulates the navigation effect of the previous nextQzXQzY functions, hiding Q#10
+// and revealing the score tally div. It also logs the final selected answer from Q#10 as correct/incorrect and
+// stores the final answer in the last index position of the arrScores array which holds all each answer value
+// (whether correct or incorrect) from each question in the quiz. 
+//!  The function determines how many correct answers out of the total questions the user had, and applies a weighted
+//! score based on any time remaining.
+//! It then enters the final weighted score, the # of answers correct, and the final time in the appropriate span
+//! placeholders for those values.
+//! it then sets a these values in local storage as the last quiz results.
 function scoreTally() {
-    getQ10Answers();
-    arrScore.push(q10FinalAnswer);
+    getQ10Answers(); // Call the corresponding getQ#Answers function
+    arrScore.push(q10FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
     console.log(arrScore);
-    qz10Div.classList.add("hidden");
-    qz11Div.classList.remove("hidden");
-    scoreTitle.textContent = "You have completed this quiz.";
+    qz10Div.classList.add("hidden"); // hides the current question (Q#10)
+    qz11Div.classList.remove("hidden"); // and shows the score tally div qz11Div
+    scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
 }
-//-----------------------------------------------------//
-// scoreBoard() does the following:
-// --- 1. Toggles visibility of the score tally div (qz11Div) and the hidden scoreboard div (scoresDiv), simulating navigation effect
-// --- 2. writes to the scoreboard table the initials input, the time, the calculated score, questions correct
-// --- 3. Disables submit score btn until initials are provided
+
+//! -- SUBMIT QUIZ SCORES FUNCTION -- //
+//! The submitScores() function takes the user input of initials, along with the values of time, final weighted 
+//! score and answers correct, and pushes them to an array. It also prevents submission until the initials are filled.
+//! It sorts the array and then returns innerHTML created elements to fill the scoreboard based on saved scores.
+//! It stringifies the complete scores list, and stores the values in local storage for later, session-independent
+//! retrieval.
+function submitScores() {
+    console.log("placeholder");
+}  
+
+
+//! -- SCORE BOARD SET UP FUNCTION -- //
+// The scoreBoard() function toggles the visibility of the score tally div (qz11Div) and the hidden scoreboard
+// div (scoresDiv), simulating a navigation effect for the take.
 function scoreBoard() {
     qz11Div.classList.add("hidden");
     scoresDiv.classList.remove("hidden");
 }
-//-----------------------------------------------------//
-// clearScores() does the following:
-// --- 1. clears the score array if not already clear
-// --- 2. clears the scoreboard table
+
+//! -- CLEAR SCORES FUNCTION -- //
+//! The clearScores() function clears the array of scores, and wipes the local storage holding it - this includes
+//! clearing the scoreboard table.  It then routes the user back to the startpoint().
 function clearScores() {
     // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
     console.log("clearScoresBtn button was clicked");
 }
-//----------------------------------------------------//
-
-
-// --- REMAINING DIVS NEEDED AND HIDDEN CLASS APPLICATION
-// create div to handle the score rankings (possible modal?) => set var to qz12
-// apply hidden attribute to qz1, qz2, qz3, qz4, qz5, qz6, qz7, qz8, qz9, qz10, qz11, qz12
-
-// --- HIGH SCORES BUTTON LINK
-// Link High Scores button to high scores listings model (qz12)
-    // page should include an array of all submitted scores
-    // array should be orders from max to min (e.g. highest to lowest)
-
-// --- START QUIZ EVENTS --
-// on click event event of start quiz button, should also:
-    // set a time interval that runs upon click event of the start quiz button
-        // timer should loop at 1000 miliseconds
-        // at each loop, the time interval should decrement the textvalue of the timer span
-        // on wrong answer, current time -= by 10,000 miliseconds
-    // apply hidden attribute to qz0
-    // remove hidden attribute to qz1
-
-// --- QUIZ ANSWER HANDLING AND QUIZ PROGRESSION
-// create an array to hold quiz responses
-// listen for click even on next button of qz1
-    // 
