@@ -480,30 +480,56 @@ goToScoresBtn.addEventListener("click", highScores);
 startBtn.addEventListener("click", startQuiz);
 // Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
 nxt1Btn.addEventListener("click", nextQz1Qz2);
+
+
 // Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
 nxt2Btn.addEventListener("click", nextQz2Qz3);
+
+
 // Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
 nxt3Btn.addEventListener("click", nextQz3Qz4);
+
+
 // Add event listener to nxt4Btn button to run nextQz4Qz5() onClick
 nxt4Btn.addEventListener("click", nextQz4Qz5);
+
+
 // Add event listener to nxt5Btn button to run nextQz5Qz6() onClick
 nxt5Btn.addEventListener("click", nextQz5Qz6);
+
+
 // Add event listener to nxt6Btn button to run nextQz6Qz7() onClick
 nxt6Btn.addEventListener("click", nextQz6Qz7);
+
+
 // Add event listener to nxt7Btn button to run nextQz7Qz8() onClick
 nxt7Btn.addEventListener("click", nextQz7Qz8);
+
+
 // Add event listener to nxt8Btn button to run nextQz8Qz9() onClick
 nxt8Btn.addEventListener("click", nextQz8Qz9);
+
+
 // Add event listener to nxt9Btn button to run nextQz9Qz10() onClick
 nxt9Btn.addEventListener("click", nextQz9Qz10);
+
+
 // Add event listener to nxt10Btn button to run scoreTally() onClick
 nxt10Btn.addEventListener("click", scoreTally);
+
+
 // Add event listener to qz11retakeBtn button to run startingPoint() onClick
 qz11retakeBtn.addEventListener("click", startingPoint);
+
+
 // Add event listener to scoreItBtn button to run scoreBoard() onClick
 scoreItBtn.addEventListener("click",scoreBoard);
+
+
 // Add event listener to scoresRetakeBtn button to run startingPoint() onClick
 scoresRetakeBtn.addEventListener("click", startingPoint);
+
+
 // Add event listener to clearScoresBtn button to run clearScores() onClick
 clearScoresBtn.addEventListener("click", clearScores);
 
@@ -595,7 +621,7 @@ function scoreTimer() {
           qz0Div.classList.add("hidden"); // ...then hide the quiz start state...
           qz11Div.classList.remove("hidden"); // ...and show the tally page...
           scoreTitle.textContent = "You have run out of time."; // ...and change score tally title to time ran out vs quiz completed
-        }
+        } 
         // interval timer loops every 1000 milliseconds aka every second    
     }, 1000);
 }
@@ -620,6 +646,9 @@ function getQ1Answers() {
     console.log(q1Answers);
     q1FinalAnswer = q1Answers.value;
     console.log(q1FinalAnswer);
+    if(q1FinalAnswer == "false") {
+        secondsLeft - 10;
+    }
 }
 function getQ2Answers() {
     // get Q2's Answers and Validate
@@ -689,6 +718,7 @@ function scoreQuizAnswers() {
 // --- 5. Proceeds to the next question (#2)
 function nextQz1Qz2() {
     getQ1Answers();
+    arrScore.push(q1FinalAnswer);
     qz1Div.classList.add("hidden");
     qz2Div.classList.remove("hidden");
 }
@@ -701,6 +731,7 @@ function nextQz1Qz2() {
 // --- 5. Proceeds to the next question (#3)
 function nextQz2Qz3() {
     getQ2Answers();
+    arrScore.push(q2FinalAnswer);
     qz2Div.classList.add("hidden");
     qz3Div.classList.remove("hidden");
 }
@@ -713,6 +744,7 @@ function nextQz2Qz3() {
 // --- 5. Proceeds to the next question (#4)
 function nextQz3Qz4() {
     getQ3Answers();
+    arrScore.push(q3FinalAnswer);
     qz3Div.classList.add("hidden");
     qz4Div.classList.remove("hidden");
 }
@@ -725,6 +757,7 @@ function nextQz3Qz4() {
 // --- 5. Proceeds to the next question (#5)
 function nextQz4Qz5() {
     getQ4Answers();
+    arrScore.push(q4FinalAnswer);
     qz4Div.classList.add("hidden");
     qz5Div.classList.remove("hidden");
 }
@@ -737,6 +770,7 @@ function nextQz4Qz5() {
 // --- 5. Proceeds to the next question (#6)
 function nextQz5Qz6() {
     getQ5Answers();
+    arrScore.push(q5FinalAnswer);
     qz5Div.classList.add("hidden");
     qz6Div.classList.remove("hidden");
 }
@@ -749,6 +783,7 @@ function nextQz5Qz6() {
 // --- 5. Proceeds to the next question (#7)
 function nextQz6Qz7() {
     getQ6Answers();
+    arrScore.push(q6FinalAnswer);
     qz6Div.classList.add("hidden");
     qz7Div.classList.remove("hidden");
 }
@@ -761,6 +796,7 @@ function nextQz6Qz7() {
 // --- 5. Proceeds to the next question (#8)
 function nextQz7Qz8() {
     getQ7Answers();
+    arrScore.push(q7FinalAnswer);
     qz7Div.classList.add("hidden");
     qz8Div.classList.remove("hidden");
 }
@@ -773,6 +809,7 @@ function nextQz7Qz8() {
 // --- 5. Proceeds to the next question (#9)
 function nextQz8Qz9() {
     getQ8Answers();
+    arrScore.push(q8FinalAnswer);
     qz8Div.classList.add("hidden");
     qz9Div.classList.remove("hidden");
 }
@@ -785,6 +822,7 @@ function nextQz8Qz9() {
 // --- 5. Proceeds to the next question (#10)
 function nextQz9Qz10() {
     getQ9Answers();
+    arrScore.push(q9FinalAnswer);
     qz9Div.classList.add("hidden");
     qz10Div.classList.remove("hidden");
 }
@@ -795,6 +833,8 @@ function nextQz9Qz10() {
 // --- 3. enters the score, time, and answers correct in the appropriate span placeholders for the those values
 function scoreTally() {
     getQ10Answers();
+    arrScore.push(q10FinalAnswer);
+    console.log(arrScore);
     qz10Div.classList.add("hidden");
     qz11Div.classList.remove("hidden");
     scoreTitle.textContent = "You have completed this quiz.";
