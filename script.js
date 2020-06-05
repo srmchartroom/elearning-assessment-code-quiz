@@ -686,79 +686,188 @@ function scoreQuizAnswers() {
 // the current question (e.g. Question 1 for nextQz1Qz2) and the following question that was hidden (e.g.
 // Question 2 for nextQz1Qz2).  This simulates a navigation effect for this single page PWA as the user 
 // takes the quiz.  The function logs the selected answer as correct or incorrect in the completed score
-// array in the appropriate index position.
-//! It also disables the Next button until an answer is selected.
-//! It toggles the visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
-//! It then hides the submit button and toggles the continue button to allow the user to continue.
-//! And on click proceeds to the next question
+// array in the appropriate index position. It also toggles the visibility of the hidden correct-answer / 
+// incorrect-answer feedback for a span of a few seconds. And on click proceeds to the next question.
 
 function nextQz1Qz2() {
     getQ1Answers();  // Call the corresponding getQ#Answers function 
-    arrScore.push(q1FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;
-    if(q1Answers.value == "true") {
-        q1CorrectMsg.classList.remove("hidden");
-    } else {
-        q1IncorrectMsg.classList.remove("hidden");
+    arrScore.push(q1FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q1Answers.value == "true") {    // If the answer selected is correct...
+        q1CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q1IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
     }
-    let timeDelayInterval = setInterval(function() {
-        timeDelay--;
-        if (timeDelay === 0) {
-            clearInterval(timeDelayInterval);
-            q1CorrectMsg.classList.add("hidden"); // hide the correct answer validation message again
-            q1IncorrectMsg.classList.add("hidden"); // hide the wrong answer validation message again
-            qz1Div.classList.add("hidden"); // hides the current question
-            qz2Div.classList.remove("hidden");  // and shows the next question
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q1CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q1IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz1Div.classList.add("hidden");    // ...Hide the current question
+            qz2Div.classList.remove("hidden");    // ...Show the next question
         } 
-    }, 1000);
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz2Qz3() {
-    getQ2Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q2FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz2Div.classList.add("hidden"); // hides the current question
-    qz3Div.classList.remove("hidden"); // and shows the next question
+    getQ2Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q2FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q2Answers.value == "true") {    // If the answer selected is correct...
+        q2CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q2IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q2CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q2IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz2Div.classList.add("hidden");    // ...Hide the current question
+            qz3Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz3Qz4() {
-    getQ3Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q3FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz3Div.classList.add("hidden"); // hides the current question
-    qz4Div.classList.remove("hidden"); // and shows the next question
+    getQ3Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q3FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q3Answers.value == "true") {    // If the answer selected is correct...
+        q3CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q3IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q3CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q3IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz3Div.classList.add("hidden");    // ...Hide the current question
+            qz4Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz4Qz5() {
-    getQ4Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q4FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz4Div.classList.add("hidden"); // hides the current question
-    qz5Div.classList.remove("hidden"); // and shows the next question
+    getQ4Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q4FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q4Answers.value == "true") {    // If the answer selected is correct...
+        q4CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q4IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q4CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q4IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz4Div.classList.add("hidden");    // ...Hide the current question
+            qz5Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz5Qz6() {
-    getQ5Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q5FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz5Div.classList.add("hidden"); // hides the current question
-    qz6Div.classList.remove("hidden"); // and shows the next question
+    getQ5Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q5FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q5Answers.value == "true") {    // If the answer selected is correct...
+        q5CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q5IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q5CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q5IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz5Div.classList.add("hidden");    // ...Hide the current question
+            qz6Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz6Qz7() {
-    getQ6Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q6FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz6Div.classList.add("hidden"); // hides the current question
-    qz7Div.classList.remove("hidden"); // and shows the next question
+    getQ6Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q6FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q6Answers.value == "true") {    // If the answer selected is correct...
+        q6CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q6IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q6CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q6IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz6Div.classList.add("hidden");    // ...Hide the current question
+            qz7Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz7Qz8() {
-    getQ7Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q7FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz7Div.classList.add("hidden"); // hides the current question
-    qz8Div.classList.remove("hidden"); // and shows the next question
+    getQ7Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q7FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q7Answers.value == "true") {    // If the answer selected is correct...
+        q7CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q7IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q7CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q7IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz7Div.classList.add("hidden");    // ...Hide the current question
+            qz8Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz8Qz9() {
-    getQ8Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q8FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz8Div.classList.add("hidden"); // hides the current question
-    qz9Div.classList.remove("hidden"); // and shows the next question
+    getQ8Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q8FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q8Answers.value == "true") {    // If the answer selected is correct...
+        q8CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q8IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q8CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q8IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz8Div.classList.add("hidden");    // ...Hide the current question
+            qz9Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 function nextQz9Qz10() {
-    getQ9Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q9FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    qz9Div.classList.add("hidden"); // hides the current question
-    qz10Div.classList.remove("hidden"); // and shows the next question
+    getQ9Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q9FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q9Answers.value == "true") {    // If the answer selected is correct...
+        q9CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q9IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q9CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q9IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz9Div.classList.add("hidden");    // ...Hide the current question
+            qz10Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
 }
 
 //! -- FINISH AND SCORE FUNCTION -- //
@@ -772,11 +881,24 @@ function nextQz9Qz10() {
 //! placeholders for those values.
 //! it then sets a these values in local storage as the last quiz results.
 function scoreTally() {
-    getQ10Answers(); // Call the corresponding getQ#Answers function
-    arrScore.push(q10FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    console.log(arrScore);
-    qz10Div.classList.add("hidden"); // hides the current question (Q#10)
-    qz11Div.classList.remove("hidden"); // and shows the score tally div qz11Div
+    getQ10Answers();  // Call the corresponding getQ#Answers function 
+    arrScore.push(q10FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
+    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    if(q10Answers.value == "true") {    // If the answer selected is correct...
+        q10CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
+    } else {    // If it's incorrect...
+        q10IncorrectMsg.classList.remove("hidden");  // ...Show the "Incorrect" validation message
+    }
+    let timeDelayInterval = setInterval(function() {    // Create the timer interval
+        timeDelay--;    // Decrement the previously set time delay for showing messaging by once per loop
+        if (timeDelay === 0) {    // Once the interval loop hits 0... 
+            clearInterval(timeDelayInterval);    // ...Clear the timer interval
+            q10CorrectMsg.classList.add("hidden");    // ...Hide the correct answer validation message again
+            q10IncorrectMsg.classList.add("hidden");    // ...Hide the wrong answer validation message again
+            qz10Div.classList.add("hidden");    // ...Hide the current question
+            qz11Div.classList.remove("hidden");    // ...Show the next question
+        } 
+    }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
     scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
 }
 
