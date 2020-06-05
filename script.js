@@ -442,7 +442,7 @@ const clearScoresBtn = document.querySelector("#clearScoresBtn");
 
 //! -- OTHER GLOBAL VARIABLES -- //
 // Set an original timer value that will be the starting time for the timer and also the beginning time for weighted scoring
-const originalTimerValue = 240;
+const originalTimerValue = 1240;
 // sets the secondsLeft var to the initial quiz time for counting down
 let secondsLeft = originalTimerValue;
 // Create empty timePenalty var to hold time penalty values when answer is incorrect
