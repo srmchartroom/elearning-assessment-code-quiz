@@ -482,11 +482,11 @@ nxt9Btn.addEventListener("click", nextQz9Qz10);
 // Add event listener to nxt10Btn button to run scoreTally() onClick
 nxt10Btn.addEventListener("click", scoreTally);
 // Add event listener to qz11retakeBtn button to run startingPoint() onClick
-qz11retakeBtn.addEventListener("click", startingPoint);
+qz11retakeBtn.addEventListener("click", retakeFromTally);
 // Add event listener to scoreItBtn button to run scoreBoard() onClick
 scoreItBtn.addEventListener("click",scoreBoard);
 // Add event listener to scoresRetakeBtn button to run startingPoint() onClick
-scoresRetakeBtn.addEventListener("click", startingPoint);
+scoresRetakeBtn.addEventListener("click", retakeFromScoreBoard);
 // Add event listener to clearScoresBtn button to run clearScores() onClick
 clearScoresBtn.addEventListener("click", clearScores);
 
@@ -497,6 +497,7 @@ clearScoresBtn.addEventListener("click", clearScores);
 // others, sets the timer for initial display purposes, empties the current arrScores array holding the  
 // answers to previous attempts, and empties the timePenalty var. 
 function startingPoint() {
+    // force reload from server to clear session variables and provide clean slate   
     // if the quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
     if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { return; }
     // if the 1st question (qz1Div) is hidden, do nothing. Else, hide it.
@@ -524,7 +525,7 @@ function startingPoint() {
     // if the scoreboard (scoresDiv) is hidden, do nothing.  Else, hide it.
     if (scoresDiv.classList.contains("hidden")) { return; } else { scoresDiv.classList.add("hidden"); }
     // set the timer to 60
-    secondsLeft = 60;
+    secondsLeft = originalTimerValue;
     // Display the timer value in the time remaining div.
     spanTime.textContent = Math.floor(secondsLeft);
     // Empty the arrScore array holding answer values
@@ -565,6 +566,7 @@ function highScores() {
 // page/div, the visibility of which is toggled to hide current the current div viewed and display the score 
 // tally div instead.=.
 function scoreTimer() {
+    secondsLeft = originalTimerValue;
     spanTime.textContent = Math.floor(secondsLeft); // display the initial time state on-screen as 60
     console.log("--------------------");
     console.log("scoreTime() has kicked off");
@@ -595,7 +597,8 @@ function scoreTimer() {
 // array so that no previous answers are held in it.
 function startQuiz() {
     arrScore = [] // sets the score array to empty if not already done so
-    qz0Div.classList.add("hidden"); // hide the quiz start div
+    // document.getElementsByName("question1").defaultChecked = false;
+    qz0Div.classList.add("hidden");    // hide the quiz start div
     qz1Div.classList.remove("hidden"); // show the 1st question
     scoreTimer(); // kick off the timer
 }
@@ -706,7 +709,7 @@ function scoreQuizAnswers() {
 function nextQz1Qz2() {
     getQ1Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q1FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q1Answers.value == "true") {    // If the answer selected is correct...
         q1CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -722,11 +725,13 @@ function nextQz1Qz2() {
             qz2Div.classList.remove("hidden");    // ...Show the next question
         } 
     }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
+    console.log(q1Answers);
+    ;
 }
 function nextQz2Qz3() {
     getQ2Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q2FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q2Answers.value == "true") {    // If the answer selected is correct...
         q2CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -746,7 +751,7 @@ function nextQz2Qz3() {
 function nextQz3Qz4() {
     getQ3Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q3FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q3Answers.value == "true") {    // If the answer selected is correct...
         q3CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -766,7 +771,7 @@ function nextQz3Qz4() {
 function nextQz4Qz5() {
     getQ4Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q4FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q4Answers.value == "true") {    // If the answer selected is correct...
         q4CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -786,7 +791,7 @@ function nextQz4Qz5() {
 function nextQz5Qz6() {
     getQ5Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q5FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q5Answers.value == "true") {    // If the answer selected is correct...
         q5CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -806,7 +811,7 @@ function nextQz5Qz6() {
 function nextQz6Qz7() {
     getQ6Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q6FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q6Answers.value == "true") {    // If the answer selected is correct...
         q6CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -826,7 +831,7 @@ function nextQz6Qz7() {
 function nextQz7Qz8() {
     getQ7Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q7FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q7Answers.value == "true") {    // If the answer selected is correct...
         q7CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -846,7 +851,7 @@ function nextQz7Qz8() {
 function nextQz8Qz9() {
     getQ8Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q8FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q8Answers.value == "true") {    // If the answer selected is correct...
         q8CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -866,7 +871,7 @@ function nextQz8Qz9() {
 function nextQz9Qz10() {
     getQ9Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q9FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;    // Set a 2 sec. delay to show the answer validation message  
+    let timeDelay = 1;    // Set a 1 sec. delay to show the answer validation message  
     if(q9Answers.value == "true") {    // If the answer selected is correct...
         q9CorrectMsg.classList.remove("hidden");    // ...Show the "Correct" validation message
     } else {    // If it's incorrect...
@@ -893,7 +898,7 @@ function nextQz9Qz10() {
 // final weighted score is equal to the number of correct responses multiplied by a percent-time-remaining multiplier.
 // Formula: FINAL WEIGHTED SCORE = NUMBER CORRECT + NUMBER CORRECT * (1 - ((STARTING TIME - ENDING TIME)/STARTING TIME))
 // The function then fills in spans that displaay the # of answers correct, the final time, and the final weighted
-// score in their appropriate spans. //! it then sets a these values in local storage as the last quiz results.
+// score in their appropriate spans.
 function scoreTally() {
     getQ10Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q10FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
@@ -914,32 +919,27 @@ function scoreTally() {
         } 
     }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
     scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
-    console.log(arrScore);
-    // scoreQuizAnswers();
-    let timeRemaining = spanTime.textContent;
-    parseInt(timeRemaining);
-    let correctCount = 0;
-    for(i = 0; i < arrScore.length; i++) {
-        if (arrScore[i] == "true") {
-            correctCount++;
-            console.log(arrScore[i]);
-        } else {
+    let timeRemaining = spanTime.textContent; // sets a var to the final time displayed on quiz completion
+    parseInt(timeRemaining); // parses that displayed time string into an integer
+    let correctCount = 0; // sets a variable to increment for counting the number of correct responses
+    for(i = 0; i < arrScore.length; i++) { // for loop to loop through the answers array
+        if (arrScore[i] == "true") {  // if the current index position has a value of "true" (our value for "correct")
+            correctCount++; // increment the correct counter by 1  
+        } else { // if it's false or empty, make some space in the console and do nothing
             console.log("---");
         }
     }
-    console.log("Correct Count: " + correctCount);
-    console.log("Time Remaining: " + timeRemaining);
-    spanNumCorrect.textContent = correctCount;
-    let percentTimeMultiplier = "";
-    if (timeRemaining < 1) {
-        percentTimeMultiplier = 0
-    } else {
-        percentTimeMultiplier = 1-((originalTimerValue - timeRemaining)/originalTimerValue);
-        console.log(percentTimeMultiplier);
+    console.log("Correct Count: " + correctCount); // log to console for testing
+    console.log("Time Remaining: " + timeRemaining); // log to console for testing
+    spanNumCorrect.textContent = correctCount; // set the text in the page that relays the # correct
+    let percentTimeMultiplier = ""; // create a var to hold a calculated multiplier to use for a weighted score
+    if (timeRemaining < 1) { // if the time has run out (or possible been driven below zero due to penalties) 
+        percentTimeMultiplier = 0 // set the multiplier to 0
+    } else { // if the quiz was completed in time
+        percentTimeMultiplier = 1-((originalTimerValue - timeRemaining)/originalTimerValue); // calculate a % change in time for adjusting the score
     }
-    weightedScore = Math.ceil((correctCount * percentTimeMultiplier) + correctCount);
-    spanFinalScore.textContent = weightedScore;
-    console.log(weightedScore);
+    weightedScore = Math.ceil((correctCount * percentTimeMultiplier) + correctCount); // set a weighted score var to be the rounded up sum of the correct responses and the correct responses * the % change in time multipier
+    spanFinalScore.textContent = weightedScore; // set the text relaing the final weighted score to the calculated variable
 }
 
 //! -- SUBMIT QUIZ SCORES FUNCTION -- //
@@ -959,6 +959,21 @@ function submitScores() {
 function scoreBoard() {
     qz11Div.classList.add("hidden");
     scoresDiv.classList.remove("hidden");
+}
+
+//! -- RETAKE QUIZ FROM SCORE TALLY FUNCTION -- //
+// The retakeFromTally() function simply reloads the quiz from the server to ensure a clean-slate, a quick
+// and easy way to wipe the session storage without impacting the purposefully set local storage
+function retakeFromTally() {
+    location.reload(true); // reloads the page from the server to clean-slate the session cache
+}
+
+
+//! -- RETAKE QUIZ FROM SCOREBOARD FUNCTION -- //
+// The retakeFromScoreBoard() function simply reloads the quiz from the server to ensure a clean-slate, a quick
+// and easy way to wipe the session storage without impacting the purposefully set local storage
+function retakeFromScoreBoard() {
+    location.reload(true); // reloads the page from the server to clean-slate the session cache
 }
 
 //! -- CLEAR SCORES FUNCTION -- //
