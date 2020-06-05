@@ -705,7 +705,6 @@ function scoreQuizAnswers() {
 // takes the quiz.  The function logs the selected answer as correct or incorrect in the completed score
 // array in the appropriate index position. It also toggles the visibility of the hidden correct-answer / 
 // incorrect-answer feedback for a span of a few seconds. And on click proceeds to the next question.
-
 function nextQz1Qz2() {
     getQ1Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q1FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
@@ -943,11 +942,11 @@ function scoreTally() {
 }
 
 //! -- SUBMIT QUIZ SCORES FUNCTION -- //
-//! The submitScores() function takes the user input of initials, along with the values of time, final weighted 
-//! score and answers correct, and pushes them to an array. It also prevents submission until the initials are filled.
-//! It sorts the array and then returns innerHTML created elements to fill the scoreboard based on saved scores.
-//! It stringifies the complete scores list, and stores the values in local storage for later, session-independent
-//! retrieval.
+//TODO The submitScores() function takes the user input of initials, along with the values of time, final weighted 
+//TODO score and answers correct, and pushes them to an array. It also prevents submission until the initials are filled.
+//TODO It sorts the array and then returns innerHTML created elements to fill the scoreboard based on saved scores.
+//TODO It stringifies the complete scores list, and stores the values in local storage for later, session-independent
+//TODO retrieval.
 function submitScores() {
     console.log("placeholder");
 }  
@@ -955,10 +954,10 @@ function submitScores() {
 
 //! -- SCORE BOARD SET UP FUNCTION -- //
 // The scoreBoard() function toggles the visibility of the score tally div (qz11Div) and the hidden scoreboard
-// div (scoresDiv), simulating a navigation effect for the take.
+// div (scoresDiv), simulating a navigation effect for the taker.
 function scoreBoard() {
-    qz11Div.classList.add("hidden");
-    scoresDiv.classList.remove("hidden");
+    qz11Div.classList.add("hidden"); //  hides the score tally/results div
+    scoresDiv.classList.remove("hidden");  // displays the score board
 }
 
 //! -- RETAKE QUIZ FROM SCORE TALLY FUNCTION -- //
@@ -977,8 +976,8 @@ function retakeFromScoreBoard() {
 }
 
 //! -- CLEAR SCORES FUNCTION -- //
-//! The clearScores() function clears the array of scores, and wipes the local storage holding it - this includes
-//! clearing the scoreboard table.  It then routes the user back to the startpoint().
+//TODO The clearScores() function clears the array of scores, and wipes the local storage holding it - this includes
+//TODO clearing the scoreboard table.  It then routes the user back to the startpoint().
 function clearScores() {
     // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
     console.log("clearScoresBtn button was clicked");
