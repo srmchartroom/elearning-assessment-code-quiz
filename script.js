@@ -118,8 +118,6 @@ const q1CorrectMsg = document.querySelector("#q1CorrectMsg");    // get correct 
 const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg");    // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q1Answers = document.forms.fq1.elements.question1;    // set radio elements w/ name of question1 to q1Answers
-const q1AnswersVal = q1Answers.value;
-console.log(q1AnswersVal);
 let q1FinalAnswer = "";    // placeholder for final answer after submit
 
 //! -- QZ2 ELEMENTS -- //
@@ -697,8 +695,8 @@ function scoreQuizAnswers() {
 function nextQz1Qz2() {
     getQ1Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q1FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 10;
-    if(q1Answers.value == true) {
+    let timeDelay = 2;
+    if(q1Answers.value == "true") {
         q1CorrectMsg.classList.remove("hidden");
     } else {
         q1IncorrectMsg.classList.remove("hidden");
@@ -707,13 +705,12 @@ function nextQz1Qz2() {
         timeDelay--;
         if (timeDelay === 0) {
             clearInterval(timeDelayInterval);
+            q1CorrectMsg.classList.add("hidden"); // hide the correct answer validation message again
+            q1IncorrectMsg.classList.add("hidden"); // hide the wrong answer validation message again
+            qz1Div.classList.add("hidden"); // hides the current question
+            qz2Div.classList.remove("hidden");  // and shows the next question
         } 
     }, 1000);
-    q1CorrectMsg.classList.add("hidden"); // hide the correct answer validation message again
-    q1IncorrectMsg.classList.add("hidden"); // hide the wrong answer validation message again
-    qz1Div.classList.add("hidden"); // hides the current question
-    qz2Div.classList.remove("hidden");  // and shows the next question
-    nxt1Btn.classList.add("hidden"); // resets the visibility hidden class on the button to be hidden
 }
 function nextQz2Qz3() {
     getQ2Answers(); // Call the corresponding getQ#Answers function
