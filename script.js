@@ -118,6 +118,7 @@ const q1CorrectMsg = document.querySelector("#q1CorrectMsg");    // get correct 
 const q1IncorrectMsg = document.querySelector("#q1IncorrectMsg");    // get incorrect message alert & set to var
 // -- ANSWER RESPONSES -- //
 const q1Answers = document.forms.fq1.elements.question1;    // set radio elements w/ name of question1 to q1Answers
+console.log(q1Answers);
 let q1FinalAnswer = "";    // placeholder for final answer after submit
 
 //! -- QZ2 ELEMENTS -- //
@@ -692,29 +693,29 @@ function scoreQuizAnswers() {
 //! It then hides the submit button and toggles the continue button to allow the user to continue.
 //! And on click proceeds to the next question
 function nextQz1Qz2() {
-    if(q1Answers.value == "") { 
-        nxt1Btn.classList.add("disabled");
-    } else if (q1Answers.value !== "" && nxt1Btn.classList.contains("disabled")) {
-        nxt1Btn.classList.remove("disabled");
-    }
     getQ1Answers();  // Call the corresponding getQ#Answers function
+    if(q1Answers.value == "") { 
+        nxt1Btn.classList.add("hidden");
+    } else if (q1Answers.value !== "" && nxt1Btn.classList.contains("hidden")) {
+        nxt1Btn.classList.remove("hidden");
+    } 
     arrScore.push(q1FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
-    let timeDelay = 2;
+    let timeDelay = 10;
     if(q1FinalAnswer == false) {
         q1IncorrectMsg.classList.remove("hidden");
-    } else if (q1FinaAnswer == true) {
-        q1CorrectMsg.classList.remove("true");
+    } else if (q1FinalAnswer == true) {
+        q1CorrectMsg.classList.remove("hidden");
     }
     const timeDelayInterval = setInterval(function() {
         timeDelay--;
         if (timeDelay === 0) {
-            clearInterval(timerInterval);
-            qz1Div.classList.add("hidden");  // hides the current question
-            q1CorrectMsg.classList.add("hidden");
-            q1IncorrectMsg.classList.add("hidden");
-            qz2Div.classList.remove("hidden");  // and shows the next question
+            clearInterval(timeDelayInterval);
             } 
-    });
+    }, 1000);
+    qz1Div.classList.add("hidden");  // hides the current question
+    q1CorrectMsg.classList.add("hidden"); // hide the correct answer validation message again
+    q1IncorrectMsg.classList.add("hidden"); // hide the wrong answer validation message again
+    qz2Div.classList.remove("hidden");  // and shows the next question
 }
 function nextQz2Qz3() {
     getQ2Answers(); // Call the corresponding getQ#Answers function
