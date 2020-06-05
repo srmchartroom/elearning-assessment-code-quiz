@@ -48,8 +48,8 @@ const arrQZ6 = {    // Question #6 Array
     question : "Which of the following would return the item in the first index position of an array call 'items'?",
     qz6A : {txtValue : "items.1", correct : false },
     qz6B : {txtValue : "items.0", correct : false},
-    qz6C : {txtValue : "items[1]", correct : true},
-    qz6D : {txtValue : "items[0]", correct: false}
+    qz6C : {txtValue : "items[1]", correct : false},
+    qz6D : {txtValue : "items[0]", correct: true}
 };
 const arrQZ7 = {    // Question #7 Array
     question : "Which of the following methods would be used on an array to arrange its items alphabetically?",
@@ -441,14 +441,18 @@ const scoresRetakeBtn = document.querySelector("#retake2Btn");
 const clearScoresBtn = document.querySelector("#clearScoresBtn");
 
 //! -- OTHER GLOBAL VARIABLES -- //
+// Set an original timer value that will be the starting time for the timer and also the beginning time for weighted scoring
+const originalTimerValue = 240;
 // sets the secondsLeft var to the initial quiz time for counting down
-let secondsLeft = 60;
+let secondsLeft = originalTimerValue;
 // Create empty timePenalty var to hold time penalty values when answer is incorrect
 let timePenalty = ""; 
 // create an empty array to hold the scoring per question
-let arrScore = {};
+let arrScore = [];
 // Create a finalTimeRemaining variable to hold the time left on the clock when quiz is finished
 let finalTimeRemaining = "";
+// Create final weighted score variable to hold the calculated final score upon completion of quiz
+let weightedScore = "";
 
 //! Event Listeners //
 // Adds an event listener to check run the startingPoint function on window load.
@@ -677,7 +681,18 @@ function getQ10Answers() {
 
 function scoreQuizAnswers() {
     // score quiz answers array
-    console.log("placeholder");
+    console.log(arrScore);
+    let timeRemaining = secondsLeft;
+    let correctCount = 0;
+    for(i = 0; i < arrScore.length; i++) {
+        if (arrScore[i] == true) {
+            correctCount++;
+        } else {
+            return;
+        }
+    }
+    console.log("Correct Count: " + correctCount);
+    console.log("Time Remaining: " + timeRemaining);
 }
 
 //! -- NAVIGATION FROM QUESTION-TO-QUESTON FUNCTION(S) -- //
@@ -873,12 +888,12 @@ function nextQz9Qz10() {
 // The scoreTally() function simulates the navigation effect of the previous nextQzXQzY functions, hiding Q#10
 // and revealing the score tally div. It also logs the final selected answer from Q#10 as correct/incorrect and
 // stores the final answer in the last index position of the arrScores array which holds all each answer value
-// (whether correct or incorrect) from each question in the quiz. 
-//!  The function determines how many correct answers out of the total questions the user had, and applies a weighted
-//! score based on any time remaining.
-//! It then enters the final weighted score, the # of answers correct, and the final time in the appropriate span
-//! placeholders for those values.
-//! it then sets a these values in local storage as the last quiz results.
+// (whether correct or incorrect) from each question in the quiz. This function then determines how many correct 
+// answers out of the total questions the user had, and applies a weighted score based on any time remaining. The
+// final weighted score is equal to the number of correct responses multiplied by a percent-time-remaining multiplier.
+// Formula: FINAL WEIGHTED SCORE = NUMBER CORRECT + NUMBER CORRECT * (1 - ((STARTING TIME - ENDING TIME)/STARTING TIME))
+// The function then fills in spans that displaay the # of answers correct, the final time, and the final weighted
+// score in their appropriate spans. //! it then sets a these values in local storage as the last quiz results.
 function scoreTally() {
     getQ10Answers();  // Call the corresponding getQ#Answers function 
     arrScore.push(q10FinalAnswer);    // Push the final submitted answer to a array to hold all answers selected
@@ -900,6 +915,31 @@ function scoreTally() {
     }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
     scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
     console.log(arrScore);
+    // scoreQuizAnswers();
+    let timeRemaining = spanTime.textContent;
+    parseInt(timeRemaining);
+    let correctCount = 0;
+    for(i = 0; i < arrScore.length; i++) {
+        if (arrScore[i] == "true") {
+            correctCount++;
+            console.log(arrScore[i]);
+        } else {
+            console.log("---");
+        }
+    }
+    console.log("Correct Count: " + correctCount);
+    console.log("Time Remaining: " + timeRemaining);
+    spanNumCorrect.textContent = correctCount;
+    let percentTimeMultiplier = "";
+    if (timeRemaining < 1) {
+        percentTimeMultiplier = 0
+    } else {
+        percentTimeMultiplier = 1-((originalTimerValue - timeRemaining)/originalTimerValue);
+        console.log(percentTimeMultiplier);
+    }
+    weightedScore = Math.ceil((correctCount * percentTimeMultiplier) + correctCount);
+    spanFinalScore.textContent = weightedScore;
+    console.log(weightedScore);
 }
 
 //! -- SUBMIT QUIZ SCORES FUNCTION -- //
