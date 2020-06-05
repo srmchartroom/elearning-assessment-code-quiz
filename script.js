@@ -92,6 +92,7 @@ const qz1Div = document.querySelector("#qz1");    // set a var to the <div> with
 const question1 = document.querySelector("#question1");    // set var to the <p> with question's #id
 const question1TXT = arrQZ1.question;    // set var to question value in questions array object
 question1.textContent = question1TXT;    // set question's text content on page to txt var
+const fq1 = document.querySelector("#fq1");    //Set a var to the <form> element with the question's #
 // ---- OPTION 1A ---- //
 const lblQ1A = document.querySelector("#label1A");    // set a var to the field label on the radio
 lblQ1A.textContent = arrQZ1.qz1A.txtValue;    // set text of label to the value in the object
@@ -126,6 +127,7 @@ const qz2Div = document.querySelector("#qz2");    // set a var to <div> with cor
 const question2 = document.querySelector("#question2");    // set var to the <p> with question's #id
 const question2TXT = arrQZ2.question;    // set var to question value in questions array object
 question2.textContent = question2TXT;    // set question's text content on page to txt var--- //
+const fq2 = document.querySelector("#fq2");    //Set a var to the <form> element with the question's #
 // ---- OPTION 2A ---- //
 const lblQ2A = document.querySelector("#label2A");    // set a var to the field label on the radio
 lblQ2A.textContent = arrQZ2.qz2A.txtValue;    // set text of label to the value in the object
@@ -159,6 +161,7 @@ const qz3Div = document.querySelector("#qz3");    // set a var to <div> with cor
 const question3 = document.querySelector("#question3");    // set var to the <p> with question's #id
 const question3TXT = arrQZ3.question;    // set var to question value in questions array object
 question3.textContent = question3TXT;    // set question's text content on page to txt var
+const fq3 = document.querySelector("#fq3");    //Set a var to the <form> element with the question's #
 // ---- OPTION 3A ---- //
 const lblQ3A = document.querySelector("#label3A");    // set a var to the field label on the radio
 lblQ3A.textContent = arrQZ3.qz3A.txtValue;    // set text of label to the value in the object
@@ -192,6 +195,7 @@ const qz4Div = document.querySelector("#qz4");    // set a var to <div> with cor
 const question4 = document.querySelector("#question4");    // set var to the <p> with question's #id
 const question4TXT = arrQZ4.question;    // set var to question value in questions array object
 question4.textContent = question4TXT;    // set question's text content on page to txt var
+const fq4 = document.querySelector("#fq4");    //Set a var to the <form> element with the question's #
 // ---- OPTION 4A ---- //
 const lblQ4A = document.querySelector("#label4A");    // set a var to the field label on the radio
 lblQ4A.textContent = arrQZ4.qz4A.txtValue;    // set text of label to the value in the object
@@ -225,6 +229,7 @@ const qz5Div = document.querySelector("#qz5");    // set a var to <div> with cor
 const question5 = document.querySelector("#question5");    // set var to the <p> with question's #id
 const question5TXT = arrQZ5.question;    // set var to question value in questions array object
 question5.textContent = question5TXT;    // set question's text content on page to txt var
+const fq5 = document.querySelector("#fq5");    //Set a var to the <form> element with the question's #
 // ---- OPTION 5A ---- //
 const lblQ5A = document.querySelector("#label5A");    // set a var to the field label on the radio
 lblQ5A.textContent = arrQZ5.qz5A.txtValue;    // set text of label to the value in the object
@@ -258,6 +263,7 @@ const qz6Div = document.querySelector("#qz6");    // set a var to <div> with cor
 const question6 = document.querySelector("#question6");    // set var to the <p> with question's #id
 const question6TXT = arrQZ6.question;    // set var to question value in questions array object
 question6.textContent = question6TXT;    // set question's text content on page to txt var
+const fq6 = document.querySelector("#fq6");    //Set a var to the <form> element with the question's #
 // ---- OPTION 6A ---- //
 const lblQ6A = document.querySelector("#label6A");    // set a var to the field label on the radio
 lblQ6A.textContent = arrQZ6.qz6A.txtValue;    // set text of label to the value in the object
@@ -291,6 +297,7 @@ const qz7Div = document.querySelector("#qz7");    // set a var to <div> with cor
 const question7 = document.querySelector("#question7");    // set var to the <p> with question's #id
 const question7TXT = arrQZ7.question;    // set var to question value in questions array object
 question7.textContent = question7TXT;    // set question's text content on page to txt var
+const fq7 = document.querySelector("#fq7");    //Set a var to the <form> element with the question's #
 // ---- OPTION 7A: Label ---- //
 const lblQ7A = document.querySelector("#label7A");    // set a var to the field label on the radio
 lblQ7A.textContent = arrQZ7.qz7A.txtValue;    // set text of label to the value in the object
@@ -325,6 +332,7 @@ const qz8Div = document.querySelector("#qz8");    // set a var to <div> with cor
 const question8 = document.querySelector("#question8");    // set var to the <p> with question's #id
 const question8TXT = arrQZ8.question;    // set var to question value in questions array object
 question8.textContent = question8TXT;    // set question's text content on page to txt var
+const fq8 = document.querySelector("#fq8");    //Set a var to the <form> element with the question's #
 // ---- OPTION 8A ---- //
 const lblQ8A = document.querySelector("#label8A");    // set a var to the field label on the radio
 lblQ8A.textContent = arrQZ8.qz8A.txtValue;    // set text of label to the value in the object
@@ -358,6 +366,7 @@ const qz9Div = document.querySelector("#qz9");    // set a var to <div> with cor
 const question9 = document.querySelector("#question9");    // set var to the <p> with question's #id
 const question9TXT = arrQZ9.question;    // set var to question value in questions array object
 question9.textContent = question9TXT;    // set question's text content on page to txt var
+const fq9 = document.querySelector("#fq9");    //Set a var to the <form> element with the question's #
 // ---- OPTION 9A ---- //
 const lblQ9A = document.querySelector("#label9A"); // set a var to the field label on the radio
 lblQ9A.textContent = arrQZ9.qz9A.txtValue;    // set text of label to the value in the object
@@ -391,6 +400,7 @@ const qz10Div = document.querySelector("#qz10");    // set a var to <div> with c
 const question10 = document.querySelector("#question10");    // set var to the <p> with question's #id
 const question10TXT = arrQZ10.question;    // set var to question value in questions array object
 question10.textContent = question10TXT;    // set question's text content on page to txt var
+const fq10 = document.querySelector("#fq10");    //Set a var to the <form> element with the question's #
 // ---- OPTION 10A ---- //
 const lblQ10A = document.querySelector("#label10A"); // set a var to the field label on the radio
 lblQ10A.textContent = arrQZ10.qz10A.txtValue;    // set text of label to the value in the object
@@ -460,6 +470,8 @@ goToScoresBtn.addEventListener("click", highScores);
 startBtn.addEventListener("click", startQuiz);
 // Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
 nxt1Btn.addEventListener("click", nextQz1Qz2);
+// Add event listener to check if the values of the radio group are defined or not
+fq1.addEventListener('change', showButton1);
 // Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
 nxt2Btn.addEventListener("click", nextQz2Qz3);
 // Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
@@ -692,30 +704,30 @@ function scoreQuizAnswers() {
 //! It toggles the visibility of the hidden correct-answer / incorrect-answer feedback and disables further answer choice
 //! It then hides the submit button and toggles the continue button to allow the user to continue.
 //! And on click proceeds to the next question
+
 function nextQz1Qz2() {
-    getQ1Answers();  // Call the corresponding getQ#Answers function
-    if(q1Answers.value == "") { 
-        nxt1Btn.classList.add("hidden");
-    } else if (q1Answers.value !== "" && nxt1Btn.classList.contains("hidden")) {
+    getQ1Answers();  // Call the corresponding getQ#Answers function 
+    if (q1Answers.value !== undefined) {
         nxt1Btn.classList.remove("hidden");
-    } 
+    }
     arrScore.push(q1FinalAnswer); // Push the final submitted answer to a array to hold all answers selected
     let timeDelay = 10;
-    if(q1FinalAnswer == false) {
-        q1IncorrectMsg.classList.remove("hidden");
-    } else if (q1FinalAnswer == true) {
+    if(q1Answers.value == true) {
         q1CorrectMsg.classList.remove("hidden");
+    } else {
+        q1IncorrectMsg.classList.remove("hidden");
     }
-    const timeDelayInterval = setInterval(function() {
+    let timeDelayInterval = setInterval(function() {
         timeDelay--;
         if (timeDelay === 0) {
             clearInterval(timeDelayInterval);
-            } 
+        } 
     }, 1000);
-    qz1Div.classList.add("hidden");  // hides the current question
     q1CorrectMsg.classList.add("hidden"); // hide the correct answer validation message again
     q1IncorrectMsg.classList.add("hidden"); // hide the wrong answer validation message again
+    qz1Div.classList.add("hidden"); // hides the current question
     qz2Div.classList.remove("hidden");  // and shows the next question
+    nxt1Btn.classList.add("hidden"); // resets the visibility hidden class on the button to be hidden
 }
 function nextQz2Qz3() {
     getQ2Answers(); // Call the corresponding getQ#Answers function
