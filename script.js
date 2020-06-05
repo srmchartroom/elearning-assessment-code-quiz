@@ -572,7 +572,8 @@ function scoreTimer() {
         if (!qz0Div.classList.contains("hidden") || !qz11Div.classList.contains("hidden") || !scoresDiv.classList.contains("hidden")) { 
             clearInterval(timerInterval); // stop the timer
         // else, if questions are currently being answered/quiz is in progress, AND if the seconds run out...
-        } else if (secondsLeft === 0) {
+        } else if (secondsLeft < 1) {
+          secondsLeft = 0; // reset the secondsLeft variable
           clearInterval(timerInterval); // stop the timer
           alert("Time's up!"); // alert the user that time is up
           startingPoint(); // reset the time and div visibilities to the starting point...
@@ -595,7 +596,7 @@ function startQuiz() {
     scoreTimer(); // kick off the timer
 }
 
-//! -- GET Q# ANSWERS FUNCTION(S) -- //
+//! -- GET Q# ANSWERS + TIMER PENALTY HANDLING FUNCTION(S) -- //
 // The getQ#Answers() function (e.g. getQ1Answers, getQ5Answers) is a function set for every question that 
 // sets the value of the radio selection when the function is called (which occurs upon submitting the answer
 // and moving to the next question) to a new "final answer" variable.  The function also checks if the answer
@@ -672,14 +673,12 @@ function getQ10Answers() {
     }
 }
 
-
 //! -- SCORE THE QUIZ FUNCTION -- //
 
 function scoreQuizAnswers() {
     // score quiz answers array
     console.log("placeholder");
 }
-
 
 //! -- NAVIGATION FROM QUESTION-TO-QUESTON FUNCTION(S) -- //
 // This function nextQz(#x)Qz(#y) functions (e.g. nextQz1Qz2, nextQz5Qz6) toggle the visibility of the 
@@ -900,6 +899,7 @@ function scoreTally() {
         } 
     }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
     scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
+    console.log(arrScore);
 }
 
 //! -- SUBMIT QUIZ SCORES FUNCTION -- //
