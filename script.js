@@ -83,7 +83,9 @@
 //! ------------------------------------------------------------------------------------------------------ //
 //! ------------------------------------------------------------------------------------------------------ //
 //! -- QZ0 ELEMENTS -- //
-    const qz0Div = document.querySelector("#qz0");    // get qz0 div and set it to a var called qz0Div
+    const qz0Div = document.querySelector("#qz0");    // get qz0 div and set it to a var called qz0Div4
+    const currTopic = document.querySelector(".currentTopic");
+    currTopic.textContent = "Javascript Basics";
     const startBtn = document.querySelector("#startBtn");    // get Start Quiz Button and set it to a var called startBtn 
 //! -- QZ1 ELEMENTS -- //
     const qz1Div = document.querySelector("#qz1");    // set a var to the <div> with corresponding qz#Div
