@@ -1,5 +1,5 @@
 //! HEADER ELEMENTS
-
+//! ------------------------------------------------------------------------------------------------------ //
 //! -- QUIZ TITLE -- //
     const quizTitle = document.querySelector("#quizTitle");   // access the span with id of #quizTitle
     quizTitle.textContent = "Javascript Basics - Level I.";   // dynamically add quiz title
@@ -7,7 +7,8 @@
     const goToScoresBtn = document.querySelector("#goToScores");   // Get High Scores Link set to goToScoresBtn
 //! -- TIME REMAINING TICKER -- //
     const spanTime = document.querySelector("#timer");   // Get time remaining span and set to spanTimeRem
-
+//! ------------------------------------------------------------------------------------------------------ //
+//! ------------------------------------------------------------------------------------------------------ //
 //! QUIZ QUESTION ARRAYS
     const arrQZ1 = {    // Question #1 Array
         question : "Which of the following are not valid events for a .addEventListener method?",
@@ -79,11 +80,11 @@
         qz10C : {txtValue : "fromString", correct : false},
         qz10D : {txtValue : "parseInt", correct: true}
     };
-
+//! ------------------------------------------------------------------------------------------------------ //
+//! ------------------------------------------------------------------------------------------------------ //
 //! -- QZ0 ELEMENTS -- //
     const qz0Div = document.querySelector("#qz0");    // get qz0 div and set it to a var called qz0Div
     const startBtn = document.querySelector("#startBtn");    // get Start Quiz Button and set it to a var called startBtn 
-
 //! -- QZ1 ELEMENTS -- //
     const qz1Div = document.querySelector("#qz1");    // set a var to the <div> with corresponding qz#Div
 // --------------------------------------------------------------------------------------- //
@@ -119,7 +120,6 @@
     // -- ANSWER RESPONSES -- //
     const q1Answers = document.forms.fq1.elements.question1;    // set radio elements w/ name of question1 to q1Answers
     let q1FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ2 ELEMENTS -- //
     const qz2Div = document.querySelector("#qz2");    // set a var to <div> with corresponding qz#Div
     const question2 = document.querySelector("#question2");    // set var to the <p> with question's #id
@@ -152,7 +152,6 @@
     // -- ANSWER RESPONSES -- //
     const q2Answers = document.forms.fq2.elements.question2;    // set radio elements w/ name of question2 to q2Answers
     let q2FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ3 ELEMENTS -- //
     const qz3Div = document.querySelector("#qz3");    // set a var to <div> with corresponding qz#Div
     const question3 = document.querySelector("#question3");    // set var to the <p> with question's #id
@@ -185,7 +184,6 @@
     // -- ANSWER RESPONSES -- //
     const q3Answers = document.forms.fq3.elements.question3;    // set radio elements w/ name of question3 to q3Answers
     let q3FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ4 ELEMENTS -- //
     const qz4Div = document.querySelector("#qz4");    // set a var to <div> with corresponding qz#Div
     const question4 = document.querySelector("#question4");    // set var to the <p> with question's #id
@@ -218,7 +216,6 @@
     // -- ANSWER RESPONSES -- //
     const q4Answers = document.forms.fq4.elements.question4;    // set radio elements w/ name of question4 to q4Answers
     let q4FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ5 ELEMENTS -- //
     const qz5Div = document.querySelector("#qz5");    // set a var to <div> with corresponding qz#Div
     const question5 = document.querySelector("#question5");    // set var to the <p> with question's #id
@@ -251,7 +248,6 @@
     // -- ANSWER RESPONSES -- //
     const q5Answers = document.forms.fq5.elements.question5;    // set radio elements w/ name of question5 to q5Answers
     let q5FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ6 ELEMENTS -- //
     const qz6Div = document.querySelector("#qz6");    // set a var to <div> with corresponding qz#Div
     const question6 = document.querySelector("#question6");    // set var to the <p> with question's #id
@@ -284,7 +280,6 @@
     // -- ANSWER RESPONSES -- //
     const q6Answers = document.forms.fq6.elements.question6;    // set radio elements w/ name of question6 to q6Answers
     let q6FinalAnswer = "";    // placeholder for final answer after submit
-
     //! -- QZ7 ELEMENTS -- //
     const qz7Div = document.querySelector("#qz7");    // set a var to <div> with corresponding qz#Div\
     const question7 = document.querySelector("#question7");    // set var to the <p> with question's #id
@@ -317,7 +312,6 @@
     // -- ANSWER RESPONSES -- //
     const q7Answers = document.forms.fq7.elements.question7;    // set radio elements w/ name of question7 to q7Answers
     let q7FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ8 ELEMENTS -- //
     const qz8Div = document.querySelector("#qz8");    // set a var to <div> with corresponding qz#Div
     const question8 = document.querySelector("#question8");    // set var to the <p> with question's #id
@@ -350,7 +344,6 @@
     // -- ANSWER RESPONSES -- //
     const q8Answers = document.forms.fq8.elements.question8;    // set radio elements w/ name of question8 to q8Answers
     let q8FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ9 ELEMENTS -- //
     const qz9Div = document.querySelector("#qz9");    // set a var to <div> with corresponding qz#Div
     const question9 = document.querySelector("#question9");    // set var to the <p> with question's #id
@@ -383,7 +376,6 @@
     // -- ANSWER RESPONSES -- //
     const q9Answers = document.forms.fq9.elements.question9;    // set radio elements w/ name of question9 to q9Answers
     let q9FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ10 ELEMENTS -- //
     const qz10Div = document.querySelector("#qz10");    // set a var to <div> with corresponding qz#Div
     const question10 = document.querySelector("#question10");    // set var to the <p> with question's #id
@@ -416,7 +408,6 @@
     // -- ANSWER RESPONSES -- //
     const q10Answers = document.forms.fq10.elements.question10;    // set radio elements w/ name of question10 to q10Answers
     let q10FinalAnswer = "";    // placeholder for final answer after submit
-
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
     const qz11Div = document.querySelector("#qz11");    // get qz11 div and set it to qz11Div
     const scoreTitle = document.querySelector("#scoreTallyTitle");    // get scoreTallyTitle h2 and set it to scoreTitle
@@ -428,14 +419,12 @@
     const scoreItBtn = document.querySelector("#scoreBtn");    // get submit score button and set to scoreItBtn
     let correctCount = 0; // variable to hold the correct number of responses at the end of the quiz
     let scoreSubmissions = [""] // initially empty array that will eventually populate from local storage
-
 //! -- QZ12 (Scoreboard) ELEMENTS -- //
     const scoresDiv = document.querySelector("#scores"); // get qz12 (aka "scores") and set it to scoresDiv
     const scoresTable = document.querySelector("#scoresTable"); // get the Scores Table and set it to scoresTable
     const scoresTableBody = document.querySelector("#scoresTableBody"); // get the Scores Table Body and set it to scoresTableBody
     const scoresRetakeBtn = document.querySelector("#retake2Btn"); // get the qz12/scores retake btn and set it to scoresRetakeBtn
     const clearScoresBtn = document.querySelector("#clearScoresBtn"); // get the clear scores button and set it to clearScoresBtn
-
 //! -- OTHER GLOBAL VARIABLES -- //
     const originalTimerValue = 1240; // Set beginning timer value; will be start time & also beginning time for weighted scoring
     let secondsLeft = originalTimerValue; // sets the secondsLeft var to the initial quiz time for counting down
@@ -444,88 +433,53 @@
     let finalTimeRemaining = ""; // Create finalTimeRemaining variable to hold time left on clock when quiz is finished
     let weightedScore = ""; // Create final weighted score variable to hold calculated final score upon completion of quiz
     let timeRemaining = 0; // Create a placeholder variable for time remaining at end of quiz for score tallying
-
+//! ------------------------------------------------------------------------------------------------------ //
+//! ------------------------------------------------------------------------------------------------------ //
 //! Event Listeners //
-    // Adds an event listener to check run the startingPoint function on window load.
-    window.addEventListener("load", startingPoint);
-    // Add event listener to goToScoresBtn button to run highScores() onClick
-    goToScoresBtn.addEventListener("click", highScores);
-    // Add event listener to startBtn button to run startQuiz() onClick 
-    startBtn.addEventListener("click", startQuiz);
-    // Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
-    nxt1Btn.addEventListener("click", nextQz1Qz2);
-    // Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
-    nxt2Btn.addEventListener("click", nextQz2Qz3);
-    // Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
-    nxt3Btn.addEventListener("click", nextQz3Qz4);
-    // Add event listener to nxt4Btn button to run nextQz4Qz5() onClick
-    nxt4Btn.addEventListener("click", nextQz4Qz5);
-    // Add event listener to nxt5Btn button to run nextQz5Qz6() onClick
-    nxt5Btn.addEventListener("click", nextQz5Qz6);
-    // Add event listener to nxt6Btn button to run nextQz6Qz7() onClick
-    nxt6Btn.addEventListener("click", nextQz6Qz7);
-    // Add event listener to nxt7Btn button to run nextQz7Qz8() onClick
-    nxt7Btn.addEventListener("click", nextQz7Qz8);
-    // Add event listener to nxt8Btn button to run nextQz8Qz9() onClick
-    nxt8Btn.addEventListener("click", nextQz8Qz9);
-    // Add event listener to nxt9Btn button to run nextQz9Qz10() onClick
-    nxt9Btn.addEventListener("click", nextQz9Qz10);
-    // Add event listener to nxt10Btn button to run scoreTally() onClick
-    nxt10Btn.addEventListener("click", scoreTally);
-    // Add event listener to qz11retakeBtn button to run startingPoint() onClick
-    qz11retakeBtn.addEventListener("click", retakeFromTally);
-    // Add event listener to scoreItBtn button to run scoreBoard() onClick
-    scoreItBtn.addEventListener("click",submitScores);
-    // Add event listener to scoresRetakeBtn button to run startingPoint() onClick
-    scoresRetakeBtn.addEventListener("click", retakeFromScoreBoard);
-    // Add event listener to clearScoresBtn button to run clearScores() onClick
-    clearScoresBtn.addEventListener("click", clearScores);
-    // Add event listener to initials field on the score tally page to run initialsStore(); on change
-
-
-
+    window.addEventListener("load", startingPoint); // Adds an event listener to check run the startingPoint function on window load.
+    goToScoresBtn.addEventListener("click", highScores); // Add event listener to goToScoresBtn button to run highScores() onClick
+    startBtn.addEventListener("click", startQuiz); // Add event listener to startBtn button to run startQuiz() onClick 
+    nxt1Btn.addEventListener("click", nextQz1Qz2); // Add event listener to nxt1Btn button to run nextQz1Qz2() onClick
+    nxt2Btn.addEventListener("click", nextQz2Qz3); // Add event listener to nxt2Btn button to run nextQz2Qz3() onClick
+    nxt3Btn.addEventListener("click", nextQz3Qz4); // Add event listener to nxt3Btn button to run nextQz3Qz4() onClick
+    nxt4Btn.addEventListener("click", nextQz4Qz5); // Add event listener to nxt4Btn button to run nextQz4Qz5() onClick
+    nxt5Btn.addEventListener("click", nextQz5Qz6); // Add event listener to nxt5Btn button to run nextQz5Qz6() onClick
+    nxt6Btn.addEventListener("click", nextQz6Qz7); // Add event listener to nxt6Btn button to run nextQz6Qz7() onClick
+    nxt7Btn.addEventListener("click", nextQz7Qz8); // Add event listener to nxt7Btn button to run nextQz7Qz8() onClick
+    nxt8Btn.addEventListener("click", nextQz8Qz9); // Add event listener to nxt8Btn button to run nextQz8Qz9() onClick
+    nxt9Btn.addEventListener("click", nextQz9Qz10); // Add event listener to nxt9Btn button to run nextQz9Qz10() onClick
+    nxt10Btn.addEventListener("click", scoreTally); // Add event listener to nxt10Btn button to run scoreTally() onClick
+    qz11retakeBtn.addEventListener("click", retakeFromTally); // Add event listener to qz11retakeBtn button to run startingPoint() onClick
+    scoreItBtn.addEventListener("click",submitScores); // Add event listener to scoreItBtn button to run scoreBoard() onClick
+    scoresRetakeBtn.addEventListener("click", retakeFromScoreBoard); // Add event listener to scoresRetakeBtn button to run startingPoint() onClick
+    clearScoresBtn.addEventListener("click", clearScores); // Add event listener to clearScoresBtn button to run clearScores() onClick
+//! ------------------------------------------------------------------------------------------------------ //
+//! ------------------------------------------------------------------------------------------------------ //
 //! -- FUNCTIONS -- //
 
 //! -- STARTING POINT -- //
-// The startingPoint() functionsets a class baseline that shows the beginning of quiz div and hides all  
+// The startingPoint() function sets a class baseline that shows the beginning of quiz div and hides all  
 // others, sets the timer for initial display purposes, empties the current arrScores array holding the  
-// answers to previous attempts, and empties the timePenalty var. 
-function startingPoint() {
-    // force reload from server to clear session variables and provide clean slate   
-    // if the quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
-    if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { return; }
-    // if the 1st question (qz1Div) is hidden, do nothing. Else, hide it.
-    if (qz1Div.classList.contains("hidden")) { return; } else { qz1Div.classList.add("hidden"); }
-    // if the 2nd question (qz2Div) is hidden, do nothing. Else, hide it.
-    if (qz2Div.classList.contains("hidden")) { return; } else { qz2Div.classList.add("hidden"); }
-    // if the 3rd question (qz3Div) is hidden, do nothing. Else, hide it.
-    if (qz3Div.classList.contains("hidden")) { return; } else { qz3Div.classList.add("hidden"); }
-    // if the 4th question (qz4Div) is hidden, do nothing. Else, hide it.
-    if (qz4Div.classList.contains("hidden")) { return; } else { qz4Div.classList.add("hidden"); }
-    // if the 5th question (qz5Div) is hidden, do nothing. Else, hide it.
-    if (qz5Div.classList.contains("hidden")) { return; } else { qz5Div.classList.add("hidden"); }
-    // if the 6th question (qz6Div) is hidden, do nothing. Else, hide it.
-    if (qz6Div.classList.contains("hidden")) { return; } else { qz6Div.classList.add("hidden"); }
-    // if the 7th question (qz7Div) is hidden, do nothing. Else, hide it.
-    if (qz7Div.classList.contains("hidden")) { return; } else { qz7Div.classList.add("hidden"); }
-    // if the 8th question (qz8Div) is hidden, do nothing. Else, hide it.
-    if (qz8Div.classList.contains("hidden")) { return; } else { qz8Div.classList.add("hidden"); }
-    // if the 9th question (qz9Div) is hidden, do nothing. Else, hide it.
-    if (qz9Div.classList.contains("hidden")) { return; } else { qz9Div.classList.add("hidden"); }
-    // if the 10th question (qz10Div) is hidden, do nothing. Else, hide it.
-    if (qz10Div.classList.contains("hidden")) { return; } else { qz10Div.classList.add("hidden"); }
-    // if the score tally (qz11Div) is hidden, do nithing. Else, hide it.
-    if (qz11Div.classList.contains("hidden")) { return; } else { qz11Div.classList.add("hidden"); }
-    // if the scoreboard (scoresDiv) is hidden, do nothing.  Else, hide it.
-    if (scoresDiv.classList.contains("hidden")) { return; } else { scoresDiv.classList.add("hidden"); }
-    // set the timer to 60
-    secondsLeft = originalTimerValue;
-    // Display the timer value in the time remaining div.
-    spanTime.textContent = Math.floor(secondsLeft);
-    // Empty the arrScore array holding answer values
-    arrScore = [""];
-    // Empty timePenalty var if any value is currently held there
-    timePenalty = "";
+// answers to previous attempts, and empties the timePenalty var. It forces a reload from server to clear 
+// session variables and provide a clean slate
+function startingPoint() {   
+    if (qz0Div.classList.contains("hidden")) { qz0Div.classList.remove("hidden"); } else { return; } // if quiz starting point (qz0Div) is hidden, display it. Else, do nothing.
+    if (qz1Div.classList.contains("hidden")) { return; } else { qz1Div.classList.add("hidden"); } // if 1st question (qz1Div) is hidden, do nothing. Else, hide it.
+    if (qz2Div.classList.contains("hidden")) { return; } else { qz2Div.classList.add("hidden"); } // if 2nd question (qz2Div) is hidden, do nothing. Else, hide it.
+    if (qz3Div.classList.contains("hidden")) { return; } else { qz3Div.classList.add("hidden"); } // if 3rd question (qz3Div) is hidden, do nothing. Else, hide it.
+    if (qz4Div.classList.contains("hidden")) { return; } else { qz4Div.classList.add("hidden"); } // if 4th question (qz4Div) is hidden, do nothing. Else, hide it.
+    if (qz5Div.classList.contains("hidden")) { return; } else { qz5Div.classList.add("hidden"); } // if 5th question (qz5Div) is hidden, do nothing. Else, hide it.
+    if (qz6Div.classList.contains("hidden")) { return; } else { qz6Div.classList.add("hidden"); } // if 6th question (qz6Div) is hidden, do nothing. Else, hide it.
+    if (qz7Div.classList.contains("hidden")) { return; } else { qz7Div.classList.add("hidden"); } // if 7th question (qz7Div) is hidden, do nothing. Else, hide it.
+    if (qz8Div.classList.contains("hidden")) { return; } else { qz8Div.classList.add("hidden"); } // if 8th question (qz8Div) is hidden, do nothing. Else, hide it.
+    if (qz9Div.classList.contains("hidden")) { return; } else { qz9Div.classList.add("hidden"); } // if 9th question (qz9Div) is hidden, do nothing. Else, hide it.
+    if (qz10Div.classList.contains("hidden")) { return; } else { qz10Div.classList.add("hidden"); } // if 10th question (qz10Div) is hidden, do nothing. Else, hide it.
+    if (qz11Div.classList.contains("hidden")) { return; } else { qz11Div.classList.add("hidden"); } // if score tally (qz11Div) is hidden, do nithing. Else, hide it.
+    if (scoresDiv.classList.contains("hidden")) { return; } else { scoresDiv.classList.add("hidden"); } // if scoreboard (scoresDiv) is hidden, do nothing. Else, hide it.
+    secondsLeft = originalTimerValue; // set the timer to default global variable for the original timer value
+    spanTime.textContent = Math.floor(secondsLeft); // Display the timer value in the time remaining div.
+    arrScore = [""]; // Empty the arrScore array holding answer values
+    timePenalty = ""; // Empty timePenalty var if any value is currently held there
 }
 
 //! -- HIGH SCORES FUNCTION -- //
@@ -533,37 +487,27 @@ function startingPoint() {
 // notifying the user that they are mid-quiz or haven't submitted their score yet. Otherwise, it shows the 
 // score board when the user clicks the "High Scores" link in the header area.
 function highScores() {
-    // if the quiz has started and any question is currently displayed...
-    if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) {
-    // show the user an alert that they must complete the quiz before viewing High Scores
-        alert("You are in the middle of a timed quiz. Please complete the quiz before view High Scores.");    
-    // else if the score tally div is displayed (and the score hasn't been submitted)
-    } else if (!(qz11Div.classList.contains("hidden"))) {
-    // show the user an alert that they must submit their score before viewing High Scores
-        alert("Please submit your score before viewing High Scores.");
-    // else if the quiz start or the score board is displayed...
-    } else {
-        // ...hide the quiz start div...
-        qz0Div.classList.add("hidden");
-        // ...and show the scoreboard div.
-        scoresDiv.classList.remove("hidden");
+    if(!(qz1Div.classList.contains("hidden")) || !(qz2Div.classList.contains("hidden")) || !(qz3Div.classList.contains("hidden")) || !(qz4Div.classList.contains("hidden")) || !(qz5Div.classList.contains("hidden")) || !(qz6Div.classList.contains("hidden")) || !(qz7Div.classList.contains("hidden")) || !(qz8Div.classList.contains("hidden")) || !(qz9Div.classList.contains("hidden")) || !(qz10Div.classList.contains("hidden"))) { // if the quiz has started and any question is currently displayed...
+        alert("You are in the middle of a timed quiz. Please complete the quiz before view High Scores."); // show user alert that must complete quiz before viewing High Scores
+    } else if (!(qz11Div.classList.contains("hidden"))) { // else if score tally div is displayed (and the score hasn't been submitted)...
+        alert("Please submit your score before viewing High Scores."); // show user alert that must submit score before viewing High Scores
+    } else { // else if the quiz start or the score board is displayed...
+        qz0Div.classList.add("hidden"); // ...hide the quiz start div...
+        scoresDiv.classList.remove("hidden"); // ...and show the scoreboard div.
     }
 }
 
 //! -- SCORE TIMER FUNCTION -- //
-//-----------------------------------------------------------------//
 // The scoreTimer() function starts a timer that counts down from a set number of seconds defined in the 
 // "secondsLeft" variable. The countdown is set to an interval of a tick per 1000 milliseconds (or 1 sec.).
 // On each interval loop, the current time penalty is deducted from the current time and then reset to avoid
 // multiple penalties for a single missed question. Once the timer reaches zero, an alert/confirm is thrown 
 // indicating to the user that time is up, at which point the user is "directed" to qz11 - the score tally  
 // page/div, the visibility of which is toggled to hide current the current div viewed and display the score 
-// tally div instead.=.
+// tally div instead.
 function scoreTimer() {
-    secondsLeft = originalTimerValue;
+    secondsLeft = originalTimerValue; // set the secondsLeft var the independently set global var for the timer value
     spanTime.textContent = Math.floor(secondsLeft); // display the initial time state on-screen as 60
-    console.log("--------------------");
-    console.log("scoreTime() has kicked off");
     var timerInterval = setInterval(function() { // create a setInterval loop to a var called timerInterval
         secondsLeft = secondsLeft - timePenalty - 1; // on each interval, decrease secondsLeft by 1 and subtract answer penalty;
         timePenalty = ""  // Reset timePenalty so only applied once per wrong answer 
@@ -605,91 +549,79 @@ function startQuiz() {
 // deducted from the time remaining as soon as the user submits the wrong answer and moves on in the quiz.
 function getQ1Answers() {
     q1FinalAnswer = q1Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 1: " + q1FinalAnswer);
     if(q1FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10; // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ2Answers() {
     q2FinalAnswer = q2Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 2: " + q2FinalAnswer);
     if(q2FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ3Answers() {
     q3FinalAnswer = q3Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 3: " + q3FinalAnswer);
     if(q3FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ4Answers() {
     q4FinalAnswer = q4Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 4: " + q4FinalAnswer);
     if(q4FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ5Answers() {
     q5FinalAnswer = q5Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 5: " + q5FinalAnswer);
     if(q5FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ6Answers() {
     q6FinalAnswer = q6Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 6: " + q6FinalAnswer);
     if(q6FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ7Answers() {
     q7FinalAnswer = q7Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 7: " + q7FinalAnswer);
     if(q7FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ8Answers() {
     q8FinalAnswer = q8Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 8: " + q8FinalAnswer);
     if(q8FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ9Answers() {
     q9FinalAnswer = q9Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 9: " + q9FinalAnswer);
     if(q9FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 function getQ10Answers() {
     q10FinalAnswer = q10Answers.value; // Set a final answer variable to hold the final submitted response
-    console.log("Question 10: " + q10FinalAnswer);
     if(q10FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
     }
 }
 
 //! -- SCORE THE QUIZ FUNCTION -- //
-
+// The scoreQuizAnswers() function is a quick function to capture the time remaining and set it to a retrieveable variable,
+// and set a counter to tally the number of correct responses, both of which are used in final weighted score calculation.
 function scoreQuizAnswers() {
-    // score quiz answers array
-    console.log(arrScore);
-    let timeRemaining = secondsLeft;
-    let correctCount = 0;
-    for(i = 0; i < arrScore.length; i++) {
-        if (arrScore[i] == true) {
-            correctCount++;
+    
+    let timeRemaining = secondsLeft;  // set a var to the final seconds left on the timer
+    let correctCount = 0; // set the number correct to zero
+    for(i = 0; i < arrScore.length; i++) { // loop through the question responses array
+        if (arrScore[i] == true) {  // If the value in each index position is true (aka correct)...
+            correctCount++; // ...advance the the correct counter by 1
         } else {
-            return;
+            return; // otherwise, do nothing
         }
     }
-    console.log("Correct Count: " + correctCount);
-    console.log("Time Remaining: " + timeRemaining);
 }
 
 //! -- NAVIGATION FROM QUESTION-TO-QUESTON FUNCTION(S) -- //
@@ -921,8 +853,6 @@ function scoreTally() {
             console.log("---");
         }
     }
-    console.log("Correct Count: " + correctCount); // log to console for testing
-    console.log("Time Remaining: " + timeRemaining); // log to console for testing
     spanNumCorrect.textContent = correctCount; // set the text in the page that relays the # correct
     let percentTimeMultiplier = ""; // create a var to hold a calculated multiplier to use for a weighted score
     if (timeRemaining < 1) { // if the time has run out (or possible been driven below zero due to penalties) 
@@ -934,63 +864,47 @@ function scoreTally() {
     spanFinalScore.textContent = weightedScore; // set the text relaing the final weighted score to the calculated variable
 }
 
-// // -- HANDLE SCORES SUBMISSIONS LOCAL STORAGE -- //
-// // function locStorSubs() {
-    // // scoresSubmissions = JSON.parse(localStorage.getItem("LastScoreBoard")) // get LastScoreBoard from local storage and parse it
-    // // if (scoresSubmissions == undefined) { // if there's nothing in local storage for it
-       // // scoresSubmissions = []; // set it to an empty array
-     //   // localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmission));
-    // //} else {
-       // // console.log("Last Score Board from Local Storage: " + scoresSubmissions);
-    // //}
-// //}
-
-
 //! -- SUBMIT QUIZ SCORES FUNCTION -- //
-//TODO The submitScores() function takes the user input of initials, along with the values of time, final weighted 
-//TODO score and answers correct, and pushes them to an array. It also prevents submission until the initials are filled.
-//TODO It sorts the array and then returns innerHTML created elements to fill the scoreboard based on saved scores.
-//TODO It stringifies the complete scores list, and stores the values in local storage for later, session-independent
-//TODO retrieval.
+// The submitScores() function does a number of things.  It toggles the visibility of the score tally div (qz11Div) and the 
+// hidden scoreboarddiv (scoresDiv), simulating a navigation effect for the taker.  It determines whether localStorage contains
+// anything to populate the Score Board, gets it and parses it if so, and sets the array to store locally to empty if not.
+// The function determines if initials are entered and whether they are 3 or less digits (the avg. length of initials). If the 
+// submission attempt doesn't have initials entered, or if the initials entered are > than 3, alerts and error handling occur. If
+// the initials meet the criteria for success, the function takes the user's input of initials, along with with values of time
+// remaining, final weighted score, and answers correct - and then pushes all values into an object in the scoresSubmissions array.
+// The function then sorts the array and sets the inner HTML of the ScoreBoard  table's row with the sorted entries from highest 
+// to lowest to fill the scoreboard based on saved scores. Lastly it re-stringifies the scoresSubmissions array and stores the 
+// values in local storage for later, session-independent retrieval.
 function submitScores() {
-    console.log(initialsInputField);
-    console.log(currentInitials);
     scoresSubmissions = JSON.parse(localStorage.getItem("LastScoreBoard")) // get LastScoreBoard from local storage and parse it
     if (scoresSubmissions == undefined) { // if there's nothing in local storage for it
         scoresSubmissions = []; // set it to an empty array
-        // localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmission));
-    } else {
-        console.log("Last Score Board from Local Storage: " + scoresSubmissions);
     }
-    currentInitials = initialsInputField.value;
-    if (initialsInputField.value !== "" && initialsInputField.value.length < 4) {
-        let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": timeRemaining, "initials": currentInitials};
-        scoresSubmissions.push(scoresObjectNext);
-        scoresSubmissions.sort();
-        localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmissions));
-        console.log(scoresSubmissions);
+    currentInitials = initialsInputField.value; // set the currentInitials var to the current initials/score submission
+    if (initialsInputField.value !== "" && initialsInputField.value.length < 4) { // provided the value is < 4 characters and not empty
+        let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": timeRemaining, "initials": currentInitials}; // create an object that fills the currect submission's weighted score, # correct, time left, and initials
+        scoresSubmissions.push(scoresObjectNext); // push the new object into the scoresSubmissions array
+        scoresSubmissions.sort(); // then sort the array (order of elements in object allows for table to be populated in correct order)
+        localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmissions)); // set the scoreSubmissions array to local storage
         qz11Div.classList.add("hidden"); //  hides the score tally/results div
         scoresDiv.classList.remove("hidden");  // displays the score board
-        for (i = 0; i < scoresSubmissions.length; i++) {
-            let scoresTableRow = document.createElement("tr");
-            scoresTableRow.innerHTML = "<td><strong>"+(i+1)+"</strong></td><td><strong>" + scoresSubmissions[i].initials + "</strong></td><td><strong>" + scoresSubmissions[i].numCorrect + "</strong></td><td>" + scoresSubmissions[i].timeLeft + "</strong></td><td>" + scoresSubmissions[i].weighted + "</strong></td>";
-            scoresTableBody.appendChild(scoresTableRow);
+        for (i = 0; i < scoresSubmissions.length; i++) { // run  a loop for all the scores submissions stored in local storage
+            let scoresTableRow = document.createElement("tr"); // create a row element
+            scoresTableRow.innerHTML = "<td><strong>"+(i+1)+"</strong></td><td><strong>" + scoresSubmissions[i].initials + "</strong></td><td><strong>" + scoresSubmissions[i].numCorrect + "</strong></td><td>" + scoresSubmissions[i].timeLeft + "</strong></td><td>" + scoresSubmissions[i].weighted + "</strong></td>"; // make the row's inner HTML align with the col info and headers
+            scoresTableBody.appendChild(scoresTableRow); // add the row to the table
         }
-    } else {
-        alert("Your initials should be no longer than 3 characters.");
+    } else if (initialsInputField.value.length > 3) { 
+        alert("Your initials should be no longer than 3 characters."); // alert user of error in submission
         initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
-        console.log(initialsInputField.value);
+    } else if (initialsInputField.value !== "") {
+        alert("You must enter your initials in order to submit your score to the Score Board.") // alert user error in submission
+        initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+    } else {
+        initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
     }
-    initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+    // all other instances, upon completion of function to this point, still reset initialsTXT for other quiz submissions
+    initialsInputField.value = "";
 }  
-
-
-//! -- SCORE BOARD SET UP FUNCTION -- //
-// The scoreBoard() function toggles the visibility of the score tally div (qz11Div) and the hidden scoreboard
-// div (scoresDiv), simulating a navigation effect for the taker.
-    // function scoreBoard() {
-    // submitScores(); // call the submit Scores function
-// }
 
 //! -- RETAKE QUIZ FROM SCORE TALLY FUNCTION -- //
 // The retakeFromTally() function simply reloads the quiz from the server to ensure a clean-slate, a quick
@@ -998,7 +912,6 @@ function submitScores() {
 function retakeFromTally() {
     location.reload(true); // reloads the page from the server to clean-slate the session cache
 }
-
 
 //! -- RETAKE QUIZ FROM SCOREBOARD FUNCTION -- //
 // The retakeFromScoreBoard() function simply reloads the quiz from the server to ensure a clean-slate, a quick
@@ -1008,9 +921,11 @@ function retakeFromScoreBoard() {
 }
 
 //! -- CLEAR SCORES FUNCTION -- //
-//TODO The clearScores() function clears the array of scores, and wipes the local storage holding it - this includes
-//TODO clearing the scoreboard table.  It then routes the user back to the startpoint().
+// The clearScores() function clears the scores in the ScoreBoard when the clearScoresBtn is clicked. It handles 2 aspects to
+// accomplish the clearing. First it clears the localStorage key/value pair from which the ScoreBoard is populated. The it resets
+// the scoreSubmissions array to ensure a future quiz submission doesn't inadvertently republish and save the previous scoreboard
+// results to local storage.
 function clearScores() {
-    // this function will clear the scores in the ScoreBoard when the clearScoresBtn is clicked
-    console.log("clearScoresBtn button was clicked");
+    localStorage.removeItem("LastScoreBoard"); // removes the stringified key/value of the previous ScoreBoard from localStorage
+    scoreSubmissiones = []; // clears the scoreboard submissions array containing previous score entries
 }
