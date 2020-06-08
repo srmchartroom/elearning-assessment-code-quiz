@@ -426,7 +426,7 @@
     const scoresRetakeBtn = document.querySelector("#retake2Btn"); // get the qz12/scores retake btn and set it to scoresRetakeBtn
     const clearScoresBtn = document.querySelector("#clearScoresBtn"); // get the clear scores button and set it to clearScoresBtn
 //! -- OTHER GLOBAL VARIABLES -- //
-    const originalTimerValue = 1240; // Set beginning timer value; will be start time & also beginning time for weighted scoring
+    const originalTimerValue = 120; // Set beginning timer value; will be start time & also beginning time for weighted scoring
     let secondsLeft = originalTimerValue; // sets the secondsLeft var to the initial quiz time for counting down
     let timePenalty = "";  // Create empty timePenalty var to hold time penalty values when answer is incorrect
     let arrScore = []; // create an empty array to hold the scoring per question
@@ -435,7 +435,7 @@
     let timeRemaining = 0; // Create a placeholder variable for time remaining at end of quiz for score tallying
 //! ------------------------------------------------------------------------------------------------------ //
 //! ------------------------------------------------------------------------------------------------------ //
-//! Event Listeners //
+//! EVENT LISTENERS //
     window.addEventListener("load", startingPoint); // Adds an event listener to check run the startingPoint function on window load.
     goToScoresBtn.addEventListener("click", highScores); // Add event listener to goToScoresBtn button to run highScores() onClick
     startBtn.addEventListener("click", startQuiz); // Add event listener to startBtn button to run startQuiz() onClick 
@@ -928,4 +928,5 @@ function retakeFromScoreBoard() {
 function clearScores() {
     localStorage.removeItem("LastScoreBoard"); // removes the stringified key/value of the previous ScoreBoard from localStorage
     scoreSubmissiones = []; // clears the scoreboard submissions array containing previous score entries
+    scoresTableBody.innerHTML = "";
 }
