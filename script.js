@@ -418,46 +418,32 @@
     let q10FinalAnswer = "";    // placeholder for final answer after submit
 
 //! -- QZ11 (Scoring Conclusion) ELEMENTS -- //
-
     const qz11Div = document.querySelector("#qz11");    // get qz11 div and set it to qz11Div
     const scoreTitle = document.querySelector("#scoreTallyTitle");    // get scoreTallyTitle h2 and set it to scoreTitle
     const spanNumCorrect = document.querySelector("#numCorrect");    // get qz11 number correct span and set to spanNumCorrect
     const spanFinalScore = document.querySelector("#score");    // get qz11 final weighted score span and set to spanFinalScore
     const qz11retakeBtn = document.querySelector("#retakeBtn");    // get qz11 retake button and set to qz11retakeBtn
     let initialsInputField = document.querySelector("#initialsInput");    // get initials input field and set to initialsInput
-    let initialsTxt = initialsInputField.textContent; // get the text content of the empty initials input field and set to initialsTxt
+    let currentInitials = ""; // set a placeholder variable to store the current initials once entered by user 
     const scoreItBtn = document.querySelector("#scoreBtn");    // get submit score button and set to scoreItBtn
     let correctCount = 0; // variable to hold the correct number of responses at the end of the quiz
+    let scoreSubmissions = [""] // initially empty array that will eventually populate from local storage
 
 //! -- QZ12 (Scoreboard) ELEMENTS -- //
-    // get qz12 (aka "scores" and set it to scoresDiv
-    const scoresDiv = document.querySelector("#scores");
-    // get the Scores Table and set it to scoresTable
-    const scoresTable = document.querySelector("#scoresTable");
-    // get the Scores Table Body and set it to scoresTableBody
-    const scoresTableBody = document.querySelector("#scoresTableBody");
-    // get the qz12/scores retake btn and set it to scoresRetakeBtn
-    const scoresRetakeBtn = document.querySelector("#retake2Btn");
-    // get the clear scores button and set it to clearScoresBtn
-    const clearScoresBtn = document.querySelector("#clearScoresBtn");
+    const scoresDiv = document.querySelector("#scores"); // get qz12 (aka "scores") and set it to scoresDiv
+    const scoresTable = document.querySelector("#scoresTable"); // get the Scores Table and set it to scoresTable
+    const scoresTableBody = document.querySelector("#scoresTableBody"); // get the Scores Table Body and set it to scoresTableBody
+    const scoresRetakeBtn = document.querySelector("#retake2Btn"); // get the qz12/scores retake btn and set it to scoresRetakeBtn
+    const clearScoresBtn = document.querySelector("#clearScoresBtn"); // get the clear scores button and set it to clearScoresBtn
 
 //! -- OTHER GLOBAL VARIABLES -- //
-    // Set a beginning timer value; will be starting time for timer and also beginning time for weighted scoring
-    const originalTimerValue = 1240;
-    // sets the secondsLeft var to the initial quiz time for counting down
-    let secondsLeft = originalTimerValue;
-    // Create empty timePenalty var to hold time penalty values when answer is incorrect
-    let timePenalty = ""; 
-    // create an empty array to hold the scoring per question
-    let arrScore = [];
-    // Create a finalTimeRemaining variable to hold the time left on the clock when quiz is finished
-    let finalTimeRemaining = "";
-    // Create final weighted score variable to hold the calculated final score upon completion of quiz
-    let weightedScore = "";
-    // Create an empty array to hold submitted score elements objects
-    let scoresSubmissions = [];
-    // Create a placeholder variable for time remaining at end of quiz for score tallying
-    let timeRemaining = 0;
+    const originalTimerValue = 1240; // Set beginning timer value; will be start time & also beginning time for weighted scoring
+    let secondsLeft = originalTimerValue; // sets the secondsLeft var to the initial quiz time for counting down
+    let timePenalty = "";  // Create empty timePenalty var to hold time penalty values when answer is incorrect
+    let arrScore = []; // create an empty array to hold the scoring per question
+    let finalTimeRemaining = ""; // Create finalTimeRemaining variable to hold time left on clock when quiz is finished
+    let weightedScore = ""; // Create final weighted score variable to hold calculated final score upon completion of quiz
+    let timeRemaining = 0; // Create a placeholder variable for time remaining at end of quiz for score tallying
 
 //! Event Listeners //
     // Adds an event listener to check run the startingPoint function on window load.
@@ -494,6 +480,7 @@
     scoresRetakeBtn.addEventListener("click", retakeFromScoreBoard);
     // Add event listener to clearScoresBtn button to run clearScores() onClick
     clearScoresBtn.addEventListener("click", clearScores);
+    // Add event listener to initials field on the score tally page to run initialsStore(); on change
 
 
 
@@ -947,6 +934,18 @@ function scoreTally() {
     spanFinalScore.textContent = weightedScore; // set the text relaing the final weighted score to the calculated variable
 }
 
+// // -- HANDLE SCORES SUBMISSIONS LOCAL STORAGE -- //
+// // function locStorSubs() {
+    // // scoresSubmissions = JSON.parse(localStorage.getItem("LastScoreBoard")) // get LastScoreBoard from local storage and parse it
+    // // if (scoresSubmissions == undefined) { // if there's nothing in local storage for it
+       // // scoresSubmissions = []; // set it to an empty array
+     //   // localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmission));
+    // //} else {
+       // // console.log("Last Score Board from Local Storage: " + scoresSubmissions);
+    // //}
+// //}
+
+
 //! -- SUBMIT QUIZ SCORES FUNCTION -- //
 //TODO The submitScores() function takes the user input of initials, along with the values of time, final weighted 
 //TODO score and answers correct, and pushes them to an array. It also prevents submission until the initials are filled.
@@ -955,20 +954,34 @@ function scoreTally() {
 //TODO retrieval.
 function submitScores() {
     console.log(initialsInputField);
-    console.log(initialsTxt);
-    if (initialsTxt !== "" && initialsTxt.length < 4) {
-        let scoresObjectNext = {"initials": initialsTxt, "numCorrect": correctCount, "timeLeft": timeRemaining, "weighted": weightedScore};
+    console.log(currentInitials);
+    scoresSubmissions = JSON.parse(localStorage.getItem("LastScoreBoard")) // get LastScoreBoard from local storage and parse it
+    if (scoresSubmissions == undefined) { // if there's nothing in local storage for it
+        scoresSubmissions = []; // set it to an empty array
+        // localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmission));
+    } else {
+        console.log("Last Score Board from Local Storage: " + scoresSubmissions);
+    }
+    currentInitials = initialsInputField.value;
+    if (initialsInputField.value !== "" && initialsInputField.value.length < 4) {
+        let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": timeRemaining, "initials": currentInitials};
         scoresSubmissions.push(scoresObjectNext);
+        scoresSubmissions.sort();
+        localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmissions));
         console.log(scoresSubmissions);
         qz11Div.classList.add("hidden"); //  hides the score tally/results div
         scoresDiv.classList.remove("hidden");  // displays the score board
-        initialsTxt = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+        for (i = 0; i < scoresSubmissions.length; i++) {
+            let scoresTableRow = document.createElement("tr");
+            scoresTableRow.innerHTML = "<td><strong>"+(i+1)+"</strong></td><td><strong>" + scoresSubmissions[i].initials + "</strong></td><td><strong>" + scoresSubmissions[i].numCorrect + "</strong></td><td>" + scoresSubmissions[i].timeLeft + "</strong></td><td>" + scoresSubmissions[i].weighted + "</strong></td>";
+            scoresTableBody.appendChild(scoresTableRow);
+        }
     } else {
         alert("Your initials should be no longer than 3 characters.");
-        initialsTxt = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
-        console.log(initialsTxt);
-        
+        initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+        console.log(initialsInputField.value);
     }
+    initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
 }  
 
 
