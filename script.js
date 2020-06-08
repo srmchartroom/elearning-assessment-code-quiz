@@ -494,6 +494,7 @@ function highScores() {
     } else { // else if the quiz start or the score board is displayed...
         qz0Div.classList.add("hidden"); // ...hide the quiz start div...
         scoresDiv.classList.remove("hidden"); // ...and show the scoreboard div.
+        submitScores();
     }
 }
 
@@ -605,22 +606,6 @@ function getQ10Answers() {
     q10FinalAnswer = q10Answers.value; // Set a final answer variable to hold the final submitted response
     if(q10FinalAnswer == "false") {  // if the answer is false...
         timePenalty = 10;  // ...Set the timePenalty var to 10 (the number of seconds to be deducted)
-    }
-}
-
-//! -- SCORE THE QUIZ FUNCTION -- //
-// The scoreQuizAnswers() function is a quick function to capture the time remaining and set it to a retrieveable variable,
-// and set a counter to tally the number of correct responses, both of which are used in final weighted score calculation.
-function scoreQuizAnswers() {
-    
-    let timeRemaining = secondsLeft;  // set a var to the final seconds left on the timer
-    let correctCount = 0; // set the number correct to zero
-    for(i = 0; i < arrScore.length; i++) { // loop through the question responses array
-        if (arrScore[i] == true) {  // If the value in each index position is true (aka correct)...
-            correctCount++; // ...advance the the correct counter by 1
-        } else {
-            return; // otherwise, do nothing
-        }
     }
 }
 
@@ -846,6 +831,7 @@ function scoreTally() {
     scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
     timeRemaining = spanTime.textContent; // sets a var to the final time displayed on quiz completion
     timmeRemaining = parseInt(timeRemaining); // parses that displayed time string into an integer resets the timeRemaining value to it
+    correctCount = 0; // set the correct count var to 0
     for(i = 0; i < arrScore.length; i++) { // for loop to loop through the answers array
         if (arrScore[i] == "true") {  // if the current index position has a value of "true" (our value for "correct")
             correctCount++; // increment the correct counter global variable by 1  
@@ -874,37 +860,51 @@ function scoreTally() {
 // remaining, final weighted score, and answers correct - and then pushes all values into an object in the scoresSubmissions array.
 // The function then sorts the array and sets the inner HTML of the ScoreBoard  table's row with the sorted entries from highest 
 // to lowest to fill the scoreboard based on saved scores. Lastly it re-stringifies the scoresSubmissions array and stores the 
-// values in local storage for later, session-independent retrieval.
+// values in local storage for later, session-independent retrieval. This function is also leveraged to build the high scores/
+// score board on demand from either the quiz start or the score tally views.
 function submitScores() {
     scoresSubmissions = JSON.parse(localStorage.getItem("LastScoreBoard")) // get LastScoreBoard from local storage and parse it
     if (scoresSubmissions == undefined) { // if there's nothing in local storage for it
         scoresSubmissions = []; // set it to an empty array
     }
-    currentInitials = initialsInputField.value; // set the currentInitials var to the current initials/score submission
-    if (initialsInputField.value !== "" && initialsInputField.value.length < 4) { // provided the value is < 4 characters and not empty
-        let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": timeRemaining, "initials": currentInitials}; // create an object that fills the currect submission's weighted score, # correct, time left, and initials
-        scoresSubmissions.push(scoresObjectNext); // push the new object into the scoresSubmissions array
-        scoresSubmissions.sort(); // then sort the array (order of elements in object allows for table to be populated in correct order)
-        localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmissions)); // set the scoreSubmissions array to local storage
-        qz11Div.classList.add("hidden"); //  hides the score tally/results div
-        scoresDiv.classList.remove("hidden");  // displays the score board
-        for (i = 0; i < scoresSubmissions.length; i++) { // run  a loop for all the scores submissions stored in local storage
-            let scoresTableRow = document.createElement("tr"); // create a row element
-            scoresTableRow.innerHTML = "<td><strong>"+(i+1)+"</strong></td><td><strong>" + scoresSubmissions[i].initials + "</strong></td><td><strong>" + scoresSubmissions[i].numCorrect + "</strong></td><td>" + scoresSubmissions[i].timeLeft + "</strong></td><td>" + scoresSubmissions[i].weighted + "</strong></td>"; // make the row's inner HTML align with the col info and headers
-            scoresTableBody.appendChild(scoresTableRow); // add the row to the table
+    if (scoresDiv.classList.contains("hidden") && !(qz11Div.classList.contains("hidden"))) {
+        currentInitials = initialsInputField.value; // set the currentInitials var to the current initials/score submission
+        if (initialsInputField.value !== "" && initialsInputField.value.length < 4) { // provided the value is < 4 characters and not empty
+            let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": timeRemaining, "initials": currentInitials}; // create an object that fills the currect submission's weighted score, # correct, time left, and initials
+            scoresSubmissions.push(scoresObjectNext); // push the new object into the scoresSubmissions array    
+        } else if (initialsInputField.value.length > 3) { 
+            alert("Your initials should be no longer than 3 characters."); // alert user of error in submission
+            initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+        } else if (initialsInputField.value !== "") {
+            alert("You must enter your initials in order to submit your score to the Score Board.") // alert user error in submission
+            initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+        } else {
+            initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
         }
-    } else if (initialsInputField.value.length > 3) { 
-        alert("Your initials should be no longer than 3 characters."); // alert user of error in submission
-        initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
-    } else if (initialsInputField.value !== "") {
-        alert("You must enter your initials in order to submit your score to the Score Board.") // alert user error in submission
-        initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
-    } else {
-        initialsInputField.value = "";    // Reset initialsTxt so that previous submissions don't interrupt conditional logic
+        initialsInputField.value = "";  // all other instances, upon completion of function to this point, still reset initials textfield for other quiz submissions
+    } 
+    function compare(a,b) { // comparison function to act on the scoresSubmissions sort that follows the function
+        const scoreA = a.weighted; // set the weighted key's value of a to scoreA
+        const scoreB = b.weighted; // set the weighted key's value of b to scoreB
+        let comparison = 0; // set comparison var to 0 for starters, if the values are equal to each other, the sort order stays the same.
+        if (scoreA > scoreB) { // if a > b, return 1 => the larger value will come after the smaller (order smallest to largest)
+            comparison = -1; // typically this is reversed (= 1 usually), but multiplied by neg. 1 here (e.g. * -1) to sort largest to smallest.
+        } else if (scoreA < scoreB) { // if a < b, return -1 => the larger value will come before the smaller (order largest to smallest)
+            comparison = 1; // typically this is reversed (= 1 usually), but multiplied by neg. 1 here (e.g. * -1) to sort largest to smallest. 
+        }
+        return comparison; 
     }
-    // all other instances, upon completion of function to this point, still reset initialsTXT for other quiz submissions
-    initialsInputField.value = "";
-}  
+    scoresSubmissions.sort(compare);  // then sort the array (order of elements in object allows for table to be populated in correct order)
+    localStorage.setItem("LastScoreBoard", JSON.stringify(scoresSubmissions)); // set the scoreSubmissions array to local storage
+    qz11Div.classList.add("hidden"); //  hides the score tally/results div
+    scoresDiv.classList.remove("hidden");  // displays the score board
+    for (i = 0; i < scoresSubmissions.length; i++) { // run  a loop for all the scores submissions stored in local storage
+        let scoresTableRow = document.createElement("tr"); // create a row element
+        scoresTableRow.innerHTML = "<td><strong>"+(i+1)+"</strong></td><td><strong>" + scoresSubmissions[i].initials + "</strong></td><td><strong>" + scoresSubmissions[i].numCorrect + "</strong></td><td>" + scoresSubmissions[i].timeLeft + "</strong></td><td>" + scoresSubmissions[i].weighted + "</strong></td>"; // make the row's inner HTML align with the col info and headers
+        scoresTableBody.appendChild(scoresTableRow); // add the row to the table
+    }
+} 
+    
 
 //! -- RETAKE QUIZ FROM SCORE TALLY FUNCTION -- //
 // The retakeFromTally() function simply reloads the quiz from the server to ensure a clean-slate, a quick
