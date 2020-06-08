@@ -1,3 +1,25 @@
+/* A critical class - it is toggled throughout the JavaScript to display and hide questions and other key divs throughout the experience */
 .hidden {
     display: none;
+}
+
+/* Sets a gradient background on the page behind the divs */
+.bg-gradient {
+    background: linear-gradient(0deg, rgba(160,160,160,1) 5%, rgba(255,255,255,1) 65%); 
+    height: 100vh;
+}
+
+/* Handles the quiz title font size at the top-center of the page */ 
+.quiz-title {
+    font-size: 200%;
+}
+
+/* Handles width of next buttons for each question div */
+.nxt-btn {
+    width: 100px;
+}
+
+/* Handles width of retake, submit score, and clear scores buttons */
+.retake-score-btn {
+    width: 200px;
 }
