@@ -529,6 +529,7 @@ function scoreTimer() {
           scoreTitle.textContent = "You have run out of time."; // ...and then change scoring div title to note time ran out
         } 
         finalTimeRemaining = secondsLeft; //  sets the finalTimeRemaining on the clock to however many seconds are left
+        spanTime.textContent = finalTimeRemaining; // set the countdown timer readout to be the remaining time on the clock.
     }, 1000); // interval timer loops every 1000 milliseconds aka every second    
 }
 
@@ -831,8 +832,8 @@ function scoreTally() {
         } 
     }, 1000);    // ...Set the interval looping at 1000 milliseconds (aka 1 sec. per interval loop)
     scoreTitle.textContent = "You have completed this quiz."; // Updates the div title with a "completed" notice.
-    timeRemaining = spanTime.textContent; // sets a var to the final time displayed on quiz completion
-    timmeRemaining = parseInt(timeRemaining); // parses that displayed time string into an integer resets the timeRemaining value to it
+    spanTime.textContent = finalTimeRemaining; // sets a var to the final time displayed on quiz completion
+    finalTimeRemaining = parseInt(finalTimeRemaining); // parses that displayed time string into an integer resets the timeRemaining value to it
     correctCount = 0; // set the correct count var to 0
     for(i = 0; i < arrScore.length; i++) { // for loop to loop through the answers array
         if (arrScore[i] == "true") {  // if the current index position has a value of "true" (our value for "correct")
@@ -846,7 +847,7 @@ function scoreTally() {
     if (timeRemaining < 1) { // if the time has run out (or possible been driven below zero due to penalties) 
         percentTimeMultiplier = 0 // set the multiplier to 0
     } else { // if the quiz was completed in time
-        percentTimeMultiplier = 1-((originalTimerValue - timeRemaining)/originalTimerValue); // calculate a % change in time for adjusting the score
+        percentTimeMultiplier = 1-((originalTimerValue - finalTimeRemaining)/originalTimerValue); // calculate a % change in time for adjusting the score
     }
     weightedScore = Math.ceil((correctCount * percentTimeMultiplier) + correctCount); // set a weighted score var to be the rounded up sum of the correct responses and the correct responses * the % change in time multipier
     spanFinalScore.textContent = weightedScore; // set the text relaing the final weighted score to the calculated variable
@@ -870,9 +871,9 @@ function submitScores() {
         scoresSubmissions = []; // set it to an empty array
     }
     if (scoresDiv.classList.contains("hidden") && !(qz11Div.classList.contains("hidden"))) {
-        currentInitials = initialsInputField.value; // set the currentInitials var to the current initials/score submission
+        currentInitials = initialsInputField.value.toUpperCase(); // set the currentInitials var to the current initials/score submission and convert to UpperCase
         if (initialsInputField.value !== "" && initialsInputField.value.length < 4) { // provided the value is < 4 characters and not empty
-            let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": timeRemaining, "initials": currentInitials}; // create an object that fills the currect submission's weighted score, # correct, time left, and initials
+            let scoresObjectNext = {"weighted": weightedScore, "numCorrect": correctCount, "timeLeft": finalTimeRemaining, "initials": currentInitials}; // create an object that fills the currect submission's weighted score, # correct, time left, and initials
             scoresSubmissions.push(scoresObjectNext); // push the new object into the scoresSubmissions array    
         } else if (initialsInputField.value.length > 3) { 
             alert("Your initials should be no longer than 3 characters."); // alert user of error in submission
