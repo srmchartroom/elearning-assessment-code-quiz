@@ -30,6 +30,8 @@ The scoring is creative. It is based on number correct and then adjusted with a 
 
 # Reviewing the Deployed Application
 
+You can review the deployed application at [https://srmchartroom.github.io/elearning-assessment-code-quiz/index.html](You can review the deployed application at https://srmchartroom.github.io/elearning-assessment-code-quiz/index.html).
+
 Links Forthcoming
 
 # Potential Future Enhancements
