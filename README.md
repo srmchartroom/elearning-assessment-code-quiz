@@ -37,20 +37,20 @@ Links Forthcoming
 A number of future enhancements are being planned. Some of the following _may_ be included in future updates/releases of this repository:
 
 - ADMIN:
-- Admin screen that provides functionality to input questions, answers, and correct/incorrect identifiers without having to touch the javascript
-- Ability to set up a question bank for the quiz
-- Ability to set timer starting value from an admin screen or function available after recognized authentication of valid admin
-- Ability to set penalty value, including
-- Ability to set whether quiz is timed or not, and dynamically adjust answer handling, final score, and scoreboard display based on it
-- Ability to randomize the answer order
-- Ability to randomize and pull random questions from a bank of questions held in memory
-- Connect to MySQL or MongoDB database via node or express server
-- Consolidation of dynamic generation of quiz divs (rather than breaking out for explicitness to suport reviewing developers to use and update)
-- Shift clearing scoreboard functionality to an admin panel - or recognized authentication of admin before displaying the function
-- Ability to set a routing/goto URL and "Continue" button/function to proceed from the quiz to the next learning module.
-- Ability to write a final SCORM-compliant object/output for admins to leverage quiz results for use in an LMS.
+  - Admin screen that provides functionality to input questions, answers, and correct/incorrect identifiers without having to touch the javascript
+  - Ability to set up a question bank for the quiz
+  - Ability to set timer starting value from an admin screen or function available after recognized authentication of valid admin
+  - Ability to set penalty value, including
+  - Ability to set whether quiz is timed or not, and dynamically adjust answer handling, final score, and scoreboard display based on it
+  - Ability to randomize the answer order
+  - Ability to randomize and pull random questions from a bank of questions held in memory
+  - Connect to MySQL or MongoDB database via node or express server
+  - Consolidation of dynamic generation of quiz divs (rather than breaking out for explicitness to suport reviewing developers to use and update)
+  - Shift clearing scoreboard functionality to an admin panel - or recognized authentication of admin before displaying the function
+  - Ability to set a routing/goto URL and "Continue" button/function to proceed from the quiz to the next learning module.
+  - Ability to write a final SCORM-compliant object/output for admins to leverage quiz results for use in an LMS.
 - USER:
   - Ability for user to remove only their score from the scoreboard
   - Ability for user to toggle whether _they_ want to time the quiz or not, and dynamically shift scoreboard criteria accordingly
 
-Watch for future releases. And feel free to message me or open an issue to suggest other ideas for future enhancements.
+**Watch for future releases. And feel free to message me or open an issue to suggest other ideas for future enhancements.**
