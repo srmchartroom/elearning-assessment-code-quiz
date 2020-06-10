@@ -14,33 +14,33 @@
     <!-- The header region. Persists throughout the Quiz.-->
     <container class="clearfix mb-0">
         <header class="navbar-dark container-md">
-            <div class="row">
+            <div class="row justify-content-between">
                 <!-- High Scores container - handles the left float of the internal container element for the button link -->
-                <div class="float-left col-auto">
+                <div id="high-scores-btn-container" class="float-left col-sm-auto col-lg-3">
                     <!-- High Scores container - holds the high scores link; Bootstrap 4.5.0 styles for background, margins, etc. -->
-                    <div class="alert alert-secondary mt-2 ml-2 mr-2 mb-1 bg-light">
+                    <div class="alert alert-secondary mt-2 mb-1 bg-light text-center">
                         <!-- Button that "links" to the Scoreboard div - essentially toggles the Quiz Start div and the Scoreboard div -->
-                        <button type="button" class="btn btn-link text-center mx-auto my-auto fit" id="goToScores">High Scores</button>
+                        <button type="button" class="btn btn-link text-center mx-auto my-auto" id="goToScores">High Scores</button>
                     </div>
                     <!-- Centered text under the High Scores button -->
                     <div class="text-center mx-auto my-auto small">
                         <p><em>Review the rankings.</em></p>
                     </div>
                 </div>
-                <!-- Centered Quiz Title - the title itself is populated dynamically from the JavaScript in the span #quizTitle -->
-                <div class="float-left ml-5 mt-2 pl-5 align-top col-6 text-center">
-                    <h1 class="quiz-title">Quiz: <span id="quizTitle"></span></h1>
-                </div>
                 <!-- Time Remaining container - handles the right float of the internal container element for the countdown timer -->
-                <div class="float-right col">
+                <div id="time-remaining-container" class="float-right col-sm-auto col-lg-3 justify-items">
                     <!-- Time Remaining container - holds the countdown timer; Bootstrap 4.5.0 styles for bg, margins, etc. -->
-                    <div class="alert alert-secondary mt-2 ml-5 mr-2 mb-1 bg-light text-center">
+                    <div class="alert alert-secondary mt-2 mb-1 bg-light text-center">
                         <!-- Time Remaininer countdown timer dynamically populated by JavaScript in the span #timer -->
                         <p class="m-auto p-2">TIME REMAINING: <span id="timer"></span> <span class="small">SEC.</span></p>
                     </div>
                     <!-- Centered text under the countdown timer -->
-                    <div class="inline text-center small ml-5"><p><em>This learning assessment is timed.</em></p></div>
+                    <div class="inline text-center small"><p><em>This learning assessment is timed.</em></p></div>
                 </div>
+            </div>
+            <!-- Centered Quiz Title - the title itself is populated dynamically from the JavaScript in the span #quizTitle -->
+            <div id="quiz-title-txt-container" class="float-left align-top col text-center">
+                <h1 class="quiz-title">Quiz: <span id="quizTitle"></span></h1>
             </div>
         </header>
     </container>
