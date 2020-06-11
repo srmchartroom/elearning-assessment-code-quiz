@@ -669,21 +669,21 @@
                 <p>Your weighted score based on your correct responses and time is <strong><span id="score"></span></strong>.</p>
                 <hr class="mt-4">
                 <div class="row pt-5">
-                    <div class="col">
+                    <div class="col-lg-3">
                         <p><strong>Not pleased with your score? Try again.</strong></p>
                         <!-- Retake button clears quiz results, resets timer, & toggles visibility of Score Tally & Quiz Start divs -->    
                         <button id="retakeBtn" tabindex="3" type="button" class="btn btn-primary mt-0 float-left retake-score-btn">Retake Quiz</button>
                     </div>
-                    <div class="col">
+                    <div id="scoretally-initials-container" class="col-lg-3">
                         <p><strong>Ready to enter your score on the scoreboard?</strong></p>
                         <!-- Form for capturing initials and submitting score results to scoreboard array and localStorage -->
                         <form>
                             <div class="row">
-                                <div class="form-group col">
+                                <div class="form-group col-lg-8">
                                     <!--- Initials input field -->
                                     <input type="text" tabindex="1" class="form-control" id="initialsInput" placeholder="Enter Initials">
                                 </div>
-                                <div class="form-group col">
+                                <div class="form-group col-lg-4">
                                     <!-- Initials and Score Submit button -->
                                     <button id="scoreBtn" tabindex="2" type="button" class="btn btn-primary mt-0 float-left retake-score-btn">Submit Score</button></div>
                                 </div>
@@ -700,8 +700,8 @@
         <!-- Div container that provides the shadow and visual treatment for the quiz questions, start, score tally, & scoreboard divs -->
         <div class="container-md shadow bg-white rounded min-vh-90">
             <!-- Internal container for scoreboard -->
-            <div class="container-md p-5" style="margin: auto auto;">
-                <h2 class="pb-5">Quiz Scoreboard:</h2>
+            <div class="container-md p-lg-5" style="margin: auto auto;">
+                <h2 id="scoreboard-title-txt" class="pb-5">Quiz Scoreboard:</h2>
                 <hr class="mt-4">
                 <div class="row pt-5">
                     <!-- Scoreboard table -->
@@ -730,16 +730,16 @@
                 </div>
                 <hr class="mt-4">
                 <div class="row pt-5 justify-content-between">
-                    <div class="col-4">
+                    <div class="col-lg-4" id="scoreboard-tryagain-container"> 
                         <p><strong>Not pleased with your score? Try again.</strong></p>
                         <!-- Retake button clears quiz results, resets timer, & toggles visibility of Scoreboard & Quiz Start divs -->
                         <button id="retake2Btn" type="button" class="btn btn-primary mt-0 mx-0 float-left retake-score-btn">Retake Quiz</button>
                     </div>
-                    <div class="col-3 offset-md-4">
-                        <p class=""><strong>Clear the Scoreboard</strong>.</p>
+                    <div class="col-lg-4" id="scoreboard-clear-container">
+                        <p ><strong>Clear the Scoreboard</strong>.</p>
                         <!-- Clear Scores button clears array that populates scoreboard & wipes local storage that holds scoreboard values -->
                         <button id="clearScoresBtn" type="button" class="btn btn-primary mt-0 mx-0 retake-score-btn">Clear Scores</button>
-                        <p class="small"><em>Note: This action cannot be undone.</em></p>
+                        <p id="scoreboard-note-txt" class="small"><em>Note: This action cannot be undone.</em></p>
                     </div>
                 </div>
             </div>
