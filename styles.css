@@ -1,100 +1,111 @@
 /* A critical class - it is toggled throughout the JavaScript to display and hide questions and other key divs throughout the experience */
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Sets a gradient background on the page behind the divs */
 .bg-gradient {
-    background: linear-gradient(
-        0deg,
-        rgba(160, 160, 160, 1) 5%,
-        rgba(255, 255, 255, 1) 65%
-    );
-    height: 100vh;
+  background: linear-gradient(
+    0deg,
+    rgba(160, 160, 160, 1) 5%,
+    rgba(255, 255, 255, 1) 65%
+  );
+  height: 100vh;
 }
 
-/* Handles the quiz title font size at the top-center of the page */
+/* Handles the quiz title font size at the top-center of the page for all default views except those handled by @media queries below */
 .quiz-title {
-    font-size: 200%;
+  font-size: 200%;
 }
 
-@media only screen and (min-width: 651px) {
-    #quiz-title-txt-container {
-        margin-top: -90px;
-        z-index: 0;
-    }
-    #high-scores-btn-container {
-        z-index: 1;
-    }
+@media only screen and (min-width: 801px) {
+  /* Handles the z-index & top margin of the quiz title's parent container in the header for devices larger than tablets (>801px wide) */
+  #quiz-title-txt-container {
+    margin-top: -90px;
+    z-index: 0;
+  }
+  /* Handles the z-index of the high scores button's parent container for devices larger than tablets (>801px wide) */
+  #high-scores-btn-container {
+    z-index: 1;
+  }
 }
 @media only screen and (max-width: 800px) and (min-width: 400px) {
-  .quiz-title {
-        font-size: 200%;
-  }
+  /* Handles the z-index & top margin of the quiz title's parent container in the header for tablets between 400-800px wide */
   #quiz-title-txt-container {
-        margin-top: 20px;
-        z-index: 10;
+    margin-top: 20px;
+    z-index: 10;
   }
+  /* Handles margins of the initials text entry & submit button parent container on the Score Tally div for tablets between 400-800px wide */
   #scoretally-initials-container {
-        margin-top: 40px;
-        margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
+  /* Handles  padding and margin adjustements for the scoreboard title h2 on tablet devices between 400-800px wide */
   #scoreboard-title-txt {
-        padding-top: 30px !important;
-        padding-bottom: 0 !important;
-        margin-bottom: 10px !important;
+    padding-top: 30px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 10px !important;
   }
+  /* Handles the retake quiz (from the Scoreboard) button's parent div width and float on tablet devices between 400-800px wide */
   #scoreboard-tryagain-container {
     width: 50vw !important;
     float: left;
-
   }
+  /* Handles the clear scores button's parent div width and margin on tablet devices between 400-800px wide */
   #scoreboard-clear-container {
     width: 35vw !important;
     margin-bottom: 30px;
   }
 }
 @media only screen and (max-width: 399px) {
+  /* Handles the font-size and margin of the quiz title in the header on mobile phones < 400px wide */
   .quiz-title {
-        font-size: 130%;
-        margin-top: 20px;
+    font-size: 130%;
+    margin-top: 20px;
   }
+  /* Handles the width and general centered alignment of the high scores button's parent container on mobile phones < 400px wide */
   #high-scores-btn-container {
-        width: 75vw !important;
-        margin: 5px auto;
+    width: 75vw !important;
+    margin: 5px auto;
   }
+  /* Handles the countdown timer parent container's width and general centered alignment in the header for mobile phones < 400px wide */
   #time-remaining-container {
-        width: 75vw !important;
-        margin: 0 auto;
+    width: 75vw !important;
+    margin: 0 auto;
   }
+  /* Handles the z-index of the quiz title's parent container in the header for mobile phone devices < 400px wide */
   #quiz-title-txt-container {
-        z-index: 10;
+    z-index: 10;
   }
+  /* Handles margins of the initials text entry and submit button parent container on the Score Tally div on phone devices < 400px wide */
   #scoretally-initials-container {
-      margin-top: 40px;
-      margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
-  #scoreboard-tryagain-container {
-      width: 70vw !important;
-  }
-  #scoreboard-clear-container {
-      width: 70vw !important;
-      margin-top: 40px;
-      margin-bottom: 40px;
-  }
+  /* Handles slight padding and margin adjustements for the scoreboard title h2 for phone devices < 400px wide */
   #scoreboard-title-txt {
-      padding-top: 30px !important;
-      padding-bottom: 0 !important;
-      margin-bottom: 10px !important;
+    padding-top: 30px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  /* Handles the retake quiz (from the Scoreboard) button's containing div with on phone devices < 400px wide */
+  #scoreboard-tryagain-container {
+    width: 70vw !important;
+  }
+  /* Handles the clear scores button's containing div width and margins on phone devices < 400px wide */
+  #scoreboard-clear-container {
+    width: 70vw !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 
 /* Handles width of next buttons for each question div */
 .nxt-btn {
-    width: 100px;
+  width: 100px;
 }
 
 /* Handles width of retake, submit score, and clear scores buttons */
 .retake-score-btn {
-    width: 200px;
+  width: 200px;
 }

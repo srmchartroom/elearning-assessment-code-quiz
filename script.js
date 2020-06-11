@@ -1032,14 +1032,10 @@ function submitScores() {
   }
   if (
     scoresDiv.classList.contains("hidden") &&
-    !qz11Div.classList.contains("hidden")
+    !qz11Div.classList.contains("hidden") // make sure the Score Tally div is the one currently displayed
   ) {
     currentInitials = initialsInputField.value.toUpperCase(); // set the currentInitials var to the current initials/score submission and convert to UpperCase
-    if (
-      initialsInputField.value !== "" &&
-      initialsInputField.value.length < 4
-    ) {
-      // provided the value is < 4 characters and not empty
+    if (initialsInputField.value !== "") {
       let scoresObjectNext = {
         weighted: weightedScore,
         numCorrect: correctCount,
@@ -1047,18 +1043,8 @@ function submitScores() {
         initials: currentInitials,
       }; // create an object that fills the currect submission's weighted score, # correct, time left, and initials
       scoresSubmissions.push(scoresObjectNext); // push the new object into the scoresSubmissions array
-    } else if (initialsInputField.value.length > 3) {
-      alert("Your initials should be no longer than 3 characters."); // alert user of error in submission
-      initialsInputField.value = ""; // Reset initialsTxt so that previous submissions don't interrupt conditional logic
-    } else if (initialsInputField.value !== "") {
-      alert(
-        "You must enter your initials in order to submit your score to the Score Board."
-      ); // alert user error in submission
-      initialsInputField.value = ""; // Reset initialsTxt so that previous submissions don't interrupt conditional logic
-    } else {
-      initialsInputField.value = ""; // Reset initialsTxt so that previous submissions don't interrupt conditional logic
     }
-    initialsInputField.value = ""; // all other instances, upon completion of function to this point, still reset initials textfield for other quiz submissions
+    initialsInputField.value = ""; // Reset initials textfield for other quiz submissions
   }
   function compare(a, b) {
     // comparison function to act on the scoresSubmissions sort that follows the function
@@ -1119,5 +1105,5 @@ function retakeFromScoreBoard() {
 function clearScores() {
   localStorage.removeItem("LastScoreBoard"); // removes the stringified key/value of the previous ScoreBoard from localStorage
   scoreSubmissiones = []; // clears the scoreboard submissions array containing previous score entries
-  scoresTableBody.innerHTML = "";
+  scoresTableBody.innerHTML = ""; // clears the rendered HTML of the scores table body
 }
